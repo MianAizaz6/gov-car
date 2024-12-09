@@ -10932,7 +10932,6 @@ screen and (forced-colors:active) {
 
 
 /* footer css */
-
 .gem-c-layout-footer--border {
   border-top: 10px solid #1d70b8
 }
@@ -11084,4 +11083,25 @@ screen and (forced-colors:active) {
   font-size: 1rem;
   line-height: 2.5;
   margin: 0
+}
+
+@media print {
+  .gem-c-search__label h1 {
+    font-family: sans-serif
+  }
+}
+
+@media(min-width: 40.0625em) {
+  .gem-c-search__label h1 {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 2.1052631579
+  }
+}
+
+@media print {
+  .gem-c-search__label h1 {
+    font-size: 14pt;
+    line-height: 40px
+  }
 }
