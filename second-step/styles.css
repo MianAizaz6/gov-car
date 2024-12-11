@@ -3220,7 +3220,7 @@ html {
 
 * {
   background: transparent;
-  color: black;
+  /* color: black; */
   text-shadow: none;
   filter: none;
   -ms-filter: none
@@ -3621,7 +3621,7 @@ button,
 .exit,
 .finding_location,
 .footer .footer-meta-inner,
-.form-inline label,
+/* .form-inline label, */
 .found_location,
 .loading_location,
 .location_error,
@@ -8339,8 +8339,9 @@ only screen and (min-resolution:192dpi) {
 
 @media (min-width:40.0625em) {
   .govuk-tag {
-    font-size: 16px;
-    font-size: 1rem;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    /* font-size: 1rem; */
     line-height: 1
   }
 }
@@ -8408,7 +8409,7 @@ only screen and (min-resolution:192dpi) {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 30px;
   font-size: .875rem;
   line-height: 1.14286;
   color: #0b0c0c;
@@ -10848,7 +10849,7 @@ screen and (forced-colors:active) {
   }
 
   .govuk-phase-banner__content {
-    font-size: 1.6rem
+    font-size: 1.7rem
   }
 
   .govuk-skip-link {

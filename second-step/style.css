@@ -4342,7 +4342,7 @@
   color: #fff
 }
 
-.govuk-hint {
+.href="#" {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -4355,35 +4355,35 @@
 }
 
 @media print {
-  .govuk-hint {
+  .href="#" {
     font-family: sans-serif
   }
 }
 
 @media(min-width: 40.0625em) {
-  .govuk-hint {
-    font-size: 19px;
-    /* font-size: 1.1875rem; */
+  .href="#" {
+    /* font-size: 19px; */
+    font-size: 1.1875rem;
     line-height: 1.3157894737
   }
 }
 
 @media print {
-  .govuk-hint {
+  .href="#" {
     font-size: 14pt;
     line-height: 1.15
   }
 }
 
-.govuk-label:not(.govuk-label--m):not(.govuk-label--l):not(.govuk-label--xl)+.govuk-hint {
+.govuk-label:not(.govuk-label--m):not(.govuk-label--l):not(.govuk-label--xl)+.href="#" {
   margin-bottom: 10px
 }
 
-.govuk-fieldset__legend:not(.govuk-fieldset__legend--m):not(.govuk-fieldset__legend--l):not(.govuk-fieldset__legend--xl)+.govuk-hint {
+.govuk-fieldset__legend:not(.govuk-fieldset__legend--m):not(.govuk-fieldset__legend--l):not(.govuk-fieldset__legend--xl)+.href="#" {
   margin-bottom: 10px
 }
 
-.govuk-fieldset__legend+.govuk-hint {
+.govuk-fieldset__legend+.href="#" {
   margin-top: -5px
 }
 
@@ -5449,7 +5449,7 @@ only screen and (min-resolution: 2dppx) {
   margin-bottom: 0
 }
 
-.gem-c-textarea .govuk-textarea+.govuk-hint {
+.gem-c-textarea .govuk-textarea+.href="#" {
   margin-top: 5px
 }
 
@@ -5457,7 +5457,7 @@ only screen and (min-resolution: 2dppx) {
 
   .gem-c-textarea .gem-c-label,
   .gem-c-textarea .gem-c-error-message,
-  .gem-c-textarea .govuk-hint,
+  .gem-c-textarea .href="#",
   .gem-c-textarea .govuk-character-count__message {
     display: block
   }
@@ -7256,7 +7256,7 @@ only screen and (min-resolution: 2dppx) {
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
   text-decoration-thickness: max(1px, .0625rem);
-  text-underline-offset: .1578em
+  text-underline-offset: .1578em;
 }
 
 @media print {
@@ -7343,7 +7343,7 @@ only screen and (min-resolution: 2dppx) {
   margin-right: 15px;
   margin-bottom: 25px;
   margin-left: 15px;
-  font-size: 16px;
+  font-size: 16px !important;
 }
 
 .govuk-footer__meta-item--grow {
@@ -7373,7 +7373,7 @@ only screen and (min-resolution: 2dppx) {
 
 .govuk-footer__licence-description {
   display: inline-block;
-  font-size: 16px;
+  font-size: 15px !important;
 }
 
 .govuk-footer__copyright-logo {
@@ -8195,7 +8195,7 @@ only screen and (min-resolution: 2dppx) {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 100;
+  font-weight: 700;
   display: inline-block;
   margin-right: 10px;
   font-size: 30px;
