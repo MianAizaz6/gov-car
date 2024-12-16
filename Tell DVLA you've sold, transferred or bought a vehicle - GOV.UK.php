@@ -571,7 +571,7 @@
                     rel="nofollow" data-module="govuk-button ga4-link-tracker"
                     data-ga4-link="{&quot;event_name&quot;:&quot;form_start&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;start page&quot;,&quot;action&quot;:&quot;start&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
                     draggable="false"
-                    href="./second-step/1 - Details of the vehicle being sold - Private sale of a vehicle - GOV.UK.html"
+                    href="./second-step/1 - Details of the vehicle being sold - Private sale of a vehicle - GOV.UK.php"
                     data-govuk-button-module-started="true" data-ga4-link-tracker-module-started="true">
                     <span>
                       Start now

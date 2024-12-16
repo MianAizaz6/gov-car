@@ -560,7 +560,7 @@
             data-ga4-track-links-only="" data-ga4-set-indexes="" data-ga4-link-tracker-module-started="true">
             <form data-module="ga4-form-tracker"
               data-ga4-form="{&quot;event_name&quot;:&quot;form_response&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;Did you sell the vehicle privately, or to a motor trader?&quot;,&quot;action&quot;:&quot;next step&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
-              action="./4 - Sold your vehicle to a private individual or business - Tell DVLA you've sold, transferred or bought a vehicle - GOV.UK.html"
+              action="./4 - Sold your vehicle to a private individual or business - Tell DVLA you've sold, transferred or bought a vehicle - GOV.UK.php"
               accept-charset="UTF-8" method="get" data-ga4-form-tracker-module-started="true">
               <input type="hidden" name="response" id="response" value="" autocomplete="off">
               <div id="did-you-sell-the-vehicle-privately-or-to-a-motor-trader"

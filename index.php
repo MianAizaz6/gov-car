@@ -553,7 +553,7 @@
             data-ga4-track-links-only="" data-ga4-set-indexes="" data-ga4-link-tracker-module-started="true">
             <form data-module="ga4-form-tracker"
               data-ga4-form="{&quot;event_name&quot;:&quot;form_response&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;Are you a motor trader?&quot;,&quot;action&quot;:&quot;next step&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
-              action="./2 - Tell DVLA you've sold, transferred or bought a vehicle.html" accept-charset="UTF-8"
+              action="./2 - Tell DVLA you've sold, transferred or bought a vehicle.php" accept-charset="UTF-8"
               method="get" data-ga4-form-tracker-module-started="true">
               <input type="hidden" name="response" id="response" value="" autocomplete="off">
               <div id="are-you-a-motor-trader" class="govuk-form-group govuk-!-margin-bottom-6">
@@ -650,7 +650,7 @@
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
             <div class="gem-c-feedback__error-summary gem-c-feedback__js-show js-errors" tabindex="-1" hidden=""></div>
-            <input type="hidden" name="url" value="https://www.gov.uk/sold-bought-vehicle/y.html">
+            <input type="hidden" name="url" value="https://www.gov.uk/sold-bought-vehicle/y.php">
             <h3 class="gem-c-feedback__form-heading">Help us improve GOV.UK</h3>
             <p id="feedback_explanation" class="gem-c-feedback__form-paragraph">Don’t include personal or financial
               information like your National Insurance number or credit card details.
@@ -705,7 +705,7 @@
           <div class="govuk-grid-column-two-thirds" id="survey-wrapper">
             <div class="gem-c-feedback__error-summary js-errors" tabindex="-1" hidden=""></div>
             <input name="email_survey_signup[survey_id]" type="hidden" value="footer_satisfaction_survey">
-            <input name="email_survey_signup[survey_source]" type="hidden" value="/sold-bought-vehicle/y.html">
+            <input name="email_survey_signup[survey_source]" type="hidden" value="/sold-bought-vehicle/y.php">
             <h3 class="gem-c-feedback__form-heading">Help us improve GOV.UK</h3>
             <p id="survey_explanation" class="gem-c-feedback__form-paragraph">To help us improve GOV.UK, we’d like to
               know more about your visit today. We’ll send you a link to a feedback form. It will take only 2 minutes to

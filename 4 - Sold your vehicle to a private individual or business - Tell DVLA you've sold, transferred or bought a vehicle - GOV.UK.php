@@ -598,7 +598,7 @@
                 </div>
                 <p>
                   <a class="gem-c-button govuk-button govuk-button--start" role="button" data-module="govuk-button"
-                    draggable="false" href="./Tell DVLA you've sold, transferred or bought a vehicle - GOV.UK.html"
+                    draggable="false" href="./Tell DVLA you've sold, transferred or bought a vehicle - GOV.UK.php"
                     data-govuk-button-module-started="true">
                     <span> Tell <abbr title="Driver and Vehicle Licensing Agency">DVLA</abbr></span>
                     <svg class="govuk-button__start-icon govuk-!-display-none-print" xmlns="http://www.w3.org/2000/svg"
