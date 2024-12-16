@@ -198,43 +198,6 @@
                             </td>
                           </td>
                         </tr>
-                        <div class="modal fade" id="editModal<?php echo $record['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="editModalLabel">Edit User</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <form action="./process/edituser.php" method="GET">
-                                <div class="modal-body">
-                                  <input type="hidden" name="id" value="<?php echo $record['id']; ?>">
-                                  <div class="form-group">
-                                    <label for="FullName">Full Name</label>
-                                    <input type="text" class="form-control" name="FullName" value="<?php echo $record['FullName']; ?>" required>
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="Email">Email</label>
-                                    <input type="email" class="form-control" name="Email" value="<?php echo $record['Email']; ?>" required>
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="Password">Password</label>
-                                    <input type="password" class="form-control" name="Password" value="<?php echo $record['Password']; ?>" required>
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="Phone">Phone</label>
-                                    <input type="text" class="form-control" name="Phone" value="<?php echo $record['Phone']; ?>" required>
-                                  </div>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                  <button type="submit" class="btn btn-primary">Save changes</button>
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
                       <?php } ?>
                     </tbody>
                   </table>

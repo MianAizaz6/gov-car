@@ -261,42 +261,43 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="registrationForm" action="./process/usersdata.php" method="POST">
-          <!-- Full Name -->
-          <div class="mb-3">
-            <label for="fullName" class="form-label">Full Name</label>
-            <input type="text" class="form-control" id="fullName" name="fullname" placeholder="Enter your full name" required>
-          </div>
+        <div class="px-3">
+          <form id="registrationForm" action="./process/usersdata.php" method="POST">
+            <!-- Full Name -->
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input type="text" class="form-control custom-input-width" id="fullName" name="fullname" placeholder="Enter your full name" required>
+            </div>
 
-          <!-- Email -->
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" autocomplete="new-email" required>
-          </div>
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control custom-input-width" id="email" name="email" placeholder="Enter your email" autocomplete="new-email" required>
+            </div>
 
-          <!-- Password -->
-          <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Create a password" autocomplete="new-password" required>
-          </div>
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control custom-input-width" id="password" name="password" placeholder="Create a password" autocomplete="new-password" required>
+            </div>
 
-          <!-- Phone Number -->
-          <div class="mb-3">
-            <label for="phone" class="form-label">Phone Number</label>
-            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
-          </div>
+            <!-- Phone Number -->
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control custom-input-width" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
 
-          <!-- Submit Button -->
-          <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-success btn-md w-25">Add Users</button>
-          </div>
-        </form>
+            <!-- Submit Button -->
+            <div class="d-flex justify-content-center">
+              <button type="submit" class="btn btn-success btn-md w-25">Add Users</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-    <!-- /.modal-content -->
   </div>
-  <!-- /.modal-dialog -->
 </div>
+
 
 
     <!-- /.content-wrapper -->
