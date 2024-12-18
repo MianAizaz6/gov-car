@@ -1,3 +1,24 @@
+<?php
+session_start();
+
+// Store the form response in the session
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
+    $_SESSION['action_data'] = $_POST['action'];
+}
+
+
+
+// Store the form response in the session
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['response'])) {
+  $_SESSION['response'] = $_POST['response'];
+}
+
+// Retrieve the saved response from the session
+$actionData = isset($_SESSION['action_data']) ? $_SESSION['action_data'] : 'No response recorded.';
+$traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No response recorded.';
+
+?>
+
 <!DOCTYPE html>
 <!-- saved from url=(0073)https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/?response= -->
 <html class=" show-global-bar">
@@ -558,10 +579,12 @@
           <section class="simple-smart-answer__question-and-outcome" data-module="ga4-link-tracker"
             data-ga4-link="{&quot;event_name&quot;:&quot;information_click&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;Did you sell the vehicle privately, or to a motor trader?&quot;,&quot;action&quot;:&quot;information click&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
             data-ga4-track-links-only="" data-ga4-set-indexes="" data-ga4-link-tracker-module-started="true">
+
+            <!-- ############form submission######## -->
             <form data-module="ga4-form-tracker"
               data-ga4-form="{&quot;event_name&quot;:&quot;form_response&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;Did you sell the vehicle privately, or to a motor trader?&quot;,&quot;action&quot;:&quot;next step&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
               action="./4 - Sold your vehicle to a private individual or business - Tell DVLA you've sold, transferred or bought a vehicle - GOV.UK.php"
-              accept-charset="UTF-8" method="get" data-ga4-form-tracker-module-started="true">
+              accept-charset="UTF-8" method="post" data-ga4-form-tracker-module-started="true">
               <input type="hidden" name="response" id="response" value="" autocomplete="off">
               <div id="did-you-sell-the-vehicle-privately-or-to-a-motor-trader"
                 class="govuk-form-group govuk-!-margin-bottom-6">
@@ -588,13 +611,13 @@
                   </div>
                   <div class="govuk-radios">
                     <div class="gem-c-radio govuk-radios__item">
-                      <input type="radio" name="response" id="radio-7e1c6e55-0" value="sold-it-to-a-motor-trader"
+                      <input type="radio" name="soldmotor" id="radio-7e1c6e55-0" value="sold-it-to-a-motor-trader"
                         class="govuk-radios__input">
                       <label for="radio-7e1c6e55-0" class="gem-c-label govuk-label govuk-radios__label">Sold it to a
                         motor trader</label>
                     </div>
                     <div class="gem-c-radio govuk-radios__item">
-                      <input type="radio" name="response" id="radio-7e1c6e55-1"
+                      <input type="radio" name="soldmotor" id="radio-7e1c6e55-1"
                         value="sold-it-privately-to-a-person-or-business" class="govuk-radios__input">
                       <label for="radio-7e1c6e55-1" class="gem-c-label govuk-label govuk-radios__label">Sold it
                         privately to a person or business</label>
@@ -605,6 +628,9 @@
               <button class="gem-c-button govuk-button gem-c-button--bottom-margin" type="submit">Next step</button>
             </form>
           </section>
+
+<!-- ##########form show answer#########3 -->
+
           <section class="govuk-!-padding-top-6">
             <h2 class="gem-c-heading govuk-heading-m   govuk-!-margin-bottom-4">
               Your answers
@@ -619,7 +645,9 @@
               <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">1. Are you a motor trader?</dt>
-                  <dd class="govuk-summary-list__value">No</dd>
+                  <dd class="govuk-summary-list__value">
+                        <?php echo htmlspecialchars($traderData); ?> <!-- Display the user's response -->
+                    </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" data-module="ga4-link-tracker"
                       data-ga4-link="{&quot;event_name&quot;:&quot;form_change_response&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;Are you a motor trader?&quot;,&quot;action&quot;:&quot;change response&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
@@ -631,7 +659,7 @@
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">2. What have you done with your vehicle?</dt>
-                  <dd class="govuk-summary-list__value">Sold it</dd>
+                  <dd class="govuk-summary-list__value"><?php echo htmlspecialchars($actionData); ?> </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" data-module="ga4-link-tracker"
                       data-ga4-link="{&quot;event_name&quot;:&quot;form_change_response&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;What have you done with your vehicle?&quot;,&quot;action&quot;:&quot;change response&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"

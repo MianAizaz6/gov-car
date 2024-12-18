@@ -1,3 +1,18 @@
+
+<?php
+session_start();
+
+// Store the form response in the session
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['trader'])) {
+    $_SESSION['trader_data'] = $_POST['trader'];
+}
+
+// Retrieve the saved response from the session
+$traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No response recorded.';
+
+
+?>
+
 <!DOCTYPE html>
 <!-- saved from url=(0065)https://dvla-buysell-service.com/sold-bought-vehicle/y/?response= -->
 <html class=" show-global-bar">
@@ -548,10 +563,12 @@
           <section class="simple-smart-answer__question-and-outcome" data-module="ga4-link-tracker"
             data-ga4-link="{&quot;event_name&quot;:&quot;information_click&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;What have you done with your vehicle?&quot;,&quot;action&quot;:&quot;information click&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
             data-ga4-track-links-only="" data-ga4-set-indexes="" data-ga4-link-tracker-module-started="true">
+
+            <!-- ###########2nd Form submission############### -->
             <form data-module="ga4-form-tracker"
               data-ga4-form="{&quot;event_name&quot;:&quot;form_response&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;What have you done with your vehicle?&quot;,&quot;action&quot;:&quot;next step&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
               action="./3 - Did you sell the vehicle privately, or to a motor trader_ - Tell DVLA you've sold, transferred or bought a vehicle - GOV.UK.php" accept-charset="UTF-8"
-              method="get" data-ga4-form-tracker-module-started="true">
+              method="post" data-ga4-form-tracker-module-started="true">
               <input type="hidden" name="response" id="response" value="" autocomplete="off">
               <div id="what-have-you-done-with-your-vehicle" class="govuk-form-group govuk-!-margin-bottom-6">
                 <fieldset class="govuk-fieldset">
@@ -562,25 +579,27 @@
                   </legend>
                   <div class="govuk-radios">
                     <div class="gem-c-radio govuk-radios__item">
-                      <input type="radio" name="response" id="radio-bf8cfbc6-0" value="sold-it"
+                      <input type="radio" name="action"
+                      name="action" id="radio-bf8cfbc6-0" value="sold-it"
                         class="govuk-radios__input">
                       <label for="radio-bf8cfbc6-0" class="gem-c-label govuk-label govuk-radios__label">Sold it</label>
                     </div>
                     <div class="gem-c-radio govuk-radios__item">
-                      <input type="radio" name="response" id="radio-bf8cfbc6-1"
+                      <input type="radio" name="action" id="radio-bf8cfbc6-1"
                         value="put-it-into-someone-else-s-name-including-transferring-it-to-a-family-member-or-friend"
                         class="govuk-radios__input">
                       <label for="radio-bf8cfbc6-1" class="gem-c-label govuk-label govuk-radios__label">Put it into
                         someone else's name, including transferring it to a family member or friend</label>
                     </div>
                     <div class="gem-c-radio govuk-radios__item">
-                      <input type="radio" name="response" id="radio-bf8cfbc6-2"
+                      <input type="radio" name="action" id="radio-bf8cfbc6-2"
                         value="scrapped-it-or-it-s-been-written-off" class="govuk-radios__input">
                       <label for="radio-bf8cfbc6-2" class="gem-c-label govuk-label govuk-radios__label">Scrapped it or
                         it's been written off</label>
                     </div>
                     <div class="gem-c-radio govuk-radios__item">
-                      <input type="radio" name="response" id="radio-bf8cfbc6-3" value="bought-it"
+                      <input type="radio" 
+                      name="action" id="radio-bf8cfbc6-3" value="bought-it"
                         class="govuk-radios__input">
                       <label for="radio-bf8cfbc6-3" class="gem-c-label govuk-label govuk-radios__label">Bought
                         it</label>
@@ -590,35 +609,33 @@
               </div>
               <button class="gem-c-button govuk-button" type="submit">Next step</button>
             </form>
+            
           </section>
-          <section class="govuk-!-padding-top-6">
-            <h2 class="gem-c-heading govuk-heading-m   govuk-!-margin-bottom-4">
-              Your answers
-            </h2>
-            <p class="govuk-body">
-              <a class="govuk-link" data-module="ga4-link-tracker"
-                data-ga4-link="{&quot;event_name&quot;:&quot;form_start_again&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;What have you done with your vehicle?&quot;,&quot;action&quot;:&quot;start again&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
-                href="https://google.com=#" sold-bought-vehicle"="" data-ga4-link-tracker-module-started="true">Start
-                again</a>
-            </p>
-            <div class="gem-c-summary-list  ">
-              <dl class="govuk-summary-list">
+<!-- ########################show answer################ -->
+  <section class="govuk-!-padding-top-6">
+        <h2 class="gem-c-heading govuk-heading-m govuk-!-margin-bottom-4">Your answers</h2>
+        <p class="govuk-body">
+            <a class="govuk-link" href="index.php">Start again</a>
+        </p>
+        <div class="gem-c-summary-list">
+            <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">1. Are you a motor trader?</dt>
-                  <dd class="govuk-summary-list__value">No</dd>
-                  <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" data-module="ga4-link-tracker"
-                      data-ga4-link="{&quot;event_name&quot;:&quot;form_change_response&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;Are you a motor trader?&quot;,&quot;action&quot;:&quot;change response&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" sold-bought-vehicle=""
-                      y?previous_response="no&quot;" data-ga4-link-tracker-module-started="true">
-                      Change
-                      <span class="govuk-visually-hidden"> 1. Are you a motor trader?</span></a>
-                  </dd>
+                    <dt class="govuk-summary-list__key">1. Are you a motor trader?</dt>
+                    <dd class="govuk-summary-list__value">
+                        <?php echo htmlspecialchars($traderData); ?> <!-- Display the user's response -->
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="index.php">
+                            Change
+                            <span class="govuk-visually-hidden">1. Are you a motor trader?</span>
+                        </a>
+                    </dd>
                 </div>
-              </dl>
-              <div class="gem-c-summary__block"></div>
-            </div>
-          </section>
+            </dl>
+            <div class="gem-c-summary__block"></div>
+        </div>
+  </section>
+
         </div>
       </div>
     </main>

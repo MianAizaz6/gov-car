@@ -1,27 +1,10 @@
 <?php
 session_start();
-
-// Store the form response in the session
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['soldmotor'])) {
-    $_SESSION['sold_motor'] = $_POST['soldmotor'];
-}
-
-
-
-// Store the form response in the session
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['response'])) {
-  $_SESSION['response'] = $_POST['response'];
-}
-
-// Retrieve the saved response from the session
-$actionData = isset($_SESSION['action_data']) ? $_SESSION['action_data'] : 'No response recorded.';
-$traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No response recorded.';
-$soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No response recorded.';
-
 ?>
 
+
 <!DOCTYPE html>
-<!-- saved from url=(0115)https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response= -->
+<!-- saved from url=(0053)https://dvla-buysell-service.com/sold-bought-vehicle/ -->
 <html class=" show-global-bar">
 
 <head>
@@ -45,9 +28,7 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
   <meta name="govuk:publishing-app" content="publisher">
   <meta name="govuk:format" content="simple_smart_answer">
   <meta name="robots" content="noindex">
-  <title>Sold your vehicle to a private individual or business - Tell DVLA you've sold, transferred or bought a vehicle
-    - GOV.UK
-  </title>
+  <title>Are you a motor trader? - Tell DVLA you've sold, transferred or bought a vehicle - GOV.UK</title>
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./style2.css">
   <link rel="stylesheet" href="./style3.css">
@@ -82,8 +63,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
 
     //]]>
   </script> <a class="gem-c-skip-link govuk-skip-link govuk-!-display-none-print" data-module="govuk-skip-link"
-    href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-    #content"="" data-govuk-skip-link-module-started="true">Skip to main content</a>
+    href="#" #content"=""
+    data-govuk-skip-link-module-started="true">Skip to main content</a>
 
   <header role="banner" class="gem-c-layout-super-navigation-header"
     data-module="gem-track-click ga4-event-tracker ga4-link-tracker" data-track-links-only="" data-ga4-expandable=""
@@ -97,8 +78,7 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
             data-track-dimension-index="29"
             data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;external&quot;:&quot;false&quot;,&quot;text&quot;:&quot;GOV.UK&quot;,&quot;section&quot;:&quot;Logo&quot;,&quot;index_link&quot;:1,&quot;index_section&quot;:0,&quot;index_section_count&quot;:2,&quot;index_total&quot;:1}"
             id="logo" aria-label="Go to the GOV.UK homepage"
-            href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-            https:="" www.gov.uk"="">
+            href="#" https:="" www.gov.uk"="">
             <span class="govuk-header__logotype">
               <!--[if gt IE 8]><!-->
               <svg aria-hidden="true"
@@ -131,18 +111,16 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
             <div class="gem-c-layout-super-navigation-header__navigation-item">
               <a class="gem-c-layout-super-navigation-header__navigation-item-link" data-track-action="menuLink"
                 data-track-category="headerClicked" data-track-label="/browse" data-track-dimension="Menu"
-                data-track-dimension-index="29"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                browse"="" hidden="hidden"><span
-                  class="gem-c-layout-super-navigation-header__navigation-item-link-inner"> Menu
+                data-track-dimension-index="29" href="#" browse"=""
+                hidden="hidden"><span class="gem-c-layout-super-navigation-header__navigation-item-link-inner"> Menu
                 </span></a>
-              <button aria-controls="super-navigation-menu-2e80f24e" aria-expanded="false"
+              <button aria-controls="super-navigation-menu-6051a84b" aria-expanded="false"
                 aria-label="Show navigation menu"
                 class="gem-c-layout-super-navigation-header__navigation-top-toggle-button"
                 data-text-for-hide="Hide navigation menu" data-text-for-show="Show navigation menu"
                 data-toggle-desktop-group="top" data-toggle-mobile-group="top" data-tracking-key="menu"
                 data-ga4-event="{&quot;event_name&quot;:&quot;select_content&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;text&quot;:&quot;Menu&quot;,&quot;index_section&quot;:1,&quot;index_section_count&quot;:2,&quot;section&quot;:&quot;Menu&quot;}"
-                id="super-navigation-menu-2e80f24e-toggle" type="button">
+                id="super-navigation-menu-6051a84b-toggle" type="button">
                 <span class="gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner">Menu</span>
               </button>
             </div>
@@ -169,8 +147,7 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                 </span>
               </button>
               <a class="gem-c-layout-super-navigation-header__search-item-link"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                search"="" hidden="hidden">
+                href="#" search"="" hidden="hidden">
                 <span class="govuk-visually-hidden">
                   Search GOV.UK
                 </span>
@@ -185,7 +162,7 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
             </div>
           </div>
         </div>
-        <div id="super-navigation-menu-2e80f24e" hidden="hidden"
+        <div id="super-navigation-menu-6051a84b" hidden="hidden"
           class="gem-c-layout-super-navigation-header__navigation-dropdown-menu">
           <div class="govuk-width-container">
             <div class="govuk-grid-row gem-c-layout-super-navigation-header__navigation-items">
@@ -202,8 +179,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/browse/benefits" data-track-dimension="Benefits"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:1,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" browse="" benefits"="">Benefits</a>
+                      href="#" https:="" www.gov.uk="" browse=""
+                      benefits"="">Benefits</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link"
@@ -211,9 +188,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/browse/births-deaths-marriages"
                       data-track-dimension="Births, death, marriages and care" data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:2,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" browse="" births-deaths-marriages"="">Births, death, marriages and
-                      care</a>
+                      href="#" https:="" www.gov.uk="" browse=""
+                      births-deaths-marriages"="">Births, death, marriages and care</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link"
@@ -221,8 +197,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/browse/business" data-track-dimension="Business and self-employed"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:3,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" browse="" business"="">Business and self-employed</a>
+                      href="#" https:="" www.gov.uk="" browse=""
+                      business"="">Business and self-employed</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link"
@@ -230,8 +206,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/browse/childcare-parenting" data-track-dimension="Childcare and parenting"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:4,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" browse="" childcare-parenting"="">Childcare and parenting</a>
+                      href="#" https:="" www.gov.uk="" browse=""
+                      childcare-parenting"="">Childcare and parenting</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link"
@@ -239,8 +215,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/browse/citizenship" data-track-dimension="Citizenship and living in the UK"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:5,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" browse="" citizenship"="">Citizenship and living in the UK</a>
+                      href="#" https:="" www.gov.uk="" browse=""
+                      citizenship"="">Citizenship and living in the UK</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link"
@@ -248,8 +224,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/browse/justice" data-track-dimension="Crime, justice and the law"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:6,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" browse="" justice"="">Crime, justice and the law</a>
+                      href="#" https:="" www.gov.uk="" browse=""
+                      justice"="">Crime, justice and the law</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link"
@@ -257,8 +233,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/browse/disabilities" data-track-dimension="Disabled people"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:7,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" browse="" disabilities"="">Disabled people</a>
+                      href="#" https:="" www.gov.uk="" browse=""
+                      disabilities"="">Disabled people</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link"
@@ -266,8 +242,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/browse/driving" data-track-dimension="Driving and transport"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:8,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" browse="" driving"="">Driving and transport</a>
+                      href="#" https:="" www.gov.uk="" browse=""
+                      driving"="">Driving and transport</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link"
@@ -275,8 +251,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/browse/education" data-track-dimension="Education and learning"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:9,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" browse="" education"="">Education and learning</a>
+                      href="#" https:="" www.gov.uk="" browse=""
+                      education"="">Education and learning</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link"
@@ -284,8 +260,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/browse/employing-people" data-track-dimension="Employing people"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:10,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" browse="" employing-people"="">Employing people</a>
+                      href="#" https:="" www.gov.uk="" browse=""
+                      employing-people"="">Employing people</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link"
@@ -293,8 +269,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/browse/environment-countryside"
                       data-track-dimension="Environment and countryside" data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:11,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" browse="" environment-countryside"="">Environment and countryside</a>
+                      href="#" https:="" www.gov.uk="" browse=""
+                      environment-countryside"="">Environment and countryside</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link"
@@ -302,8 +278,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/browse/housing-local-services"
                       data-track-dimension="Housing and local services" data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:12,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" browse="" housing-local-services"="">Housing and local services</a>
+                      href="#" https:="" www.gov.uk="" browse=""
+                      housing-local-services"="">Housing and local services</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link"
@@ -311,8 +287,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/browse/tax" data-track-dimension="Money and tax"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:13,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" browse="" tax"="">Money and tax</a>
+                      href="#" https:="" www.gov.uk="" browse=""
+                      tax"="">Money and tax</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link"
@@ -320,8 +296,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/browse/abroad" data-track-dimension="Passports, travel and living abroad"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:14,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" browse="" abroad"="">Passports, travel and living abroad</a>
+                      href="#" https:="" www.gov.uk="" browse=""
+                      abroad"="">Passports, travel and living abroad</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link"
@@ -329,8 +305,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/browse/visas-immigration" data-track-dimension="Visas and immigration"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:15,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" browse="" visas-immigration"="">Visas and immigration</a>
+                      href="#" https:="" www.gov.uk="" browse=""
+                      visas-immigration"="">Visas and immigration</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link"
@@ -338,8 +314,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/browse/working" data-track-dimension="Working, jobs and pensions"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:16,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" browse="" working"="">Working, jobs and pensions</a>
+                      href="#" https:="" www.gov.uk="" browse=""
+                      working"="">Working, jobs and pensions</a>
                   </li>
                 </ul>
               </div>
@@ -356,8 +332,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/government/organisations" data-track-dimension="Departments"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:2,&quot;index_link&quot;:1,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Government activity&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" government="" organisations"="">Departments</a>
+                      href="#" https:="" www.gov.uk=""
+                      government="" organisations"="">Departments</a>
                     <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Departments,
                       agencies and public bodies
                     </p>
@@ -368,8 +344,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/search/news-and-communications" data-track-dimension="News"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:2,&quot;index_link&quot;:2,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Government activity&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" search="" news-and-communications"="">News</a>
+                      href="#" https:="" www.gov.uk="" search=""
+                      news-and-communications"="">News</a>
                     <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">News stories,
                       speeches, letters and notices
                     </p>
@@ -380,8 +356,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/search/guidance-and-regulation" data-track-dimension="Guidance and regulation"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:2,&quot;index_link&quot;:3,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Government activity&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" search="" guidance-and-regulation"="">Guidance and regulation</a>
+                      href="#" https:="" www.gov.uk="" search=""
+                      guidance-and-regulation"="">Guidance and regulation</a>
                     <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Detailed
                       guidance, regulations and rules
                     </p>
@@ -392,8 +368,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/search/research-and-statistics" data-track-dimension="Research and statistics"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:2,&quot;index_link&quot;:4,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Government activity&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" search="" research-and-statistics"="">Research and statistics</a>
+                      href="#" https:="" www.gov.uk="" search=""
+                      research-and-statistics"="">Research and statistics</a>
                     <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Reports,
                       analysis and official statistics
                     </p>
@@ -404,9 +380,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/search/policy-papers-and-consultations"
                       data-track-dimension="Policy papers and consultations" data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:2,&quot;index_link&quot;:5,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Government activity&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" search="" policy-papers-and-consultations"="">Policy papers and
-                      consultations</a>
+                      href="#" https:="" www.gov.uk="" search=""
+                      policy-papers-and-consultations"="">Policy papers and consultations</a>
                     <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Consultations
                       and strategy
                     </p>
@@ -417,8 +392,7 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/search/transparency-and-freedom-of-information-releases"
                       data-track-dimension="Transparency" data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:2,&quot;index_link&quot;:6,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Government activity&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" search=""
+                      href="#" https:="" www.gov.uk="" search=""
                       transparency-and-freedom-of-information-releases"="">Transparency</a>
                     <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Data, Freedom of
                       Information releases and corporate reports
@@ -447,12 +421,12 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                     class="gem-c-search govuk-!-display-none-print  govuk-!-margin-bottom-0 gem-c-search--large gem-c-search--on-white gem-c-search--separate-label"
                     data-module="gem-toggle-input-class-on-focus"
                     data-gem-toggle-input-class-on-focus-module-started="true">
-                    <label for="search-main-887d4d36"
+                    <label for="search-main-3c222b17"
                       class="govuk-label govuk-label--m gem-c-layout-super-navigation-header__search-label--large-navbar">Search
                       GOV.UK</label>
                     <div class="gem-c-search__item-wrapper">
                       <input enterkeyhint="search" class="gem-c-search__item gem-c-search__input js-class-toggle"
-                        id="search-main-887d4d36" name="q" title="Search" type="search" value="">
+                        id="search-main-3c222b17" name="q" title="Search" type="search" value="">
                       <div class="gem-c-search__item gem-c-search__submit-wrapper">
                         <button class="gem-c-search__submit" type="submit" data-track-category="headerClicked"
                           data-track-action="searchSubmitted" data-track-label="/search/all"
@@ -486,8 +460,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/cost-of-living" data-track-dimension="Get support with the cost of living"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:4,&quot;index_link&quot;:1,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Popular on GOV.UK&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" cost-of-living"="">Get support with the cost of living</a>
+                      href="#" https:="" www.gov.uk=""
+                      cost-of-living"="">Get support with the cost of living</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__popular-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__popular-link"
@@ -496,17 +470,17 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-dimension="Find out about the Energy Bills Support Scheme"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:4,&quot;index_link&quot;:2,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Popular on GOV.UK&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" guidance="" getting-the-energy-bills-support-scheme-discount"="">Find out
-                      about the Energy Bills Support Scheme</a>
+                      href="#" https:="" www.gov.uk="" guidance=""
+                      getting-the-energy-bills-support-scheme-discount"="">Find out about the Energy Bills Support
+                      Scheme</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__popular-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__popular-link"
                       data-track-action="popularLink" data-track-category="headerClicked" data-track-label="/find-a-job"
                       data-track-dimension="Find a job" data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:4,&quot;index_link&quot;:3,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Popular on GOV.UK&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" find-a-job"="">Find a job</a>
+                      href="#" https:="" www.gov.uk=""
+                      find-a-job"="">Find a job</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__popular-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__popular-link"
@@ -514,8 +488,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/sign-in-universal-credit"
                       data-track-dimension="Universal Credit account: sign in" data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:4,&quot;index_link&quot;:4,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Popular on GOV.UK&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" sign-in-universal-credit"="">Universal Credit account: sign in</a>
+                      href="#" https:="" www.gov.uk=""
+                      sign-in-universal-credit"="">Universal Credit account: sign in</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__popular-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__popular-link"
@@ -523,9 +497,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/check-national-insurance-record"
                       data-track-dimension="Check your National Insurance record" data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:4,&quot;index_link&quot;:5,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Popular on GOV.UK&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" check-national-insurance-record"="">Check your National Insurance
-                      record</a>
+                      href="#" https:="" www.gov.uk=""
+                      check-national-insurance-record"="">Check your National Insurance record</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__popular-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__popular-link"
@@ -533,8 +506,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                       data-track-label="/check-mot-history" data-track-dimension="Check MOT history of a vehicle"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:4,&quot;index_link&quot;:6,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Popular on GOV.UK&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      https:="" www.gov.uk="" check-mot-history"="">Check MOT history of a vehicle</a>
+                      href="#" https:="" www.gov.uk=""
+                      check-mot-history"="">Check MOT history of a vehicle</a>
                   </li>
                 </ul>
               </div>
@@ -557,25 +530,22 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
             <a data-track-category="homeLinkClicked" data-track-action="homeBreadcrumb" data-track-label=""
               data-track-options="{}"
               data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;breadcrumb&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_total&quot;:&quot;3&quot;}"
-              class="govuk-breadcrumbs__link"
-              href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#" "="">Home</a>
+              class="govuk-breadcrumbs__link" href="#" "="">Home</a>
                   </li>
                   <li class=" govuk-breadcrumbs__list-item">
               <a data-track-category="breadcrumbClicked" data-track-action="2" data-track-label="/browse/driving"
                 data-track-options="{&quot;dimension28&quot;:&quot;3&quot;,&quot;dimension29&quot;:&quot;Driving and transport&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;breadcrumb&quot;,&quot;index_link&quot;:&quot;2&quot;,&quot;index_total&quot;:&quot;3&quot;}"
-                class="govuk-breadcrumbs__link"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                browse="" driving"="">Driving and transport</a>
+                class="govuk-breadcrumbs__link" href="#" browse=""
+                driving"="">Driving and transport</a>
           </li>
           <li class="govuk-breadcrumbs__list-item">
             <a data-track-category="breadcrumbClicked" data-track-action="3"
               data-track-label="/browse/driving/buy-sell-scrap-vehicle"
               data-track-options="{&quot;dimension28&quot;:&quot;3&quot;,&quot;dimension29&quot;:&quot;Buy, sell or scrap a vehicle&quot;}"
               data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;breadcrumb&quot;,&quot;index_link&quot;:&quot;3&quot;,&quot;index_total&quot;:&quot;3&quot;}"
-              class="govuk-breadcrumbs__link"
-              href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-              browse="" driving="" buy-sell-scrap-vehicle"="">Buy, sell or scrap a vehicle</a>
+              class="govuk-breadcrumbs__link" href="#" browse=""
+              driving="" buy-sell-scrap-vehicle"="">Buy, sell or scrap a vehicle</a>
           </li>
         </ol>
       </div>
@@ -584,201 +554,47 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <section class="simple-smart-answer__question-and-outcome" data-module="ga4-link-tracker"
-            data-ga4-link="{&quot;event_name&quot;:&quot;information_click&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;Sold your vehicle to a private individual or business&quot;,&quot;action&quot;:&quot;information click&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
+            data-ga4-link="{&quot;event_name&quot;:&quot;information_click&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;Are you a motor trader?&quot;,&quot;action&quot;:&quot;information click&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
             data-ga4-track-links-only="" data-ga4-set-indexes="" data-ga4-link-tracker-module-started="true">
-            <div data-module="track-smart-answer ga4-auto-tracker" data-smart-answer-node-type="outcome"
-              data-smart-answer-slug="outcome-3"
-              data-ga4-auto="{&quot;event_name&quot;:&quot;form_complete&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;Sold your vehicle to a private individual or business&quot;,&quot;action&quot;:&quot;complete&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;,&quot;text&quot;:&quot;outcome-3&quot;}"
-              data-track-smart-answer-module-started="true" data-ga4-auto-tracker-module-started="true">
-              <div class="gem-c-title govuk-!-margin-top-0 govuk-!-margin-bottom-4">
-                <span class="govuk-caption-xl gem-c-title__context">
-                  Tell DVLA you've sold, transferred or bought a vehicle
-                </span>
-                <h1 class="gem-c-title__text govuk-heading-l">
-                  Sold your vehicle to a private individual or business
-                </h1>
-              </div>
-              <div class="gem-c-govspeak govuk-govspeak " data-module="govspeak" data-govspeak-module-started="true">
-                <p>You need the 11 digit reference number from the latest vehicle log book (V5C).</p>
-                <ol class="steps">
-                  <li>
-                    <p>Give the green ‘new keeper’ slip from the log book to the buyer.</p>
-                  </li>
-                  <li>
-                    <p>Tell DVLA you’ve sold the vehicle using this service.</p>
-                  </li>
-                  <li>
-                    <p>Destroy the rest of the log book.</p>
-                  </li>
-                </ol>
-                <div role="note" aria-label="Information" class="application-notice info-notice">
-                  <p>You cannot use this service if the buyer is registering the vehicle abroad. This includes the
-                    Channel Islands (Jersey and Guernsey), Isle of Man and Ireland. You need to <a
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      responsibilities-selling-vehicle"="">fill in the ‘permanent export’ section</a> instead.
-                  </p>
-                </div>
-                <p>
-                  <a class="gem-c-button govuk-button govuk-button--start" role="button" data-module="govuk-button"
-                    draggable="false" href="./Tell DVLA you've sold, transferred or bought a vehicle - GOV.UK.php"
-                    data-govuk-button-module-started="true">
-                    <span> Tell <abbr title="Driver and Vehicle Licensing Agency">DVLA</abbr></span>
-                    <svg class="govuk-button__start-icon govuk-!-display-none-print" xmlns="http://www.w3.org/2000/svg"
-                      width="17.5" height="19" viewBox="0 0 33 40" focusable="false" aria-hidden="true">
-                      <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-                    </svg>
-                  </a>
-                </p>
-                <p>You can <a
-                    href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                    keep-registration-number"="">take the registration number off the vehicle</a> if you want to keep
-                  it. You must do this before you tell <abbr title="Driver and Vehicle Licensing Agency">DVLA</abbr> you
-                  sold your vehicle.
-                </p>
-                <h2 id="what-happens-next">What happens next</h2>
-                <p>You’ll be sent:</p>
+<!-- ################form data##############3 -->
+  <form data-module="ga4-form-tracker"
+      data-ga4-form="{&quot;event_name&quot;:&quot;form_response&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;Are you a motor trader?&quot;,&quot;action&quot;:&quot;next step&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
+      action="2 - Tell DVLA you've sold, transferred or bought a vehicle.php" 
+      accept-charset="UTF-8" method="post" data-ga4-form-tracker-module-started="true">
+    <div id="are-you-a-motor-trader" class="govuk-form-group govuk-!-margin-bottom-6">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <span class="govuk-caption-l">Tell DVLA you've sold, transferred or bought a vehicle</span>
+                <h1 class="govuk-fieldset__heading gem-c-radio__heading-text">1. Are you a motor trader?</h1>
+            </legend>
+            <div class="govuk-body">
+                <p>A motor trader can be any of the following:</p>
                 <ul>
-                  <li>an email confirmation (if you gave your email address)</li>
-                  <li>a letter confirming you’re no longer the keeper of the vehicle</li>
-                  <li>a <a
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      vehicle-tax-refund"="">refund cheque</a> for any full months left on your vehicle tax, calculated
-                    from the date <abbr title="Driver and Vehicle Licensing Agency">DVLA</abbr> gets your information -
-                    if you pay by Direct Debit, it’ll be cancelled automatically
-                  </li>
+                    <li>motor dealer</li>
+                    <li>motor auctioneer</li>
+                    <li>salvage dealer</li>
+                    <li>finance or insurance company</li>
+                    <li>fleet operator</li>
+                    <li>car buying service</li>
                 </ul>
-                <div role="note" aria-label="Warning" class="application-notice help-notice">
-                  <p>The buyer must tax the vehicle before driving it, or declare that it’s off the road (a SORN). The
-                    tax is not transferred when the vehicle is sold.
-                  </p>
-                </div>
-                <p>The new keeper should get:</p>
-                <ul>
-                  <li>an email confirmation (if you gave their email address)</li>
-                  <li>a new log book within 5 working days</li>
-                </ul>
-                <h2 id="other-ways-to-apply">Other ways to apply</h2>
-                <p>Fill in the log book and post it to <abbr title="Driver and Vehicle Licensing Agency">DVLA</abbr>.
-                </p>
-                <p>If you do not have a log book you must write to <abbr
-                    title="Driver and Vehicle Licensing Agency">DVLA</abbr> with:</p>
-                <ul>
-                  <li>your name and address</li>
-                  <li>the vehicle registration number</li>
-                  <li>the make and model</li>
-                  <li>the exact date of sale</li>
-                  <li>the name and address of the new keeper</li>
-                </ul>
-                <div role="note" aria-label="Information" class="application-notice info-notice">
-                  <p>Your notification can be rejected if you do not give all the information. This will also affect any
-                    vehicle tax refund you’re owed.
-                  </p>
-                </div>
-                <div class="address">
-                  <div class="adr org fn">
-                    <p>
-                      DVLA
-                      <br>Swansea
-                      <br>SA99 1BA
-                      <br>
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
-          </section>
+            <div class="govuk-radios">
+                <div class="gem-c-radio govuk-radios__item">
+                    <input type="radio" name="trader" id="radio-yes" value="Yes" class="govuk-radios__input">
+                    <label for="radio-yes" class="gem-c-label govuk-label govuk-radios__label">Yes</label>
+                </div>
+                <div class="gem-c-radio govuk-radios__item">
+                    <input type="radio" name="trader" id="radio-no" value="No" class="govuk-radios__input">
+                    <label for="radio-no" class="gem-c-label govuk-label govuk-radios__label">No</label>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <button class="gem-c-button govuk-button gem-c-button--bottom-margin" type="submit">Next step</button>
+  </form>
 
-<!-- #############show answer#########33 -->
 
-          <section class="govuk-!-padding-top-6">
-            <h2 class="gem-c-heading govuk-heading-m   govuk-!-margin-bottom-4">
-              Your answers
-            </h2>
-            <p class="govuk-body">
-              <a class="govuk-link" data-module="ga4-link-tracker"
-                data-ga4-link="{&quot;event_name&quot;:&quot;form_start_again&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;Sold your vehicle to a private individual or business&quot;,&quot;action&quot;:&quot;start again&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
-                href="./1 - Are you a motor trader_ - Tell DVLA you've sold, transferred or bought a vehicle - GOV.UK.html"
-                sold-bought-vehicle"="" data-ga4-link-tracker-module-started="true">Start again</a>
-            </p>
-            <div class="gem-c-summary-list  ">
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">1. Are you a motor trader?</dt>
-                  <dd class="govuk-summary-list__value"><?php echo htmlspecialchars($traderData); ?></dd>
-                  <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" data-module="ga4-link-tracker"
-                      data-ga4-link="{&quot;event_name&quot;:&quot;form_change_response&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;Are you a motor trader?&quot;,&quot;action&quot;:&quot;change response&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      sold-bought-vehicle="" y?previous_response="no&quot;" data-ga4-link-tracker-module-started="true">
-                      Change
-                      <span class="govuk-visually-hidden"> 1. Are you a motor trader?</span></a>
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">2. What have you done with your vehicle?</dt>
-                  <dd class="govuk-summary-list__value"><?php echo htmlspecialchars($actionData); ?></dd>
-                  <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" data-module="ga4-link-tracker"
-                      data-ga4-link="{&quot;event_name&quot;:&quot;form_change_response&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;What have you done with your vehicle?&quot;,&quot;action&quot;:&quot;change response&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      sold-bought-vehicle="" y="" no?previous_response="sold-it&quot;"
-                      data-ga4-link-tracker-module-started="true">
-                      Change
-                      <span class="govuk-visually-hidden"> 2. What have you done with your vehicle?</span></a>
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">3. Did you sell the vehicle privately, or to a motor trader?</dt>
-                  <dd class="govuk-summary-list__value"><?php echo htmlspecialchars($soldMotor); ?></dd>
-                  <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" data-module="ga4-link-tracker"
-                      data-ga4-link="{&quot;event_name&quot;:&quot;form_change_response&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;Did you sell the vehicle privately, or to a motor trader?&quot;,&quot;action&quot;:&quot;change response&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      sold-bought-vehicle="" y="" no=""
-                      sold-it?previous_response="sold-it-privately-to-a-person-or-business&quot;"
-                      data-ga4-link-tracker-module-started="true">
-                      Change
-                      <span class="govuk-visually-hidden"> 3. Did you sell the vehicle privately, or to a motor
-                        trader?</span></a>
-                  </dd>
-                </div>
-              </dl>
-              <div class="gem-c-summary__block"></div>
-            </div>
           </section>
-        </div>
-        <div class="govuk-grid-column-one-third">
-          <div class="gem-c-contextual-sidebar">
-            <div class="gem-c-related-navigation" data-module="gem-track-click ga4-link-tracker"
-              data-gem-track-click-module-started="true" data-ga4-link-tracker-module-started="true">
-              <h2 id="related-nav-related_items-79a7f89d" class="gem-c-related-navigation__main-heading"
-                data-track-count="sidebarRelatedItemSection">
-                Related content
-              </h2>
-              <nav role="navigation" class="gem-c-related-navigation__nav-section"
-                aria-labelledby="related-nav-related_items-79a7f89d" data-module="gem-toggle"
-                data-gem-toggle-module-started="true">
-                <ul class="gem-c-related-navigation__link-list">
-                  <li class="gem-c-related-navigation__link"><a
-                      class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--sidebar  govuk-link gem-c-related-navigation__section-link--other"
-                      data-track-category="relatedLinkClicked" data-track-action="1.1 Related content"
-                      data-track-label="/scrapped-and-written-off-vehicles"
-                      data-track-options="{&quot;dimension28&quot;:&quot;2&quot;,&quot;dimension29&quot;:&quot;Scrapping your vehicle and insurance write-offs&quot;}"
-                      data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;related content&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;1&quot;,&quot;index_total&quot;:&quot;2&quot;,&quot;section&quot;:&quot;Related content&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      scrapped-and-written-off-vehicles"="">Scrapping your vehicle and insurance write-offs</a></li>
-                  <li class="gem-c-related-navigation__link"><a
-                      class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--sidebar  govuk-link gem-c-related-navigation__section-link--other"
-                      data-track-category="relatedLinkClicked" data-track-action="1.2 Related content"
-                      data-track-label="/vehicle-registration"
-                      data-track-options="{&quot;dimension28&quot;:&quot;2&quot;,&quot;dimension29&quot;:&quot;Vehicle registration&quot;}"
-                      data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;related content&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_link&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;1&quot;,&quot;index_total&quot;:&quot;2&quot;,&quot;section&quot;:&quot;Related content&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                      vehicle-registration"="">Vehicle registration</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
         </div>
       </div>
     </main>
@@ -795,8 +611,7 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                 <li class="gem-c-feedback__option-list-item govuk-visually-hidden" hidden="">
                   <a class="gem-c-feedback__prompt-link" data-track-category="yesNoFeedbackForm"
                     data-track-action="ffMaybeClick" role="button" hidden="hidden" aria-hidden="true"
-                    href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                    contact="" govuk"="">
+                    href="#" contact="" govuk"="">
                     Maybe
                   </a>
                 </li>
@@ -839,6 +654,7 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
             <div class="gem-c-feedback__error-summary gem-c-feedback__js-show js-errors" tabindex="-1" hidden=""></div>
+            <input type="hidden" name="url" value="https://www.gov.uk/sold-bought-vehicle/y.php">
             <h3 class="gem-c-feedback__form-heading">Help us improve GOV.UK</h3>
             <p id="feedback_explanation" class="gem-c-feedback__form-paragraph">Don’t include personal or financial
               information like your National Insurance number or credit card details.
@@ -848,13 +664,13 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
               <input id="giraffe" name="giraffe" type="text" pattern=".{0}" tabindex="-1" autocomplete="off">
             </div>
             <div class="gem-c-textarea govuk-form-group govuk-!-margin-bottom-6">
-              <label for="textarea-ad400b7e" class="gem-c-label govuk-label">What were you doing?</label>
-              <textarea name="what_doing" class="govuk-textarea" id="textarea-ad400b7e" rows="3" spellcheck="true"
+              <label for="textarea-6464b978" class="gem-c-label govuk-label">What were you doing?</label>
+              <textarea name="what_doing" class="govuk-textarea" id="textarea-6464b978" rows="3" spellcheck="true"
                 aria-describedby="feedback_explanation"></textarea>
             </div>
             <div class="gem-c-textarea govuk-form-group govuk-!-margin-bottom-6">
-              <label for="textarea-87fe2ab2" class="gem-c-label govuk-label">What went wrong?</label>
-              <textarea name="what_wrong" class="govuk-textarea" id="textarea-87fe2ab2" rows="3"
+              <label for="textarea-f19ed4fa" class="gem-c-label govuk-label">What went wrong?</label>
+              <textarea name="what_wrong" class="govuk-textarea" id="textarea-f19ed4fa" rows="3"
                 spellcheck="true"></textarea>
             </div>
             <button class="gem-c-button govuk-button" type="submit"
@@ -867,8 +683,8 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
             </button>
           </div>
         </div>
-        <input type="hidden" name="javascript_enabled" value="true"><input type="hidden" name="referrer" value=""><input
-          type="hidden" name="timer" value="0">
+        <input type="hidden" name="javascript_enabled" value="true"><input type="hidden" name="referrer"
+          value="https://www.gov.uk/sold-bought-vehicle"><input type="hidden" name="timer" value="0">
       </form>
       <script nonce="">
         //<![CDATA[
@@ -893,17 +709,16 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
           <div class="govuk-grid-column-two-thirds" id="survey-wrapper">
             <div class="gem-c-feedback__error-summary js-errors" tabindex="-1" hidden=""></div>
             <input name="email_survey_signup[survey_id]" type="hidden" value="footer_satisfaction_survey">
-            <input name="email_survey_signup[survey_source]" type="hidden"
-              value="/sold-bought-vehicle/y/no/sold-it/sold-it-privately-to-a-person-or-business">
+            <input name="email_survey_signup[survey_source]" type="hidden" value="/sold-bought-vehicle/y.php">
             <h3 class="gem-c-feedback__form-heading">Help us improve GOV.UK</h3>
             <p id="survey_explanation" class="gem-c-feedback__form-paragraph">To help us improve GOV.UK, we’d like to
               know more about your visit today. We’ll send you a link to a feedback form. It will take only 2 minutes to
               fill in. Don’t worry we won’t send you spam or share your email address with anyone.
             </p>
             <div class="govuk-form-group">
-              <label for="input-c22e7c8b" class="gem-c-label govuk-label">Email address</label>
+              <label for="input-091cfa81" class="gem-c-label govuk-label">Email address</label>
               <input aria-describedby="survey_explanation" autocomplete="email" class="gem-c-input govuk-input"
-                id="input-c22e7c8b" name="email_survey_signup[email_address]" spellcheck="false" type="email">
+                id="input-091cfa81" name="email_survey_signup[email_address]" spellcheck="false" type="email">
             </div>
             <button class="gem-c-button govuk-button" type="submit"
               data-ga4-event="{&quot;event_name&quot;:&quot;form_submit&quot;,&quot;type&quot;:&quot;feedback&quot;,&quot;text&quot;:&quot;Send me the survey&quot;,&quot;section&quot;:&quot;Help us improve GOV.UK&quot;}">Send
@@ -930,127 +745,127 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/benefits" data-track-options="{&quot;dimension29&quot;:&quot;Benefits&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" browse="" benefits"="">Benefits</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                benefits"="">Benefits</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/births-deaths-marriages"
                 data-track-options="{&quot;dimension29&quot;:&quot;Births, death, marriages and care&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;2&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" browse="" births-deaths-marriages"="">Births, death, marriages and care</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                births-deaths-marriages"="">Births, death, marriages and care</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/business"
                 data-track-options="{&quot;dimension29&quot;:&quot;Business and self-employed&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;3&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" browse="" business"="">Business and self-employed</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                business"="">Business and self-employed</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/childcare-parenting"
                 data-track-options="{&quot;dimension29&quot;:&quot;Childcare and parenting&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;4&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" browse="" childcare-parenting"="">Childcare and parenting</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                childcare-parenting"="">Childcare and parenting</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/citizenship"
                 data-track-options="{&quot;dimension29&quot;:&quot;Citizenship and living in the UK&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;5&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" browse="" citizenship"="">Citizenship and living in the UK</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                citizenship"="">Citizenship and living in the UK</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/justice"
                 data-track-options="{&quot;dimension29&quot;:&quot;Crime, justice and the law&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;6&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" browse="" justice"="">Crime, justice and the law</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                justice"="">Crime, justice and the law</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/disabilities"
                 data-track-options="{&quot;dimension29&quot;:&quot;Disabled people&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;7&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" browse="" disabilities"="">Disabled people</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                disabilities"="">Disabled people</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/driving"
                 data-track-options="{&quot;dimension29&quot;:&quot;Driving and transport&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;8&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" browse="" driving"="">Driving and transport</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                driving"="">Driving and transport</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/education"
                 data-track-options="{&quot;dimension29&quot;:&quot;Education and learning&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;9&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" browse="" education"="">Education and learning</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                education"="">Education and learning</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/employing-people"
                 data-track-options="{&quot;dimension29&quot;:&quot;Employing people&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;10&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" browse="" employing-people"="">Employing people</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                employing-people"="">Employing people</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/environment-countryside"
                 data-track-options="{&quot;dimension29&quot;:&quot;Environment and countryside&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;11&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" browse="" environment-countryside"="">Environment and countryside</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                environment-countryside"="">Environment and countryside</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/housing-local-services"
                 data-track-options="{&quot;dimension29&quot;:&quot;Housing and local services&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;12&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" browse="" housing-local-services"="">Housing and local services</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                housing-local-services"="">Housing and local services</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/tax" data-track-options="{&quot;dimension29&quot;:&quot;Money and tax&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;13&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" browse="" tax"="">Money and tax</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                tax"="">Money and tax</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/abroad"
                 data-track-options="{&quot;dimension29&quot;:&quot;Passports, travel and living abroad&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;14&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" browse="" abroad"="">Passports, travel and living abroad</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                abroad"="">Passports, travel and living abroad</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/visas-immigration"
                 data-track-options="{&quot;dimension29&quot;:&quot;Visas and immigration&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;15&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" browse="" visas-immigration"="">Visas and immigration</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                visas-immigration"="">Visas and immigration</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/working"
                 data-track-options="{&quot;dimension29&quot;:&quot;Working, jobs and pensions&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;16&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" browse="" working"="">Working, jobs and pensions</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                working"="">Working, jobs and pensions</a>
             </li>
           </ul>
         </div>
@@ -1062,41 +877,40 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                 data-track-action="governmentactivityLink" data-track-label="/government/organisations"
                 data-track-options="{&quot;dimension29&quot;:&quot;Departments&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" government="" organisations"="">Departments</a>
+                href="#" https:="" www.gov.uk="" government=""
+                organisations"="">Departments</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked"
                 data-track-action="governmentactivityLink" data-track-label="/search/news-and-communications"
                 data-track-options="{&quot;dimension29&quot;:&quot;News&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;2&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" search="" news-and-communications"="">News</a>
+                href="#" https:="" www.gov.uk="" search=""
+                news-and-communications"="">News</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked"
                 data-track-action="governmentactivityLink" data-track-label="/search/guidance-and-regulation"
                 data-track-options="{&quot;dimension29&quot;:&quot;Guidance and regulation&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;3&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" search="" guidance-and-regulation"="">Guidance and regulation</a>
+                href="#" https:="" www.gov.uk="" search=""
+                guidance-and-regulation"="">Guidance and regulation</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked"
                 data-track-action="governmentactivityLink" data-track-label="/search/research-and-statistics"
                 data-track-options="{&quot;dimension29&quot;:&quot;Research and statistics&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;4&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" search="" research-and-statistics"="">Research and statistics</a>
+                href="#" https:="" www.gov.uk="" search=""
+                research-and-statistics"="">Research and statistics</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked"
                 data-track-action="governmentactivityLink" data-track-label="/search/policy-papers-and-consultations"
                 data-track-options="{&quot;dimension29&quot;:&quot;Policy papers and consultations&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;5&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" search="" policy-papers-and-consultations"="">Policy papers and
-                consultations</a>
+                href="#" https:="" www.gov.uk="" search=""
+                policy-papers-and-consultations"="">Policy papers and consultations</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked"
@@ -1104,24 +918,24 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                 data-track-label="/search/transparency-and-freedom-of-information-releases"
                 data-track-options="{&quot;dimension29&quot;:&quot;Transparency&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;6&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" search="" transparency-and-freedom-of-information-releases"="">Transparency</a>
+                href="#" https:="" www.gov.uk="" search=""
+                transparency-and-freedom-of-information-releases"="">Transparency</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked"
                 data-track-action="governmentactivityLink" data-track-label="/government/how-government-works"
                 data-track-options="{&quot;dimension29&quot;:&quot;How government works&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;7&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" government="" how-government-works"="">How government works</a>
+                href="#" https:="" www.gov.uk="" government=""
+                how-government-works"="">How government works</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked"
                 data-track-action="governmentactivityLink" data-track-label="/government/get-involved"
                 data-track-options="{&quot;dimension29&quot;:&quot;Get involved&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;8&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" government="" get-involved"="">Get involved</a>
+                href="#" https:="" www.gov.uk="" government=""
+                get-involved"="">Get involved</a>
             </li>
           </ul>
         </div>
@@ -1136,63 +950,61 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="supportLink"
                 data-track-label="/help" data-track-options="{&quot;dimension29&quot;:&quot;Help&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" help"="">Help</a>
+                href="#" https:="" www.gov.uk="" help"="">Help</a>
             </li>
             <li class="govuk-footer__inline-list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="supportLink"
                 data-track-label="/help/privacy-notice"
                 data-track-options="{&quot;dimension29&quot;:&quot;Privacy&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;2&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" help="" privacy-notice"="">Privacy</a>
+                href="#" https:="" www.gov.uk="" help=""
+                privacy-notice"="">Privacy</a>
             </li>
             <li class="govuk-footer__inline-list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="supportLink"
                 data-track-label="/help/cookies" data-track-options="{&quot;dimension29&quot;:&quot;Cookies&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;3&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" help="" cookies"="">Cookies</a>
+                href="#" https:="" www.gov.uk="" help=""
+                cookies"="">Cookies</a>
             </li>
             <li class="govuk-footer__inline-list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="supportLink"
                 data-track-label="/help/accessibility-statement"
                 data-track-options="{&quot;dimension29&quot;:&quot;Accessibility statement&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;4&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" help="" accessibility-statement"="">Accessibility statement</a>
+                href="#" https:="" www.gov.uk="" help=""
+                accessibility-statement"="">Accessibility statement</a>
             </li>
             <li class="govuk-footer__inline-list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="supportLink"
                 data-track-label="/contact" data-track-options="{&quot;dimension29&quot;:&quot;Contact&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;5&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" contact"="">Contact</a>
+                href="#" https:="" www.gov.uk=""
+                contact"="">Contact</a>
             </li>
             <li class="govuk-footer__inline-list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="supportLink"
                 data-track-label="/help/terms-conditions"
                 data-track-options="{&quot;dimension29&quot;:&quot;Terms and conditions&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;6&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" help="" terms-conditions"="">Terms and conditions</a>
+                href="#" https:="" www.gov.uk="" help=""
+                terms-conditions"="">Terms and conditions</a>
             </li>
             <li class="govuk-footer__inline-list-item">
               <a class="govuk-footer__link" lang="cy" data-track-category="footerClicked"
                 data-track-action="supportLink" data-track-label="/cymraeg"
                 data-track-options="{&quot;dimension29&quot;:&quot;Rhestr o Wasanaethau Cymraeg&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;7&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" cymraeg"="">Rhestr o Wasanaethau Cymraeg</a>
+                href="#" https:="" www.gov.uk="" cymraeg"="">Rhestr
+                o Wasanaethau Cymraeg</a>
             </li>
             <li class="govuk-footer__inline-list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="supportLink"
                 data-track-label="/government/organisations/government-digital-service"
                 data-track-options="{&quot;dimension29&quot;:&quot;Government Digital Service&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;8&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-                https:="" www.gov.uk="" government="" organisations="" government-digital-service"="">Government Digital
-                Service</a>
+                href="#" https:="" www.gov.uk="" government=""
+                organisations="" government-digital-service"="">Government Digital Service</a>
             </li>
           </ul>
           <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo"
@@ -1209,9 +1021,9 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
             data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;section&quot;:&quot;Licence&quot;,&quot;index_section&quot;:&quot;4&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;text&quot;:&quot;Open Government Licence v3.0&quot;,&quot;index_total&quot;:&quot;1&quot;,&quot;type&quot;:&quot;footer&quot;}"
             data-gem-track-click-module-started="true">
             All content is available under the <a class="govuk-footer__link"
-              href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-              https:="" www.nationalarchives.gov.uk="" doc="" open-government-licence="" version="" 3="" "="" rel="
-              license">Open Government Licence v3.0</a>, except where otherwise stated
+              href="#" https:="" www.nationalarchives.gov.uk=""
+              doc="" open-government-licence="" version="" 3="" "="" rel=" license">Open Government Licence v3.0</a>,
+            except where otherwise stated
           </span>
         </div>
         <div class="govuk-footer__meta-item" data-module="gem-track-click" data-track-action="copyrightLink"
@@ -1221,9 +1033,9 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
           data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;section&quot;:&quot;Copyright&quot;,&quot;index_section&quot;:&quot;5&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;text&quot;:&quot;© Crown copyright&quot;,&quot;index_total&quot;:&quot;1&quot;,&quot;type&quot;:&quot;footer&quot;}"
           data-gem-track-click-module-started="true">
           <a class="govuk-footer__link govuk-footer__copyright-logo"
-            href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/sold-it-privately-to-a-person-or-business/?response=#"
-            https:="" www.nationalarchives.gov.uk="" information-management="" re-using-public-sector-information=""
-            uk-government-licensing-framework="" crown-copyright="" "="">© Crown copyright</a>
+            href="#" https:="" www.nationalarchives.gov.uk=""
+            information-management="" re-using-public-sector-information="" uk-government-licensing-framework=""
+            crown-copyright="" "="">© Crown copyright</a>
                </div>
             </div>
          </div>
