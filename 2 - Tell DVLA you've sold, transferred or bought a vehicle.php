@@ -42,6 +42,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./style2.css">
   <link rel="stylesheet" href="./style3.css">
+  <link rel="stylesheet" href="./style4.css">
   <meta name="govuk:components_gem_version" content="37.1.1">
   <!--[if lt IE 9]><![endif]-->
   <link rel="mask-icon" href="#" assets="" static=""
@@ -612,7 +613,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
             
           </section>
 <!-- ########################show answer################ -->
-  <section class="govuk-!-padding-top-6">
+    <section class="govuk-!-padding-top-6">
         <h2 class="gem-c-heading govuk-heading-m govuk-!-margin-bottom-4">Your answers</h2>
         <p class="govuk-body">
             <a class="govuk-link" href="index.php">Start again</a>
@@ -625,16 +626,58 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                         <?php echo htmlspecialchars($traderData); ?> <!-- Display the user's response -->
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="index.php">
+                        <a class="govuk-link change-link">
                             Change
                             <span class="govuk-visually-hidden">1. Are you a motor trader?</span>
                         </a>
                     </dd>
+
                 </div>
             </dl>
             <div class="gem-c-summary__block"></div>
         </div>
-  </section>
+    </section>
+
+<!-- #####first Modal##### -->
+        <div id="modal-are-you-a-motor-trader" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" id="closeModalBtn">&times;</span>
+                <form id="updateTraderForm" action="" method="post">
+                    <div id="are-you-a-motor-trader" class="govuk-form-group govuk-!-margin-bottom-2">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <span class="govuk-caption-l">Tell DVLA you've sold, transferred or bought a vehicle</span>
+                                <h1 class="govuk-fieldset__heading gem-c-radio__heading-text">1. Are you a motor trader?</h1>
+                            </legend>
+                            <div class="govuk-body">
+                                <p>A motor trader can be any of the following:</p>
+                                <ul>
+                                    <li>motor dealer</li>
+                                    <li>motor auctioneer</li>
+                                    <li>salvage dealer</li>
+                                    <li>finance or insurance company</li>
+                                    <li>fleet operator</li>
+                                    <li>car buying service</li>
+                                </ul>
+                            </div>
+                            <div class="govuk-radios">
+                                <div class="gem-c-radio govuk-radios__item">
+                                    <input type="radio" name="trader" id="radio-yes" value="Yes" class="govuk-radios__input" 
+                                        <?php echo $traderData === 'Yes' ? 'checked' : ''; ?>>
+                                    <label for="radio-yes" class="gem-c-label govuk-label govuk-radios__label">Yes</label>
+                                </div>
+                                <div class="gem-c-radio govuk-radios__item">
+                                    <input type="radio" name="trader" id="radio-no" value="No" class="govuk-radios__input" 
+                                        <?php echo $traderData === 'No' ? 'checked' : ''; ?>>
+                                    <label for="radio-no" class="gem-c-label govuk-label govuk-radios__label">No</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <button class="gem-c-button govuk-button gem-c-button--bottom-margin" type="submit">Save Changes</button>
+                </form>
+            </div>
+        </div>
 
         </div>
       </div>
@@ -1079,6 +1122,10 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
          </div>
       </footer>
 <script src=" ./script.js"></script>
+<script src=" ./modalscript.js"></script>
+
+
 </body>
 
 </html>
+

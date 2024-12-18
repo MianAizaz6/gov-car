@@ -50,6 +50,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./style2.css">
   <link rel="stylesheet" href="./style3.css">
+  <link rel="stylesheet" href="./style4.css">
   <meta name="govuk:components_gem_version" content="37.1.1">
   <!--[if lt IE 9]><![endif]-->
   <link rel="mask-icon" href="#" assets="" static=""
@@ -648,32 +649,121 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                   <dd class="govuk-summary-list__value">
                         <?php echo htmlspecialchars($traderData); ?> <!-- Display the user's response -->
                     </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" data-module="ga4-link-tracker"
-                      data-ga4-link="{&quot;event_name&quot;:&quot;form_change_response&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;Are you a motor trader?&quot;,&quot;action&quot;:&quot;change response&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/?response=#"
-                      sold-bought-vehicle="" y?previous_response="no&quot;" data-ga4-link-tracker-module-started="true">
-                      Change
-                      <span class="govuk-visually-hidden"> 1. Are you a motor trader?</span></a>
-                  </dd>
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link change-link">
+                            Change
+                            <span class="govuk-visually-hidden">1. Are you a motor trader?</span>
+                        </a>
+                    </dd>
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">2. What have you done with your vehicle?</dt>
                   <dd class="govuk-summary-list__value"><?php echo htmlspecialchars($actionData); ?> </dd>
                   <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" data-module="ga4-link-tracker"
-                      data-ga4-link="{&quot;event_name&quot;:&quot;form_change_response&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;What have you done with your vehicle?&quot;,&quot;action&quot;:&quot;change response&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/sold-it/?response=#"
-                      sold-bought-vehicle="" y="" no?previous_response="sold-it&quot;"
-                      data-ga4-link-tracker-module-started="true">
-                      Change
-                      <span class="govuk-visually-hidden"> 2. What have you done with your vehicle?</span></a>
+                      <a id="changeButton" class="govuk-link change-link">
+                          Change
+                          <span class="govuk-visually-hidden">2. What have you done with your vehicle?</span>
+                      </a>
                   </dd>
+
                 </div>
               </dl>
               <div class="gem-c-summary__block"></div>
             </div>
           </section>
+<!-- ###first modal ###### -->
+        <div id="modal-are-you-a-motor-trader" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" id="closeModalBtn">&times;</span>
+                <form id="updateTraderForm" action="./2 - Tell DVLA you've sold, transferred or bought a vehicle.php" method="post">
+                    <div id="are-you-a-motor-trader" class="govuk-form-group govuk-!-margin-bottom-2">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <span class="govuk-caption-l">Tell DVLA you've sold, transferred or bought a vehicle</span>
+                                <h1 class="govuk-fieldset__heading gem-c-radio__heading-text">1. Are you a motor trader?</h1>
+                            </legend>
+                            <div class="govuk-body">
+                                <p>A motor trader can be any of the following:</p>
+                                <ul>
+                                    <li>motor dealer</li>
+                                    <li>motor auctioneer</li>
+                                    <li>salvage dealer</li>
+                                    <li>finance or insurance company</li>
+                                    <li>fleet operator</li>
+                                    <li>car buying service</li>
+                                </ul>
+                            </div>
+                            <div class="govuk-radios">
+                                <div class="gem-c-radio govuk-radios__item">
+                                    <input type="radio" name="trader" id="radio-yes" value="Yes" class="govuk-radios__input" 
+                                        <?php echo $traderData === 'Yes' ? 'checked' : ''; ?>>
+                                    <label for="radio-yes" class="gem-c-label govuk-label govuk-radios__label">Yes</label>
+                                </div>
+                                <div class="gem-c-radio govuk-radios__item">
+                                    <input type="radio" name="trader" id="radio-no" value="No" class="govuk-radios__input" 
+                                        <?php echo $traderData === 'No' ? 'checked' : ''; ?>>
+                                    <label for="radio-no" class="gem-c-label govuk-label govuk-radios__label">No</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <button class="gem-c-button govuk-button gem-c-button--bottom-margin" type="submit">Save Changes</button>
+                </form>
+            </div>
+        </div>
+
+<!-- ##########second modal ############### -->
+        <div id="modal-what-have-you-done-with-your-vehicle" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" id="closeModalBtn2">&times;</span>
+                <form data-module="ga4-form-tracker"
+                      data-ga4-form="{&quot;event_name&quot;:&quot;form_response&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;What have you done with your vehicle?&quot;,&quot;action&quot;:&quot;next step&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
+                      action="./3 - Did you sell the vehicle privately, or to a motor trader_ - Tell DVLA you've sold, transferred or bought a vehicle - GOV.UK.php" 
+                      accept-charset="UTF-8" method="post" data-ga4-form-tracker-module-started="true">
+                    <input type="hidden" name="response" id="response" value="" autocomplete="off">
+                    <div id="what-have-you-done-with-your-vehicle" class="govuk-form-group govuk-!-margin-bottom-6">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <span class="govuk-caption-l">Tell DVLA you've sold, transferred or bought a vehicle</span>
+                                <h1 class="govuk-fieldset__heading gem-c-radio__heading-text">2. What have you done with your vehicle?</h1>
+                            </legend>
+                            <div class="govuk-radios">
+                                <div class="gem-c-radio govuk-radios__item">
+                                    <input type="radio" name="action" id="radio-bf8cfbc6-0" value="sold-it"
+                                          class="govuk-radios__input" <?php echo $actionData === 'sold-it' ? 'checked' : ''; ?>>
+                                    <label for="radio-bf8cfbc6-0" class="gem-c-label govuk-label govuk-radios__label">Sold it</label>
+                                </div>
+                                <div class="gem-c-radio govuk-radios__item">
+                                    <input type="radio" name="action" id="radio-bf8cfbc6-1" 
+                                          value="put-it-into-someone-else-s-name-including-transferring-it-to-a-family-member-or-friend"
+                                          class="govuk-radios__input" <?php echo $actionData === 'put-it-into-someone-else-s-name-including-transferring-it-to-a-family-member-or-friend' ? 'checked' : ''; ?>>
+                                    <label for="radio-bf8cfbc6-1" class="gem-c-label govuk-label govuk-radios__label">
+                                        Put it into someone else's name, including transferring it to a family member or friend
+                                    </label>
+                                </div>
+                                <div class="gem-c-radio govuk-radios__item">
+                                    <input type="radio" name="action" id="radio-bf8cfbc6-2" 
+                                          value="scrapped-it-or-it-s-been-written-off" 
+                                          class="govuk-radios__input" <?php echo $actionData === 'scrapped-it-or-it-s-been-written-off' ? 'checked' : ''; ?>>
+                                    <label for="radio-bf8cfbc6-2" class="gem-c-label govuk-label govuk-radios__label">
+                                        Scrapped it or it's been written off
+                                    </label>
+                                </div>
+                                <div class="gem-c-radio govuk-radios__item">
+                                    <input type="radio" name="action" id="radio-bf8cfbc6-3" value="bought-it"
+                                          class="govuk-radios__input" <?php echo $actionData === 'bought-it' ? 'checked' : ''; ?>>
+                                    <label for="radio-bf8cfbc6-3" class="gem-c-label govuk-label govuk-radios__label">Bought it</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <button class="gem-c-button govuk-button" type="submit">Save changes</button>
+                </form>
+            </div>
+        </div>
+
+
         </div>
       </div>
     </main>
@@ -1123,6 +1213,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
          </div>
       </footer>
       <script src=" ./script.js"></script>
+      <script src=" ./modalscript.js"></script>
 </body>
 
 </html>
