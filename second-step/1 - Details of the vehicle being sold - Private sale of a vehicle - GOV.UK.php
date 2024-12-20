@@ -123,7 +123,8 @@
                      </div>
                      <h1>Details of the vehicle being sold</h1>
                      <div class="form-steps">
-                        <form action="./2 - Enter new keeper details - Private sale of a vehicle - GOV.UK.php"
+<!-- ##########form submisson############ -->
+               <form action="./2 - Enter new keeper details - Private sale of a vehicle - GOV.UK.php"
                            method="POST">
                            <div class="step uppercase-input">
                               <div class="form-item">
@@ -293,7 +294,8 @@
                               <input type="submit" class="govuk-button" style="font-size: 20px;" name="submit" id=""
                                  value="Continue">
                            </div>
-                        </form>
+               </form>
+               
                      </div>
                   </div>
                </div>
