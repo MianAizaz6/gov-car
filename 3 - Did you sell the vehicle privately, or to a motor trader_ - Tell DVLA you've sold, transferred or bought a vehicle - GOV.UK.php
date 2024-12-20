@@ -15,6 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['response'])) {
 
 // Retrieve the saved response from the session
 $actionData = isset($_SESSION['action_data']) ? $_SESSION['action_data'] : 'No response recorded.';
+
+//page two
+// Store the form response in the session
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['trader'])) {
+  $_SESSION['trader_data'] = $_POST['trader'];
+}
+
+// Retrieve the saved response from the session
 $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No response recorded.';
 
 ?>
@@ -676,7 +684,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
         <div id="modal-are-you-a-motor-trader" class="modal" style="display: none;">
             <div class="modal-content">
                 <span class="close" id="closeModalBtn">&times;</span>
-                <form id="updateTraderForm" action="./2 - Tell DVLA you've sold, transferred or bought a vehicle.php" method="post">
+                <form id="updateTraderForm" action="./3 - Did you sell the vehicle privately, or to a motor trader_ - Tell DVLA you've sold, transferred or bought a vehicle - GOV.UK.php" method="post">
                     <div id="are-you-a-motor-trader" class="govuk-form-group govuk-!-margin-bottom-2">
                         <fieldset class="govuk-fieldset">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">

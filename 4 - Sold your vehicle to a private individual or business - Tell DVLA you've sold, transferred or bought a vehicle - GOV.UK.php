@@ -14,10 +14,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['response'])) {
 }
 
 // Retrieve the saved response from the session
-$actionData = isset($_SESSION['action_data']) ? $_SESSION['action_data'] : 'No response recorded.';
-$traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No response recorded.';
 $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No response recorded.';
 
+// Store the form response in the session
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['trader'])) {
+  $_SESSION['trader_data'] = $_POST['trader'];
+}
+
+// Retrieve the saved response from the session
+$traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No response recorded.';
+
+//page two
+// Store the form response in the session
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['trader'])) {
+  $_SESSION['trader_data'] = $_POST['trader'];
+}
+
+// Retrieve the saved response from the session
+$traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No response recorded.';
+
+//page three
+// Store the form response in the session
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
+  $_SESSION['action_data'] = $_POST['action'];
+}
+
+
+
+// Store the form response in the session
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['response'])) {
+$_SESSION['response'] = $_POST['response'];
+}
+
+// Retrieve the saved response from the session
+$actionData = isset($_SESSION['action_data']) ? $_SESSION['action_data'] : 'No response recorded.';
 ?>
 
 <!DOCTYPE html>
@@ -742,7 +772,7 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
           <div id="modal-are-you-a-motor-trader" class="modal" style="display: none;">
             <div class="modal-content">
                 <span class="close" id="closeModalBtn">&times;</span>
-                <form id="updateTraderForm" action="" method="post">
+                <form id="updateTraderForm" action="./4 - Sold your vehicle to a private individual or business - Tell DVLA you've sold, transferred or bought a vehicle - GOV.UK.php" method="post">
                     <div id="are-you-a-motor-trader" class="govuk-form-group govuk-!-margin-bottom-2">
                         <fieldset class="govuk-fieldset">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -785,7 +815,7 @@ $soldMotor = isset($_SESSION['sold_motor']) ? $_SESSION['sold_motor'] : 'No resp
                         <span class="close" id="closeModalBtn2">&times;</span>
                         <form data-module="ga4-form-tracker"
                               data-ga4-form="{&quot;event_name&quot;:&quot;form_response&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;What have you done with your vehicle?&quot;,&quot;action&quot;:&quot;next step&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
-                              action="./3 - Did you sell the vehicle privately, or to a motor trader_ - Tell DVLA you've sold, transferred or bought a vehicle - GOV.UK.php" 
+                              action="./4 - Sold your vehicle to a private individual or business - Tell DVLA you've sold, transferred or bought a vehicle - GOV.UK.php" 
                               accept-charset="UTF-8" method="post" data-ga4-form-tracker-module-started="true">
                             <input type="hidden" name="response" id="response" value="" autocomplete="off">
                             <div id="what-have-you-done-with-your-vehicle" class="govuk-form-group govuk-!-margin-bottom-6">
