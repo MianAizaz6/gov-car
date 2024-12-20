@@ -54,7 +54,7 @@ if (isset($_SESSION['login_error'])) {
 }
 ?>
             <!-- form -->
-            <form action="login.php" method="POST" class="mt-4 space-y-4">
+          <form action="login.php" method="POST" class="mt-4 space-y-4">
             <!-- Email -->
             <div class="mx-auto">
                 <label for="Email" class="block mb-2 font-sans font-semibold">Email</label>
@@ -66,7 +66,7 @@ if (isset($_SESSION['login_error'])) {
             <!-- Password -->
             <div class="mx-auto">
                 <label for="Password" class="block mb-2 font-sans font-semibold">Password</label>
-                <input type="password" name="user_password" id="Password" placeholder="Please enter your password"
+                <input type="password" id="Password" name="Password" 
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg outline-none block w-full p-2.5"
                 required />
             </div>
@@ -81,7 +81,7 @@ if (isset($_SESSION['login_error'])) {
                 </span>
                 </button>
             </div>
-            </form>
+          </form>
 
 
           </div>

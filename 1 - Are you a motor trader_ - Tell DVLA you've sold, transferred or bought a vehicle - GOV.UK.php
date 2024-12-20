@@ -622,6 +622,7 @@
           <section class="simple-smart-answer__question-and-outcome" data-module="ga4-link-tracker"
             data-ga4-link="{&quot;event_name&quot;:&quot;information_click&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;Are you a motor trader?&quot;,&quot;action&quot;:&quot;information click&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
             data-ga4-track-links-only="" data-ga4-set-indexes="" data-ga4-link-tracker-module-started="true">
+           
             <form data-module="ga4-form-tracker"
               data-ga4-form="{&quot;event_name&quot;:&quot;form_response&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;Are you a motor trader?&quot;,&quot;action&quot;:&quot;next step&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
               action="./2 - Tell DVLA you've sold, transferred or bought a vehicle.html" accept-charset="UTF-8"
@@ -661,6 +662,7 @@
               </div>
               <button class="gem-c-button govuk-button gem-c-button--bottom-margin" type="submit">Next step</button>
             </form>
+            
           </section>
         </div>
       </div>
