@@ -1,20 +1,10 @@
-
 <?php
 session_start();
-
-// Store the form response in the session
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['trader'])) {
-    $_SESSION['trader_data'] = $_POST['trader'];
-}
-
-// Retrieve the saved response from the session
-$traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No response recorded.';
-
-
 ?>
 
+
 <!DOCTYPE html>
-<!-- saved from url=(0065)https://dvla-buysell-service.com/sold-bought-vehicle/y/?response= -->
+<!-- saved from url=(0053)https://dvla-buysell-service.com/sold-bought-vehicle/ -->
 <html class=" show-global-bar">
 
 <head>
@@ -38,11 +28,10 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
   <meta name="govuk:publishing-app" content="publisher">
   <meta name="govuk:format" content="simple_smart_answer">
   <meta name="robots" content="noindex">
-  <title>What have you done with your vehicle? - Tell DVLA you've sold, transferred or bought a vehicle - GOV.UK</title>
+  <title>Are you a motor trader? - Tell DVLA you've sold, transferred or bought a vehicle - GOV.UK</title>
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./style2.css">
   <link rel="stylesheet" href="./style3.css">
-  <link rel="stylesheet" href="./style4.css">
   <meta name="govuk:components_gem_version" content="37.1.1">
   <!--[if lt IE 9]><![endif]-->
   <link rel="mask-icon" href="#" assets="" static=""
@@ -74,7 +63,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
 
     //]]>
   </script> <a class="gem-c-skip-link govuk-skip-link govuk-!-display-none-print" data-module="govuk-skip-link"
-    href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" #content"=""
+    href="#" #content"=""
     data-govuk-skip-link-module-started="true">Skip to main content</a>
 
   <header role="banner" class="gem-c-layout-super-navigation-header"
@@ -89,24 +78,24 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
             data-track-dimension-index="29"
             data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;external&quot;:&quot;false&quot;,&quot;text&quot;:&quot;GOV.UK&quot;,&quot;section&quot;:&quot;Logo&quot;,&quot;index_link&quot;:1,&quot;index_section&quot;:0,&quot;index_section_count&quot;:2,&quot;index_total&quot;:1}"
             id="logo" aria-label="Go to the GOV.UK homepage"
-            href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" "="">
-                     <span class=" govuk-header__logotype">
-            <!--[if gt IE 8]><!-->
-            <svg aria-hidden="true"
-              class="govuk-header__logotype-crown gem-c-layout-super-navigation-header__logotype-crown" height="30"
-              width="36" focusable="false" viewBox="0 0 132 97" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"
-                fill="currentColor" fill-rule="evenodd">
-              </path>
-            </svg>
-            <!--<![endif]-->
-            <!--[if IE 8]>
+            href="#" https:="" www.gov.uk"="">
+            <span class="govuk-header__logotype">
+              <!--[if gt IE 8]><!-->
+              <svg aria-hidden="true"
+                class="govuk-header__logotype-crown gem-c-layout-super-navigation-header__logotype-crown" height="30"
+                width="36" focusable="false" viewBox="0 0 132 97" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"
+                  fill="currentColor" fill-rule="evenodd">
+                </path>
+              </svg>
+              <!--<![endif]-->
+              <!--[if IE 8]>
                         <img src="/assets/static/govuk-logotype-crown-66ad9a9b8fca42cf0ba18979eef6afc2e8056d5f158ca9b27ce9afdf852aae87.png" alt="" class="govuk-header__logotype-crown-fallback-image" width="36" height="32">
                         <![endif]-->
-            <span class="govuk-header__logotype-text">
-              GOV.UK
-            </span>
+              <span class="govuk-header__logotype-text">
+                GOV.UK
+              </span>
             </span>
           </a>
         </div>
@@ -122,8 +111,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
             <div class="gem-c-layout-super-navigation-header__navigation-item">
               <a class="gem-c-layout-super-navigation-header__navigation-item-link" data-track-action="menuLink"
                 data-track-category="headerClicked" data-track-label="/browse" data-track-dimension="Menu"
-                data-track-dimension-index="29"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse"=""
+                data-track-dimension-index="29" href="#" browse"=""
                 hidden="hidden"><span class="gem-c-layout-super-navigation-header__navigation-item-link-inner"> Menu
                 </span></a>
               <button aria-controls="super-navigation-menu-6051a84b" aria-expanded="false"
@@ -159,7 +147,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 </span>
               </button>
               <a class="gem-c-layout-super-navigation-header__search-item-link"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" search"="" hidden="hidden">
+                href="#" search"="" hidden="hidden">
                 <span class="govuk-visually-hidden">
                   Search GOV.UK
                 </span>
@@ -191,7 +179,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/browse/benefits" data-track-dimension="Benefits"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:1,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                      href="#" https:="" www.gov.uk="" browse=""
                       benefits"="">Benefits</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
@@ -200,7 +188,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/browse/births-deaths-marriages"
                       data-track-dimension="Births, death, marriages and care" data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:2,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                      href="#" https:="" www.gov.uk="" browse=""
                       births-deaths-marriages"="">Births, death, marriages and care</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
@@ -209,7 +197,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/browse/business" data-track-dimension="Business and self-employed"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:3,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                      href="#" https:="" www.gov.uk="" browse=""
                       business"="">Business and self-employed</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
@@ -218,7 +206,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/browse/childcare-parenting" data-track-dimension="Childcare and parenting"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:4,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                      href="#" https:="" www.gov.uk="" browse=""
                       childcare-parenting"="">Childcare and parenting</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
@@ -227,7 +215,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/browse/citizenship" data-track-dimension="Citizenship and living in the UK"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:5,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                      href="#" https:="" www.gov.uk="" browse=""
                       citizenship"="">Citizenship and living in the UK</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
@@ -236,7 +224,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/browse/justice" data-track-dimension="Crime, justice and the law"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:6,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                      href="#" https:="" www.gov.uk="" browse=""
                       justice"="">Crime, justice and the law</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
@@ -245,7 +233,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/browse/disabilities" data-track-dimension="Disabled people"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:7,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                      href="#" https:="" www.gov.uk="" browse=""
                       disabilities"="">Disabled people</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
@@ -254,7 +242,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/browse/driving" data-track-dimension="Driving and transport"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:8,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                      href="#" https:="" www.gov.uk="" browse=""
                       driving"="">Driving and transport</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
@@ -263,7 +251,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/browse/education" data-track-dimension="Education and learning"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:9,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                      href="#" https:="" www.gov.uk="" browse=""
                       education"="">Education and learning</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
@@ -272,7 +260,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/browse/employing-people" data-track-dimension="Employing people"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:10,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                      href="#" https:="" www.gov.uk="" browse=""
                       employing-people"="">Employing people</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
@@ -281,7 +269,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/browse/environment-countryside"
                       data-track-dimension="Environment and countryside" data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:11,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                      href="#" https:="" www.gov.uk="" browse=""
                       environment-countryside"="">Environment and countryside</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
@@ -290,7 +278,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/browse/housing-local-services"
                       data-track-dimension="Housing and local services" data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:12,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                      href="#" https:="" www.gov.uk="" browse=""
                       housing-local-services"="">Housing and local services</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
@@ -299,8 +287,8 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/browse/tax" data-track-dimension="Money and tax"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:13,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse="" tax"="">Money
-                      and tax</a>
+                      href="#" https:="" www.gov.uk="" browse=""
+                      tax"="">Money and tax</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link"
@@ -308,7 +296,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/browse/abroad" data-track-dimension="Passports, travel and living abroad"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:14,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                      href="#" https:="" www.gov.uk="" browse=""
                       abroad"="">Passports, travel and living abroad</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
@@ -317,7 +305,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/browse/visas-immigration" data-track-dimension="Visas and immigration"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:15,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                      href="#" https:="" www.gov.uk="" browse=""
                       visas-immigration"="">Visas and immigration</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
@@ -326,7 +314,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/browse/working" data-track-dimension="Working, jobs and pensions"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:1,&quot;index_link&quot;:16,&quot;index_section_count&quot;:4,&quot;index_total&quot;:16,&quot;section&quot;:&quot;Services and information&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                      href="#" https:="" www.gov.uk="" browse=""
                       working"="">Working, jobs and pensions</a>
                   </li>
                 </ul>
@@ -344,10 +332,11 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/government/organisations" data-track-dimension="Departments"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:2,&quot;index_link&quot;:1,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Government activity&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" government=""
-                      organisations"="">Departments</a>
+                      href="#" https:="" www.gov.uk=""
+                      government="" organisations"="">Departments</a>
                     <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Departments,
-                      agencies and public bodies</p>
+                      agencies and public bodies
+                    </p>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description"
@@ -355,10 +344,11 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/search/news-and-communications" data-track-dimension="News"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:2,&quot;index_link&quot;:2,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Government activity&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" search=""
+                      href="#" https:="" www.gov.uk="" search=""
                       news-and-communications"="">News</a>
                     <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">News stories,
-                      speeches, letters and notices</p>
+                      speeches, letters and notices
+                    </p>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description"
@@ -366,10 +356,11 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/search/guidance-and-regulation" data-track-dimension="Guidance and regulation"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:2,&quot;index_link&quot;:3,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Government activity&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" search=""
+                      href="#" https:="" www.gov.uk="" search=""
                       guidance-and-regulation"="">Guidance and regulation</a>
                     <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Detailed
-                      guidance, regulations and rules</p>
+                      guidance, regulations and rules
+                    </p>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description"
@@ -377,10 +368,11 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/search/research-and-statistics" data-track-dimension="Research and statistics"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:2,&quot;index_link&quot;:4,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Government activity&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" search=""
+                      href="#" https:="" www.gov.uk="" search=""
                       research-and-statistics"="">Research and statistics</a>
                     <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Reports,
-                      analysis and official statistics</p>
+                      analysis and official statistics
+                    </p>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description"
@@ -388,10 +380,11 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/search/policy-papers-and-consultations"
                       data-track-dimension="Policy papers and consultations" data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:2,&quot;index_link&quot;:5,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Government activity&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" search=""
+                      href="#" https:="" www.gov.uk="" search=""
                       policy-papers-and-consultations"="">Policy papers and consultations</a>
                     <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Consultations
-                      and strategy</p>
+                      and strategy
+                    </p>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description"
@@ -399,10 +392,11 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/search/transparency-and-freedom-of-information-releases"
                       data-track-dimension="Transparency" data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:2,&quot;index_link&quot;:6,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Government activity&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" search=""
+                      href="#" https:="" www.gov.uk="" search=""
                       transparency-and-freedom-of-information-releases"="">Transparency</a>
                     <p class="gem-c-layout-super-navigation-header__navigation-second-item-description">Data, Freedom of
-                      Information releases and corporate reports</p>
+                      Information releases and corporate reports
+                    </p>
                   </li>
                 </ul>
               </div>
@@ -466,8 +460,8 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/cost-of-living" data-track-dimension="Get support with the cost of living"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:4,&quot;index_link&quot;:1,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Popular on GOV.UK&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" cost-of-living"="">Get
-                      support with the cost of living</a>
+                      href="#" https:="" www.gov.uk=""
+                      cost-of-living"="">Get support with the cost of living</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__popular-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__popular-link"
@@ -476,7 +470,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-dimension="Find out about the Energy Bills Support Scheme"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:4,&quot;index_link&quot;:2,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Popular on GOV.UK&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" guidance=""
+                      href="#" https:="" www.gov.uk="" guidance=""
                       getting-the-energy-bills-support-scheme-discount"="">Find out about the Energy Bills Support
                       Scheme</a>
                   </li>
@@ -485,8 +479,8 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-action="popularLink" data-track-category="headerClicked" data-track-label="/find-a-job"
                       data-track-dimension="Find a job" data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:4,&quot;index_link&quot;:3,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Popular on GOV.UK&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" find-a-job"="">Find a
-                      job</a>
+                      href="#" https:="" www.gov.uk=""
+                      find-a-job"="">Find a job</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__popular-item">
                     <a class="govuk-link gem-c-layout-super-navigation-header__popular-link"
@@ -494,7 +488,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/sign-in-universal-credit"
                       data-track-dimension="Universal Credit account: sign in" data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:4,&quot;index_link&quot;:4,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Popular on GOV.UK&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#"
+                      href="#" https:="" www.gov.uk=""
                       sign-in-universal-credit"="">Universal Credit account: sign in</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__popular-item">
@@ -503,7 +497,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/check-national-insurance-record"
                       data-track-dimension="Check your National Insurance record" data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:4,&quot;index_link&quot;:5,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Popular on GOV.UK&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#"
+                      href="#" https:="" www.gov.uk=""
                       check-national-insurance-record"="">Check your National Insurance record</a>
                   </li>
                   <li class="gem-c-layout-super-navigation-header__popular-item">
@@ -512,7 +506,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                       data-track-label="/check-mot-history" data-track-dimension="Check MOT history of a vehicle"
                       data-track-dimension-index="29"
                       data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;header menu bar&quot;,&quot;index_section&quot;:4,&quot;index_link&quot;:6,&quot;index_section_count&quot;:4,&quot;index_total&quot;:6,&quot;section&quot;:&quot;Popular on GOV.UK&quot;}"
-                      href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#"
+                      href="#" https:="" www.gov.uk=""
                       check-mot-history"="">Check MOT history of a vehicle</a>
                   </li>
                 </ul>
@@ -536,24 +530,22 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
             <a data-track-category="homeLinkClicked" data-track-action="homeBreadcrumb" data-track-label=""
               data-track-options="{}"
               data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;breadcrumb&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_total&quot;:&quot;3&quot;}"
-              class="govuk-breadcrumbs__link"
-              href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" "="">Home</a>
+              class="govuk-breadcrumbs__link" href="#" "="">Home</a>
                   </li>
                   <li class=" govuk-breadcrumbs__list-item">
               <a data-track-category="breadcrumbClicked" data-track-action="2" data-track-label="/browse/driving"
                 data-track-options="{&quot;dimension28&quot;:&quot;3&quot;,&quot;dimension29&quot;:&quot;Driving and transport&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;breadcrumb&quot;,&quot;index_link&quot;:&quot;2&quot;,&quot;index_total&quot;:&quot;3&quot;}"
-                class="govuk-breadcrumbs__link"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse="" driving"="">Driving
-                and transport</a>
+                class="govuk-breadcrumbs__link" href="#" browse=""
+                driving"="">Driving and transport</a>
           </li>
           <li class="govuk-breadcrumbs__list-item">
             <a data-track-category="breadcrumbClicked" data-track-action="3"
               data-track-label="/browse/driving/buy-sell-scrap-vehicle"
               data-track-options="{&quot;dimension28&quot;:&quot;3&quot;,&quot;dimension29&quot;:&quot;Buy, sell or scrap a vehicle&quot;}"
               data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;breadcrumb&quot;,&quot;index_link&quot;:&quot;3&quot;,&quot;index_total&quot;:&quot;3&quot;}"
-              class="govuk-breadcrumbs__link" href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#"
-              browse="" driving="" buy-sell-scrap-vehicle"="">Buy, sell or scrap a vehicle</a>
+              class="govuk-breadcrumbs__link" href="#" browse=""
+              driving="" buy-sell-scrap-vehicle"="">Buy, sell or scrap a vehicle</a>
           </li>
         </ol>
       </div>
@@ -562,123 +554,47 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <section class="simple-smart-answer__question-and-outcome" data-module="ga4-link-tracker"
-            data-ga4-link="{&quot;event_name&quot;:&quot;information_click&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;What have you done with your vehicle?&quot;,&quot;action&quot;:&quot;information click&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
+            data-ga4-link="{&quot;event_name&quot;:&quot;information_click&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;Are you a motor trader?&quot;,&quot;action&quot;:&quot;information click&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
             data-ga4-track-links-only="" data-ga4-set-indexes="" data-ga4-link-tracker-module-started="true">
-
-            <!-- ###########2nd Form submission############### -->
-            <form data-module="ga4-form-tracker"
-              data-ga4-form="{&quot;event_name&quot;:&quot;form_response&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;What have you done with your vehicle?&quot;,&quot;action&quot;:&quot;next step&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
-              action="./3 - Did you sell the vehicle privately, or to a motor trader_ - Tell DVLA you've sold, transferred or bought a vehicle - GOV.UK.php" accept-charset="UTF-8"
-              method="post" data-ga4-form-tracker-module-started="true">
-              <input type="hidden" name="response" id="response" value="" autocomplete="off">
-              <div id="what-have-you-done-with-your-vehicle" class="govuk-form-group govuk-!-margin-bottom-6">
-                <fieldset class="govuk-fieldset">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <span class="govuk-caption-l">Tell DVLA you've sold, transferred or bought a vehicle</span>
-                    <h1 class="govuk-fieldset__heading gem-c-radio__heading-text">2. What have you done with your
-                      vehicle?</h1>
-                  </legend>
-                  <div class="govuk-radios">
-                    <div class="gem-c-radio govuk-radios__item">
-                      <input type="radio" name="action"
-                      name="action" id="radio-bf8cfbc6-0" value="sold-it"
-                        class="govuk-radios__input">
-                      <label for="radio-bf8cfbc6-0" class="gem-c-label govuk-label govuk-radios__label">Sold it</label>
-                    </div>
-                    <div class="gem-c-radio govuk-radios__item">
-                      <input type="radio" name="action" id="radio-bf8cfbc6-1"
-                        value="put-it-into-someone-else-s-name-including-transferring-it-to-a-family-member-or-friend"
-                        class="govuk-radios__input">
-                      <label for="radio-bf8cfbc6-1" class="gem-c-label govuk-label govuk-radios__label">Put it into
-                        someone else's name, including transferring it to a family member or friend</label>
-                    </div>
-                    <div class="gem-c-radio govuk-radios__item">
-                      <input type="radio" name="action" id="radio-bf8cfbc6-2"
-                        value="scrapped-it-or-it-s-been-written-off" class="govuk-radios__input">
-                      <label for="radio-bf8cfbc6-2" class="gem-c-label govuk-label govuk-radios__label">Scrapped it or
-                        it's been written off</label>
-                    </div>
-                    <div class="gem-c-radio govuk-radios__item">
-                      <input type="radio" 
-                      name="action" id="radio-bf8cfbc6-3" value="bought-it"
-                        class="govuk-radios__input">
-                      <label for="radio-bf8cfbc6-3" class="gem-c-label govuk-label govuk-radios__label">Bought
-                        it</label>
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
-              <button class="gem-c-button govuk-button" type="submit">Next step</button>
-            </form>
-            
-          </section>
-<!-- ########################show answer################ -->
-    <section class="govuk-!-padding-top-6">
-        <h2 class="gem-c-heading govuk-heading-m govuk-!-margin-bottom-4">Your answers</h2>
-        <p class="govuk-body">
-            <a class="govuk-link" href="index.php">Start again</a>
-        </p>
-        <div class="gem-c-summary-list">
-            <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">1. Are you a motor trader?</dt>
-                    <dd class="govuk-summary-list__value">
-                        <?php echo htmlspecialchars($traderData); ?> <!-- Display the user's response -->
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link change-link">
-                            Change
-                            <span class="govuk-visually-hidden">1. Are you a motor trader?</span>
-                        </a>
-                    </dd>
-
-                </div>
-            </dl>
-            <div class="gem-c-summary__block"></div>
-        </div>
-    </section>
-
-<!-- #####first Modal##### -->
-        <div id="modal-are-you-a-motor-trader" class="modal" style="display: none;">
-            <div class="modal-content">
-                <span class="close" id="closeModalBtn">&times;</span>
-                <form id="updateTraderForm" action="" method="post">
-                    <div id="are-you-a-motor-trader" class="govuk-form-group govuk-!-margin-bottom-2">
-                        <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                                <span class="govuk-caption-l">Tell DVLA you've sold, transferred or bought a vehicle</span>
-                                <h1 class="govuk-fieldset__heading gem-c-radio__heading-text">1. Are you a motor trader?</h1>
-                            </legend>
-                            <div class="govuk-body">
-                                <p>A motor trader can be any of the following:</p>
-                                <ul>
-                                    <li>motor dealer</li>
-                                    <li>motor auctioneer</li>
-                                    <li>salvage dealer</li>
-                                    <li>finance or insurance company</li>
-                                    <li>fleet operator</li>
-                                    <li>car buying service</li>
-                                </ul>
-                            </div>
-                            <div class="govuk-radios">
-                                <div class="gem-c-radio govuk-radios__item">
-                                    <input type="radio" name="trader" id="radio-yes" value="Yes" class="govuk-radios__input" 
-                                        <?php echo $traderData === 'Yes' ? 'checked' : ''; ?>>
-                                    <label for="radio-yes" class="gem-c-label govuk-label govuk-radios__label">Yes</label>
-                                </div>
-                                <div class="gem-c-radio govuk-radios__item">
-                                    <input type="radio" name="trader" id="radio-no" value="No" class="govuk-radios__input" 
-                                        <?php echo $traderData === 'No' ? 'checked' : ''; ?>>
-                                    <label for="radio-no" class="gem-c-label govuk-label govuk-radios__label">No</label>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                    <button class="gem-c-button govuk-button gem-c-button--bottom-margin" type="submit">Save Changes</button>
-                </form>
+<!-- ################form data##############3 -->
+  <form data-module="ga4-form-tracker"
+      data-ga4-form="{&quot;event_name&quot;:&quot;form_response&quot;,&quot;type&quot;:&quot;simple smart answer&quot;,&quot;section&quot;:&quot;Are you a motor trader?&quot;,&quot;action&quot;:&quot;next step&quot;,&quot;tool_name&quot;:&quot;Tell DVLA you&#39;ve sold, transferred or bought a vehicle&quot;}"
+      action="2 - Tell DVLA you've sold, transferred or bought a vehicle.php" 
+      accept-charset="UTF-8" method="post" data-ga4-form-tracker-module-started="true">
+    <div id="are-you-a-motor-trader" class="govuk-form-group govuk-!-margin-bottom-6">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <span class="govuk-caption-l">Tell DVLA you've sold, transferred or bought a vehicle</span>
+                <h1 class="govuk-fieldset__heading gem-c-radio__heading-text">1. Are you a motor trader?</h1>
+            </legend>
+            <div class="govuk-body">
+                <p>A motor trader can be any of the following:</p>
+                <ul>
+                    <li>motor dealer</li>
+                    <li>motor auctioneer</li>
+                    <li>salvage dealer</li>
+                    <li>finance or insurance company</li>
+                    <li>fleet operator</li>
+                    <li>car buying service</li>
+                </ul>
             </div>
-        </div>
+            <div class="govuk-radios">
+                <div class="gem-c-radio govuk-radios__item">
+                    <input type="radio" name="trader" id="radio-yes" value="Yes" class="govuk-radios__input">
+                    <label for="radio-yes" class="gem-c-label govuk-label govuk-radios__label">Yes</label>
+                </div>
+                <div class="gem-c-radio govuk-radios__item">
+                    <input type="radio" name="trader" id="radio-no" value="No" class="govuk-radios__input">
+                    <label for="radio-no" class="gem-c-label govuk-label govuk-radios__label">No</label>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <button class="gem-c-button govuk-button gem-c-button--bottom-margin" type="submit">Next step</button>
+  </form>
 
+
+          </section>
         </div>
       </div>
     </main>
@@ -695,7 +611,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 <li class="gem-c-feedback__option-list-item govuk-visually-hidden" hidden="">
                   <a class="gem-c-feedback__prompt-link" data-track-category="yesNoFeedbackForm"
                     data-track-action="ffMaybeClick" role="button" hidden="hidden" aria-hidden="true"
-                    href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" contact="" govuk"="">
+                    href="#" contact="" govuk"="">
                     Maybe
                   </a>
                 </li>
@@ -738,10 +654,11 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
             <div class="gem-c-feedback__error-summary gem-c-feedback__js-show js-errors" tabindex="-1" hidden=""></div>
-            <input type="hidden" name="url" value="https://www.gov.uk/sold-bought-vehicle/y/no">
+            <input type="hidden" name="url" value="https://www.gov.uk/sold-bought-vehicle/y.php">
             <h3 class="gem-c-feedback__form-heading">Help us improve GOV.UK</h3>
             <p id="feedback_explanation" class="gem-c-feedback__form-paragraph">Don’t include personal or financial
-              information like your National Insurance number or credit card details.</p>
+              information like your National Insurance number or credit card details.
+            </p>
             <div class="govuk-visually-hidden" aria-hidden="true">
               <label for="giraffe">This field is for robots only. Please leave blank</label>
               <input id="giraffe" name="giraffe" type="text" pattern=".{0}" tabindex="-1" autocomplete="off">
@@ -767,7 +684,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
           </div>
         </div>
         <input type="hidden" name="javascript_enabled" value="true"><input type="hidden" name="referrer"
-          value="https://www.gov.uk/sold-bought-vehicle/y.html"><input type="hidden" name="timer" value="0">
+          value="https://www.gov.uk/sold-bought-vehicle"><input type="hidden" name="timer" value="0">
       </form>
       <script nonce="">
         //<![CDATA[
@@ -792,11 +709,12 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
           <div class="govuk-grid-column-two-thirds" id="survey-wrapper">
             <div class="gem-c-feedback__error-summary js-errors" tabindex="-1" hidden=""></div>
             <input name="email_survey_signup[survey_id]" type="hidden" value="footer_satisfaction_survey">
-            <input name="email_survey_signup[survey_source]" type="hidden" value="/sold-bought-vehicle/y/no">
+            <input name="email_survey_signup[survey_source]" type="hidden" value="/sold-bought-vehicle/y.php">
             <h3 class="gem-c-feedback__form-heading">Help us improve GOV.UK</h3>
             <p id="survey_explanation" class="gem-c-feedback__form-paragraph">To help us improve GOV.UK, we’d like to
               know more about your visit today. We’ll send you a link to a feedback form. It will take only 2 minutes to
-              fill in. Don’t worry we won’t send you spam or share your email address with anyone.</p>
+              fill in. Don’t worry we won’t send you spam or share your email address with anyone.
+            </p>
             <div class="govuk-form-group">
               <label for="input-091cfa81" class="gem-c-label govuk-label">Email address</label>
               <input aria-describedby="survey_explanation" autocomplete="email" class="gem-c-input govuk-input"
@@ -827,7 +745,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/benefits" data-track-options="{&quot;dimension29&quot;:&quot;Benefits&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                href="#" https:="" www.gov.uk="" browse=""
                 benefits"="">Benefits</a>
             </li>
             <li class="govuk-footer__list-item">
@@ -835,7 +753,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-label="/browse/births-deaths-marriages"
                 data-track-options="{&quot;dimension29&quot;:&quot;Births, death, marriages and care&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;2&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                href="#" https:="" www.gov.uk="" browse=""
                 births-deaths-marriages"="">Births, death, marriages and care</a>
             </li>
             <li class="govuk-footer__list-item">
@@ -843,7 +761,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-label="/browse/business"
                 data-track-options="{&quot;dimension29&quot;:&quot;Business and self-employed&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;3&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                href="#" https:="" www.gov.uk="" browse=""
                 business"="">Business and self-employed</a>
             </li>
             <li class="govuk-footer__list-item">
@@ -851,7 +769,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-label="/browse/childcare-parenting"
                 data-track-options="{&quot;dimension29&quot;:&quot;Childcare and parenting&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;4&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                href="#" https:="" www.gov.uk="" browse=""
                 childcare-parenting"="">Childcare and parenting</a>
             </li>
             <li class="govuk-footer__list-item">
@@ -859,7 +777,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-label="/browse/citizenship"
                 data-track-options="{&quot;dimension29&quot;:&quot;Citizenship and living in the UK&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;5&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                href="#" https:="" www.gov.uk="" browse=""
                 citizenship"="">Citizenship and living in the UK</a>
             </li>
             <li class="govuk-footer__list-item">
@@ -867,15 +785,15 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-label="/browse/justice"
                 data-track-options="{&quot;dimension29&quot;:&quot;Crime, justice and the law&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;6&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse="" justice"="">Crime,
-                justice and the law</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                justice"="">Crime, justice and the law</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/disabilities"
                 data-track-options="{&quot;dimension29&quot;:&quot;Disabled people&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;7&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                href="#" https:="" www.gov.uk="" browse=""
                 disabilities"="">Disabled people</a>
             </li>
             <li class="govuk-footer__list-item">
@@ -883,15 +801,15 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-label="/browse/driving"
                 data-track-options="{&quot;dimension29&quot;:&quot;Driving and transport&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;8&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse="" driving"="">Driving
-                and transport</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                driving"="">Driving and transport</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/education"
                 data-track-options="{&quot;dimension29&quot;:&quot;Education and learning&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;9&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                href="#" https:="" www.gov.uk="" browse=""
                 education"="">Education and learning</a>
             </li>
             <li class="govuk-footer__list-item">
@@ -899,7 +817,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-label="/browse/employing-people"
                 data-track-options="{&quot;dimension29&quot;:&quot;Employing people&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;10&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                href="#" https:="" www.gov.uk="" browse=""
                 employing-people"="">Employing people</a>
             </li>
             <li class="govuk-footer__list-item">
@@ -907,7 +825,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-label="/browse/environment-countryside"
                 data-track-options="{&quot;dimension29&quot;:&quot;Environment and countryside&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;11&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                href="#" https:="" www.gov.uk="" browse=""
                 environment-countryside"="">Environment and countryside</a>
             </li>
             <li class="govuk-footer__list-item">
@@ -915,22 +833,22 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-label="/browse/housing-local-services"
                 data-track-options="{&quot;dimension29&quot;:&quot;Housing and local services&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;12&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                href="#" https:="" www.gov.uk="" browse=""
                 housing-local-services"="">Housing and local services</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/tax" data-track-options="{&quot;dimension29&quot;:&quot;Money and tax&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;13&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse="" tax"="">Money and
-                tax</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                tax"="">Money and tax</a>
             </li>
             <li class="govuk-footer__list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="topicsLink"
                 data-track-label="/browse/abroad"
                 data-track-options="{&quot;dimension29&quot;:&quot;Passports, travel and living abroad&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;14&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                href="#" https:="" www.gov.uk="" browse=""
                 abroad"="">Passports, travel and living abroad</a>
             </li>
             <li class="govuk-footer__list-item">
@@ -938,7 +856,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-label="/browse/visas-immigration"
                 data-track-options="{&quot;dimension29&quot;:&quot;Visas and immigration&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;15&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse=""
+                href="#" https:="" www.gov.uk="" browse=""
                 visas-immigration"="">Visas and immigration</a>
             </li>
             <li class="govuk-footer__list-item">
@@ -946,8 +864,8 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-label="/browse/working"
                 data-track-options="{&quot;dimension29&quot;:&quot;Working, jobs and pensions&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;16&quot;,&quot;index_section&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;16&quot;,&quot;section&quot;:&quot;Services and information&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" browse="" working"="">Working,
-                jobs and pensions</a>
+                href="#" https:="" www.gov.uk="" browse=""
+                working"="">Working, jobs and pensions</a>
             </li>
           </ul>
         </div>
@@ -959,7 +877,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-action="governmentactivityLink" data-track-label="/government/organisations"
                 data-track-options="{&quot;dimension29&quot;:&quot;Departments&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" government=""
+                href="#" https:="" www.gov.uk="" government=""
                 organisations"="">Departments</a>
             </li>
             <li class="govuk-footer__list-item">
@@ -967,7 +885,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-action="governmentactivityLink" data-track-label="/search/news-and-communications"
                 data-track-options="{&quot;dimension29&quot;:&quot;News&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;2&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" search=""
+                href="#" https:="" www.gov.uk="" search=""
                 news-and-communications"="">News</a>
             </li>
             <li class="govuk-footer__list-item">
@@ -975,7 +893,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-action="governmentactivityLink" data-track-label="/search/guidance-and-regulation"
                 data-track-options="{&quot;dimension29&quot;:&quot;Guidance and regulation&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;3&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" search=""
+                href="#" https:="" www.gov.uk="" search=""
                 guidance-and-regulation"="">Guidance and regulation</a>
             </li>
             <li class="govuk-footer__list-item">
@@ -983,7 +901,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-action="governmentactivityLink" data-track-label="/search/research-and-statistics"
                 data-track-options="{&quot;dimension29&quot;:&quot;Research and statistics&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;4&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" search=""
+                href="#" https:="" www.gov.uk="" search=""
                 research-and-statistics"="">Research and statistics</a>
             </li>
             <li class="govuk-footer__list-item">
@@ -991,7 +909,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-action="governmentactivityLink" data-track-label="/search/policy-papers-and-consultations"
                 data-track-options="{&quot;dimension29&quot;:&quot;Policy papers and consultations&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;5&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" search=""
+                href="#" https:="" www.gov.uk="" search=""
                 policy-papers-and-consultations"="">Policy papers and consultations</a>
             </li>
             <li class="govuk-footer__list-item">
@@ -1000,7 +918,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-label="/search/transparency-and-freedom-of-information-releases"
                 data-track-options="{&quot;dimension29&quot;:&quot;Transparency&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;6&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" search=""
+                href="#" https:="" www.gov.uk="" search=""
                 transparency-and-freedom-of-information-releases"="">Transparency</a>
             </li>
             <li class="govuk-footer__list-item">
@@ -1008,7 +926,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-action="governmentactivityLink" data-track-label="/government/how-government-works"
                 data-track-options="{&quot;dimension29&quot;:&quot;How government works&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;7&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" government=""
+                href="#" https:="" www.gov.uk="" government=""
                 how-government-works"="">How government works</a>
             </li>
             <li class="govuk-footer__list-item">
@@ -1016,7 +934,7 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-action="governmentactivityLink" data-track-label="/government/get-involved"
                 data-track-options="{&quot;dimension29&quot;:&quot;Get involved&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;8&quot;,&quot;index_section&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Government activity&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" government=""
+                href="#" https:="" www.gov.uk="" government=""
                 get-involved"="">Get involved</a>
             </li>
           </ul>
@@ -1032,21 +950,21 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="supportLink"
                 data-track-label="/help" data-track-options="{&quot;dimension29&quot;:&quot;Help&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" help"="">Help</a>
+                href="#" https:="" www.gov.uk="" help"="">Help</a>
             </li>
             <li class="govuk-footer__inline-list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="supportLink"
                 data-track-label="/help/privacy-notice"
                 data-track-options="{&quot;dimension29&quot;:&quot;Privacy&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;2&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" help=""
+                href="#" https:="" www.gov.uk="" help=""
                 privacy-notice"="">Privacy</a>
             </li>
             <li class="govuk-footer__inline-list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="supportLink"
                 data-track-label="/help/cookies" data-track-options="{&quot;dimension29&quot;:&quot;Cookies&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;3&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" help=""
+                href="#" https:="" www.gov.uk="" help=""
                 cookies"="">Cookies</a>
             </li>
             <li class="govuk-footer__inline-list-item">
@@ -1054,21 +972,22 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-label="/help/accessibility-statement"
                 data-track-options="{&quot;dimension29&quot;:&quot;Accessibility statement&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;4&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" help=""
+                href="#" https:="" www.gov.uk="" help=""
                 accessibility-statement"="">Accessibility statement</a>
             </li>
             <li class="govuk-footer__inline-list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="supportLink"
                 data-track-label="/contact" data-track-options="{&quot;dimension29&quot;:&quot;Contact&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;5&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" contact"="">Contact</a>
+                href="#" https:="" www.gov.uk=""
+                contact"="">Contact</a>
             </li>
             <li class="govuk-footer__inline-list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="supportLink"
                 data-track-label="/help/terms-conditions"
                 data-track-options="{&quot;dimension29&quot;:&quot;Terms and conditions&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;6&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" help=""
+                href="#" https:="" www.gov.uk="" help=""
                 terms-conditions"="">Terms and conditions</a>
             </li>
             <li class="govuk-footer__inline-list-item">
@@ -1076,16 +995,16 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
                 data-track-action="supportLink" data-track-label="/cymraeg"
                 data-track-options="{&quot;dimension29&quot;:&quot;Rhestr o Wasanaethau Cymraeg&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;7&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" cymraeg"="">Rhestr o
-                Wasanaethau Cymraeg</a>
+                href="#" https:="" www.gov.uk="" cymraeg"="">Rhestr
+                o Wasanaethau Cymraeg</a>
             </li>
             <li class="govuk-footer__inline-list-item">
               <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="supportLink"
                 data-track-label="/government/organisations/government-digital-service"
                 data-track-options="{&quot;dimension29&quot;:&quot;Government Digital Service&quot;}"
                 data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;8&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}"
-                href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" government="" organisations=""
-                government-digital-service"="">Government Digital Service</a>
+                href="#" https:="" www.gov.uk="" government=""
+                organisations="" government-digital-service"="">Government Digital Service</a>
             </li>
           </ul>
           <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo"
@@ -1102,9 +1021,9 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
             data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;section&quot;:&quot;Licence&quot;,&quot;index_section&quot;:&quot;4&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;text&quot;:&quot;Open Government Licence v3.0&quot;,&quot;index_total&quot;:&quot;1&quot;,&quot;type&quot;:&quot;footer&quot;}"
             data-gem-track-click-module-started="true">
             All content is available under the <a class="govuk-footer__link"
-              href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" https:=""
-              www.nationalarchives.gov.uk="" doc="" open-government-licence="" version="" 3="" "="" rel=" license">Open
-              Government Licence v3.0</a>, except where otherwise stated
+              href="#" https:="" www.nationalarchives.gov.uk=""
+              doc="" open-government-licence="" version="" 3="" "="" rel=" license">Open Government Licence v3.0</a>,
+            except where otherwise stated
           </span>
         </div>
         <div class="govuk-footer__meta-item" data-module="gem-track-click" data-track-action="copyrightLink"
@@ -1114,18 +1033,14 @@ $traderData = isset($_SESSION['trader_data']) ? $_SESSION['trader_data'] : 'No r
           data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;section&quot;:&quot;Copyright&quot;,&quot;index_section&quot;:&quot;5&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;text&quot;:&quot;© Crown copyright&quot;,&quot;index_total&quot;:&quot;1&quot;,&quot;type&quot;:&quot;footer&quot;}"
           data-gem-track-click-module-started="true">
           <a class="govuk-footer__link govuk-footer__copyright-logo"
-            href="https://dvla-buysell-service.com/sold-bought-vehicle/y/?response=#" https:=""
-            www.nationalarchives.gov.uk="" information-management="" re-using-public-sector-information=""
-            uk-government-licensing-framework="" crown-copyright="" "="">© Crown copyright</a>
+            href="#" https:="" www.nationalarchives.gov.uk=""
+            information-management="" re-using-public-sector-information="" uk-government-licensing-framework=""
+            crown-copyright="" "="">© Crown copyright</a>
                </div>
             </div>
          </div>
       </footer>
-<script src=" ./script.js"></script>
-<script src=" ./modalscript.js"></script>
-
-
+      <script src=" ./script.js"></script>
 </body>
 
 </html>
-
