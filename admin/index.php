@@ -2,18 +2,11 @@
 session_start();
 
 $conn = mysqli_connect('localhost', 'root', '', 'gov-car');
-
-
 // Check if the user is already logged in
 if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
     header('Location: ./dashboard.php');
     exit(); // Stop further script execution
 }
-
-
-
-
-
 $errorMessage = ''; // Variable to store error messages
 
 if (isset($_POST['login']) && $_POST['login'] == 'type') {
@@ -38,9 +31,6 @@ if (isset($_POST['login']) && $_POST['login'] == 'type') {
         $errorMessage = 'Invalid email or password. Please try again.';
     }
 }
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
