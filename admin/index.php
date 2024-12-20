@@ -1,29 +1,29 @@
 <?php
-$conn=mysqli_connect('localhost','root','','gov-car');
+$conn = mysqli_connect('localhost', 'root', '', 'gov-car');
 
-if(isset($_POST['login']) && $_POST['login']=='admintype')
-{
-    
-$email=$_POST['email'];
-$password=$_POST['password'];
-// echo $email;exit;
-$query=mysqli_query($conn,"select * from user where Email='$email' AND Password='$password'");
-$num=mysqli_num_rows($query);
+$errorMessage = ''; // Variable to store error messages
 
+if (isset($_POST['login']) && $_POST['login'] == 'type') {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-if($num > 0)
-{
-   $row=mysqli_fetch_assoc($query);
-   if($row['type']=='admin')
-   {
-      header('Location:./dashboard.php');
-   }
-   else
-   {
-    echo 'error';
-   }
+    $query = mysqli_query($conn, "SELECT * FROM user WHERE Email='$email' AND Password='$password'");
+    $row = mysqli_fetch_assoc($query);
+    $num = mysqli_num_rows($query);
 
-}
+    if ($num > 0) 
+    {
+        session_start();
+        $_SESSION['id'] = $row['id'];        
+        if ($row['type'] == 'admin') {
+            header('Location: ./dashboard.php');
+            exit();
+        } else {
+            $errorMessage = 'Error! You are not authorized to access the admin panel.';
+        }
+    } else {
+        $errorMessage = 'Invalid email or password. Please try again.';
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -43,6 +43,7 @@ if($num > 0)
     <link rel="stylesheet" href="./plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="./dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 </head>
 
 <body class="hold-transition login-page">
@@ -55,9 +56,19 @@ if($num > 0)
             <div class="card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
 
+                <!-- Display Bootstrap Alert -->
+                <?php if (!empty($errorMessage)) : ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <?php echo $errorMessage; ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <?php endif; ?>
+
                 <form action="index.php" method="post">
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" name="email" placeholder="Email">
+                        <input type="email" class="form-control" name="email" placeholder="Email" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -65,8 +76,8 @@ if($num > 0)
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" name="password" placeholder="Password">
-                        <input class="orm-control" type="hidden" name="login" value="admintype" required>
+                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                        <input type="hidden" name="login" value="type">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -77,39 +88,16 @@ if($num > 0)
                         <div class="col-8">
                             <div class="icheck-primary">
                                 <input type="checkbox" id="remember">
-                                <label for="remember">
-                                    Remember Me
-                                </label>
+                                <label for="remember">Remember Me</label>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Sign In &nbsp; <i
+                        <button type="submit" class="btn btn-primary btn-block">Sign In &nbsp;<i
                                 class="fa fa-lock"></i></button>
-                        <!-- /.col -->
-                        <!-- <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-          </div> -->
-                        <!-- /.col -->
                     </div>
                 </form>
-
-                <!-- <div class="social-auth-links text-center mt-2 mb-3">
-          <button type="submit" class="btn btn-primary btn-block">Sign In &nbsp; <i class="fa fa-lock"></i></button> -->
-
             </div>
-            <!-- /.social-auth-links -->
-
-            <!-- <p class="mb-1">
-          <a href="forgot-password.html">I forgot my password</a>
-        </p>
-        <p class="mb-0">
-          <a href="register.html" class="text-center">Register a new membership</a>
-        </p> -->
         </div>
-        <!-- /.card-body -->
     </div>
-    <!-- /.card -->
-    </div>
-    <!-- /.login-box -->
 
     <!-- jQuery -->
     <script src="./plugins/jquery/jquery.min.js"></script>
@@ -117,6 +105,7 @@ if($num > 0)
     <script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="./dist/js/adminlte.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
