@@ -1,3 +1,22 @@
+<?php
+session_start();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+   $_SESSION['vehicleRegistrationNumber'] = $_POST['vehicleRegistrationNumber'] ?? '';
+   $_SESSION['documentReferenceNumber'] = $_POST['documentReferenceNumber'] ?? '';
+   $_SESSION['vehicleSellerEmail'] = $_POST['vehicleSellerEmail']['email'] ?? '';
+   $_SESSION['vehicleSoldTo'] = $_POST['vehicleSoldTo'] ?? '';
+
+   if ($_POST['vehicleSellerEmail']['email'] === $_POST['vehicleSellerEmail']['email-verify']) {
+       header('Location: ./2 - Enter new keeper details - Private sale of a vehicle - GOV.UK.php');
+       exit();
+   } else {
+       $errorMessage = "Email addresses do not match.";
+   }
+}
+// Retrieve the vehicle registration number from the session
+$vehicleRegistrationNumber = $_SESSION['vehicleRegistrationNumber'] ?? 'N/A';
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -105,7 +124,9 @@
          </div>
          <main class="govuk-main-wrapper" id="main-content">
             <div class="app vehicles-change-keeper-online">
-               <form action="./3 - Select new keeper address - Private sale of a vehicle - GOV.UK.html" method="POST"
+
+            <!-- #####form submission############3 -->
+               <form action="./3 - Select new keeper address - Private sale of a vehicle - GOV.UK.php" method="POST"
                   style="position: relative;" data-gtm-form-interact-id="0">
                   <div class="two-col clearfix">
                      <div class="first-col">
@@ -115,7 +136,7 @@
                            <dl>
                               <dt>Registration number</dt>
                               <dd>
-                                 <span class="reg-number">FX68VKN</span>
+                                 <span class="reg-number"><?php echo htmlspecialchars($vehicleRegistrationNumber, ENT_QUOTES); ?></span>
                               </dd>
                               <dt>Make</dt>
                               <dd>MERCEDES-BENZ</dd>

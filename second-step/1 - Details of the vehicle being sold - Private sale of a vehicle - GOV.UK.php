@@ -1,3 +1,67 @@
+
+<?php 
+$conn = mysqli_connect("localhost", "root", "", "gov-car") or die("connection failed");
+
+// if (isset($_POST['submit'])) {
+//    $v_registration = mysqli_real_escape_string($conn, $_POST['registration']);
+//    $v_certificate = mysqli_real_escape_string($conn, $_POST['certificate']);
+//    $s_email = mysqli_real_escape_string($conn, $_POST['email']);
+//    $verify_email = mysqli_real_escape_string($conn, $_POST['v_email']);
+//    $radio_option = mysqli_real_escape_string($conn, $_POST['bussiness']);
+   
+
+//     $sql = "INSERT INTO vehical_detail (`vehical_reg_num`, `vehical_certificate`,`seller_email`,`confirm_email`,`vehical_sell`) VALUES ('$v_registration', '$v_certificate','$s_email','$verify_email','$radio_option')";
+//     $run = mysqli_query($conn, $sql);
+
+//     if ($sql) {
+//         echo "Success";
+//     } else {
+//         echo "Failed";
+//     }
+// }\
+
+// echo $sql;
+// }
+
+session_start();
+
+if (isset($_POST['submit'])) {
+    // Database connection
+    // Replace $conn with your actual connection setup
+    if (!$conn) {
+        die("Database connection failed: " . mysqli_connect_error());
+    }
+
+    // Sanitize input
+    $s_email = mysqli_real_escape_string($conn, $_POST['email']);
+    $verify_email = mysqli_real_escape_string($conn, $_POST['v_email']);
+    $v_registration = mysqli_real_escape_string($conn, $_POST['registration']);
+    $v_certificate = mysqli_real_escape_string($conn, $_POST['certificate']);
+
+    // Store values in the session
+    $_SESSION['v_registration'] = $v_registration;
+    $_SESSION['v_certificate'] = $v_certificate;
+    // Redirect to the next page or perform further processing
+    header('Location: 2 - Enter new keeper details - Private sale of a vehicle - GOV.UK.php'); // Replace with your next page
+  
+    // Check if email and confirm email match
+    if ($s_email !== $verify_email) {
+        $_SESSION['error_message'] = "Email and Confirm Email do not match.";
+        header('Location: 1 - Details of the vehicle being sold - Private sale of a vehicle - GOV.UK.php'); // Replace with the actual form page name
+   
+    }
+    else{
+      header('Location: 2 - Enter new keeper details - Private sale of a vehicle - GOV.UK.php');
+      exit;  
+   }
+  
+
+}
+
+ ?> 
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -123,9 +187,8 @@
                      </div>
                      <h1>Details of the vehicle being sold</h1>
                      <div class="form-steps">
-<!-- ##########form submisson############ -->
-               <form action="./2 - Enter new keeper details - Private sale of a vehicle - GOV.UK.php"
-                           method="POST">
+                        <form action=""
+                           method="POST" enctype="multipart/form-data">
                            <div class="step uppercase-input">
                               <div class="form-item">
                                  <label for="vehicleRegistrationNumber">
@@ -133,7 +196,7 @@
                                  </label>
                                  <span class="form-hint" id="vehicleRegistrationNumber-hint"></span>
                                  <input class="govuk-input" id="vehicleRegistrationNumber" required=""
-                                    name="vehicleRegistrationNumber" value="" type="text"
+                                    name="registration" value="" type="text"
                                     aria-describedby="vehicleRegistrationNumber-hint"
                                     onkeypress="check(event, this, /[a-zA-Z0-9]/);" autocomplete="off" maxlength="8">
                               </div>
@@ -142,7 +205,7 @@
                               <label for="documentReferenceNumber">
                                  Latest V5C registration certificate (logbook) document reference number
                               </label>
-                              <input class="govuk-input" id="documentReferenceNumber" name="documentReferenceNumber"
+                              <input class="govuk-input" id="documentReferenceNumber" name="certificate"
                                  value="" required="" type="tel" onkeypress="check(event, this, /[0-9]/);" title=""
                                  autocomplete="off"
                                  imgsrc="/sell-private/assets/images/b3b6317e5d209548ef6b7c3877b8dd94-V5Creferencehint.png"
@@ -187,21 +250,23 @@
                                                          Seller's email address
                                                       </label>
                                                       <input class="govuk-input" id="vehicleSellerEmail_email"
-                                                         name="vehicleSellerEmail.email" value="" type="text"
+                                                         name="email" value="" type="text"
                                                          no_optional_label="true" maxlength="254" autocomplete="off">
                                                    </div>
                                                    <div class="form-item">
-                                                      <label for="vehicleSellerEmail_email-verify">
+                                                      <label for="confirmemail">
                                                          Confirm email address
                                                       </label>
                                                       <input class="govuk-input js-email-confirm"
                                                          id="vehicleSellerEmail_email-verify"
-                                                         name="vehicleSellerEmail.email-verify" value="" type="text"
+                                                         name="v_email" value="" type="text"
                                                          no_optional_label="true" autocomplete="off" maxlength="254">
+                                                        
                                                    </div>
                                                 </div>
                                              </div>
                                           </div>
+
                                           <div class="govuk-radios__item">
                                              <input class="govuk-radios__input ga-track-value"
                                                 data-ga-action="vehicleSellerEmailOption" data-ga-label="absent"
@@ -216,7 +281,14 @@
                                           </div>
                                        </div>
                                     </fieldset>
+                                    
                                  </div>
+                                 <?php
+if (!empty($_SESSION['error_message'])): ?>
+   <div class="govuk-error-message">
+       <?= htmlspecialchars($_SESSION['error_message']); ?>
+   </div>
+<?php endif; ?>
                               </div>
                               <style>
                                  .govuk-radios__conditional {
@@ -268,7 +340,7 @@
                                        <div class="form-item">
                                           <div class="govuk-radios__item">
                                              <input class="govuk-radios__input form-radio selectable" type="radio"
-                                                id="vehicleSoldTo_Private" name="vehicleSoldTo" value="Private"
+                                                id="vehicleSoldTo_Private" name="bussiness" value="Private"
                                                 data-ga-action="track_path" showerrors="false">
                                              <label class="govuk-label govuk-radios__label" for="vehicleSoldTo_Private">
                                                 <span class="text">Private individual</span>
@@ -276,7 +348,7 @@
                                           </div>
                                           <div class="govuk-radios__item">
                                              <input class="govuk-radios__input form-radio selectable" type="radio"
-                                                id="vehicleSoldTo_Business" name="vehicleSoldTo" value="Business"
+                                                id="vehicleSoldTo_Business" name="bussiness" value="Business"
                                                 data-ga-action="track_path" showerrors="false">
                                              <label class="govuk-label govuk-radios__label"
                                                 for="vehicleSoldTo_Business">
@@ -294,8 +366,7 @@
                               <input type="submit" class="govuk-button" style="font-size: 20px;" name="submit" id=""
                                  value="Continue">
                            </div>
-               </form>
-               
+                        </form>
                      </div>
                   </div>
                </div>
@@ -394,7 +465,6 @@
                data-track-options="{&quot;dimension29&quot;: &quot;© Crown copyright&quot;}" data-track-links-only=""
                data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;section&quot;:&quot;Copyright&quot;,&quot;index_section&quot;:&quot;5&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;text&quot;:&quot;© Crown copyright&quot;,&quot;index_total&quot;:&quot;1&quot;,&quot;type&quot;:&quot;footer&quot;}"
                data-gem-track-click-module-started="true">
-
                <a class="govuk-footer__link govuk-footer__copyright-logo" href="#" https:=""
                   www.nationalarchives.gov.uk="" information-management="" re-using-public-sector-information=""
                   uk-government-licensing-framework="" crown-copyright="" "="">© Crown copyright</a>

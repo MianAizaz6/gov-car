@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//     $_SESSION['vehicleRegistrationNumber'] = $_POST['vehicleRegistrationNumber'] ?? '';
+//     $_SESSION['documentReferenceNumber'] = $_POST['documentReferenceNumber'] ?? '';
+//     $_SESSION['vehicleSellerEmail'] = $_POST['vehicleSellerEmail']['email'] ?? '';
+//     $_SESSION['vehicleSoldTo'] = $_POST['vehicleSoldTo'] ?? '';
+
+//     if ($_POST['vehicleSellerEmail']['email'] === $_POST['vehicleSellerEmail']['email-verify']) {
+//         header('Location: ./2 - Enter new keeper details - Private sale of a vehicle - GOV.UK.php');
+//         exit();
+//     } else {
+//         $errorMessage = "Email addresses do not match.";
+//     }
+// }
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -123,7 +141,9 @@
                      </div>
                      <h1>Details of the vehicle being sold</h1>
                      <div class="form-steps">
-                        <form action="./2 - Enter new keeper details - Private sale of a vehicle - GOV.UK.html"
+
+<!-- ##############form submission##############33 -->
+                        <form action="./2 - Enter new keeper details - Private sale of a vehicle - GOV.UK.php"
                            method="POST">
                            <div class="step uppercase-input">
                               <div class="form-item">
@@ -294,6 +314,7 @@
                                  value="Continue">
                            </div>
                         </form>
+
                      </div>
                   </div>
                </div>
@@ -402,6 +423,23 @@
       </footer>
    <div id=" global-app-error" class="app-error hidden">
             </div>
+            <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+            const emailInput = document.getElementById('vehicleSellerEmail_email');
+            const confirmEmailInput = document.getElementById('vehicleSellerEmail_email-verify');
+            const emailError = document.createElement('p');
+            emailError.style.color = 'red';
+
+            form.addEventListener('submit', function (event) {
+                if (emailInput.value !== confirmEmailInput.value) {
+                    event.preventDefault();
+                    emailError.textContent = "Email addresses do not match.";
+                    confirmEmailInput.after(emailError);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

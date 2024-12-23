@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if (isset('$_POST'['dateofsale'])) {
+    $_SESSION['dateofsale_day'] = $_POST['dateofsale_day'];
+    $_SESSION['dateofsale_month'] = $_POST['dateofsale_month'];
+    $_SESSION['dateofsale_year'] = $_POST['dateofsale_year'];
+    $_SESSION['mileage'] = $_POST['mileage'];
+
+    var_dump($_SESSION); // Debug: Check session variables
+}
+?>
+
 <!-- saved from url=(0085)https://dvla-buysell-service.com/buysell-service/next/after/then/confirm/saledate.php -->
 <html>
 

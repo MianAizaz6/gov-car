@@ -1,5 +1,10 @@
-<html>
+<?php 
+session_start();
 
+$vehicleRegistrationNumber = $_SESSION['vehicleRegistrationNumber'] ?? 'N/A';
+
+?>
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!--<base href="#">-->
@@ -106,9 +111,9 @@
                                 <h2>Vehicle details</h2>
                                 <dl>
                                     <dt>Registration number</dt>
-                                    <dd>
-                                        <span class="reg-number">FX68VKN</span>
-                                    </dd>
+                                   <dd>
+                                 <span class="reg-number"><?php echo htmlspecialchars($vehicleRegistrationNumber, ENT_QUOTES); ?></span>
+                              </dd>
                                     <dt>Make</dt>
                                     <dd>MERCEDES-BENZ</dd>
                                     <dt>Model</dt>
@@ -128,7 +133,7 @@
                         </div>
                         <div class="second-col">
                             <h1>Select new keeper address</h1>
-                            <form action="./4 - Sale details - Private sale of a vehicle - GOV.UK.html" method="POST">
+                            <form action="./4 - Sale details - Private sale of a vehicle - GOV.UK.php" method="POST">
                                 <div class="playback">
                                     <dl>
                                         <dt>Name</dt>

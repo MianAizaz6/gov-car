@@ -1,3 +1,45 @@
+<?php
+// Start session
+session_start();
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Collect and sanitize form inputs
+    $title = htmlspecialchars($_POST['privatekeeper_title.titleOption']);
+    $otherTitle = htmlspecialchars($_POST['privatekeeper_title.titleText']);
+    $firstName = htmlspecialchars($_POST['privatekeeper_firstname']);
+    $lastName = htmlspecialchars($_POST['privatekeeper_lastname'] );
+    $day = htmlspecialchars($_POST['privatekeeper_dateofbirth.day']);
+    $month = htmlspecialchars($_POST['privatekeeper_dateofbirth.month']);
+    $year = htmlspecialchars($_POST['privatekeeper_dateofbirth.year']);
+    $licenseNumber = htmlspecialchars($_POST['privatekeeper_drivernumber']);
+    $emailConfirmation = htmlspecialchars($_POST['privatekeeper_option_email']);
+    $email = htmlspecialchars($_POST['privatekeeper_email.email']);
+    $emailVerify = htmlspecialchars($_POST['privatekeeper_email.email-verify']);
+    $postcode = htmlspecialchars($_POST['privatekeeper_postcode']);
+
+    
+    $_SESSION['privatekeeper_title.titleOption'] = $_POST['privatekeeper_title.titleOption'];
+    $_SESSION['privatekeeper_title.titleText'] = $_POST['privatekeeper_title.titleText'];
+    $_SESSION['privatekeeper_firstname'] = $_POST['privatekeeper_firstname'];
+    $_SESSION['privatekeeper_lastname'] = $_POST['privatekeeper_lastname'];
+    $_SESSION['privatekeeper_dateofbirth.day'] = $_POST['privatekeeper_dateofbirth.day'];
+    $_SESSION['privatekeeper_dateofbirth.month'] = $_POST['privatekeeper_dateofbirth.month'];
+    $_SESSION['privatekeeper_dateofbirth.year'] = $_POST['privatekeeper_dateofbirth.year'];
+    $_SESSION['privatekeeper_drivernumber'] = $_POST['privatekeeper_drivernumber'];
+    $_SESSION['privatekeeper_option_email'] = $_POST['privatekeeper_option_email'];
+    $_SESSION['privatekeeper_option_email'] = $_POST['privatekeeper_email.email'];
+    $_SESSION['privatekeeper_email.email-verify'] = $_POST['privatekeeper_email.email-verify'];
+    
+    $_SESSION['privatekeeper_postcode'] = $_POST['privatekeeper_postcode'];
+    
+
+    // Redirect or display a success message
+   //  header("Location: success.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -115,7 +157,7 @@
                            <dl>
                               <dt>Registration number</dt>
                               <dd>
-                                 <span class="reg-number">FX68VKN</span>
+                                 <span class="reg-number"><?php echo $_SESSION['v_registration'];?></span>
                               </dd>
                               <dt>Make</dt>
                               <dd>MERCEDES-BENZ</dd>

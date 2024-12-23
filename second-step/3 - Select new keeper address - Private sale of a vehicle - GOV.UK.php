@@ -1,3 +1,11 @@
+<?php
+ session_start();
+
+ 
+ ?>
+
+
+
 <html>
 
 <head>
@@ -107,7 +115,7 @@
                                 <dl>
                                     <dt>Registration number</dt>
                                     <dd>
-                                        <span class="reg-number">FX68VKN</span>
+                                        <span class="reg-number"><?php echo $_SESSION['v_registration'] ; ?></span>
                                     </dd>
                                     <dt>Make</dt>
                                     <dd>MERCEDES-BENZ</dd>
@@ -132,14 +140,14 @@
                                 <div class="playback">
                                     <dl>
                                         <dt>Name</dt>
-                                        <dd>James Mason</dd>
+                                        <dd><?php    echo  $_SESSION['privatekeeper_firstname'] = $_POST['privatekeeper_firstname'] . ' ' .$_SESSION['privatekeeper_firstname'] = $_POST['privatekeeper_lastname']; ?></dd>
                                         <dt>Email address</dt>
                                         <dd>
                                             <span>
-                                                NOT ENTERED </span>
+                                            <?php echo $_SESSION['privatekeeper_option_email'] = $_POST['privatekeeper_option_email'];?> </span>
                                         </dd>
                                         <dt>Postcode</dt>
-                                        <dd>N15 5 DA</dd>
+                                        <dd><?php echo $_SESSION['privatekeeper_postcode'] = $_POST['privatekeeper_postcode'];?></dd>
                                     </dl>
                                 </div>
                                 <br>

@@ -145,7 +145,7 @@
                             </div>
                         </div>
                         <div class="form-steps">
-                            <form action="./6 - Summary - Private sale of a vehicle - GOV.UK.html" method="POST">
+                            <form action="./6 - Summary - Private sale of a vehicle - GOV.UK.php" method="POST">
                                 <div class="form-item">
                                     <div class="govuk-checkboxes">
                                         <div class="govuk-checkboxes__item">

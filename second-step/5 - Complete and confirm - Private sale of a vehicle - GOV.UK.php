@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -116,7 +121,7 @@
                                 <dl>
                                     <dt>Registration number</dt>
                                     <dd>
-                                        <span class="reg-number">FX68VKN</span>
+                                        <span class="reg-number"><?php echo $_SESSION['v_registration']; ?></span>
                                     </dd>
                                     <dt>Make</dt>
                                     <dd>MERCEDES-BENZ</dd>
@@ -131,15 +136,21 @@
                                     <h2>New keeper details</h2>
                                     <dl>
                                         <dt>Name</dt>
-                                        <dd>MR JAMES MASON</dd>
+                                        <dd><?php echo $_SESSION['privatekeeper_firstname'];?></dd>
                                         <dt>Address</dt>
                                         <dd>Bab Zee Salon<br> 61 West Green Road<br> London<br> Greater London<br> N15
                                             5DA<br>
                                         </dd>
                                         <dt>Email</dt>
-                                        <dd></dd>
+                                        <dd> <?php echo $_SESSION['privatekeeper_option_email'];?></dd>
                                         <dt>Date of sale</dt>
-                                        <dd>22/10/2024</dd>
+                                        <dd>
+                                      <?php 
+                                     echo $_SESSION['dateofsale'] = $_POST['dateofsale_day'] . '-' . $_POST['dateofsale_month'] . '-' . $_POST['dateofsale_year']; 
+                                     ?>
+                                            </dd>
+
+                                        </dd>
                                     </dl>
                                 </div>
                             </div>

@@ -109,7 +109,7 @@
                   </div>
                   <div class="second-col">
                      <h1>Sale details</h1>
-                     <form action="./5 - Complete and confirm - Private sale of a vehicle - GOV.UK.html" method="POST">
+                     <form action="./5 - Complete and confirm - Private sale of a vehicle - GOV.UK.php" method="POST">
                         <div class="govuk-date-input__item">
                            <div id="dateofsale" class="form-steps">
                               <fieldset>
