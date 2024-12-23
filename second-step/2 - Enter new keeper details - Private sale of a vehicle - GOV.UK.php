@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $_SESSION['privatekeeper_dateofbirth.year'] = $_POST['privatekeeper_dateofbirth.year'];
     $_SESSION['privatekeeper_drivernumber'] = $_POST['privatekeeper_drivernumber'];
     $_SESSION['privatekeeper_option_email'] = $_POST['privatekeeper_option_email'];
-    $_SESSION['privatekeeper_option_email'] = $_POST['privatekeeper_email.email'];
+    $_SESSION['privatekeeper_email.email'] = $_POST['privatekeeper_email.email'];
     $_SESSION['privatekeeper_email.email-verify'] = $_POST['privatekeeper_email.email-verify'];
     
     $_SESSION['privatekeeper_postcode'] = $_POST['privatekeeper_postcode'];

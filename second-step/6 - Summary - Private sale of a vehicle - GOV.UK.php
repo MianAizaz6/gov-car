@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+   $day = $_SESSION['dateofsale_day'];
+   $month = $_SESSION['dateofsale_month'] ;
+   $year = $_SESSION['dateofsale_year'];
+
 ?>
 
 <!DOCTYPE html>
@@ -196,11 +201,11 @@ session_start();
                                           London<br> N15 5DA<br>
                                        </dd>
                                        <dt>Contact email address</dt>
-                                       <dd><?php echo $_SESSION['privatekeeper_email.email'];?>
+                                       <dd><?php echo $_SESSION['email'];?>
                                        </dd>
                                        <dt>Date of sale</dt>
                                        <dd><?php
-                                     echo $_SESSION['dateofsale'] = $_POST['dateofsale_day'] . '-' . $_POST['dateofsale_month'] . '-' . $_POST['dateofsale_year']; 
+                                     echo  $day . '-' .$month . '-' . $year; 
                                      ?>
                                        </dd>
                                     </dl>

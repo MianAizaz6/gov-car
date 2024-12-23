@@ -135,6 +135,7 @@
                             </div>
                         </div>
                         <div class="second-col">
+<!-- ####form submission######## -->
                             <h1>Select new keeper address</h1>
                             <form action="./4 - Sale details - Private sale of a vehicle - GOV.UK.php" method="POST">
                                 <div class="playback">
@@ -144,7 +145,7 @@
                                         <dt>Email address</dt>
                                         <dd>
                                             <span>
-                                            <?php echo $_SESSION['privatekeeper_option_email'] = $_POST['privatekeeper_option_email'];?> </span>
+                                            <?php echo $_SESSION['email'];?> </span>
                                         </dd>
                                         <dt>Postcode</dt>
                                         <dd><?php echo $_SESSION['privatekeeper_postcode'] = $_POST['privatekeeper_postcode'];?></dd>
@@ -423,6 +424,7 @@
                                         value="Continue" type="submit" autocomplete="off" maxlength="6">
                                 </div>
                             </form>
+
                         </div>
                     </div>
                 </div>

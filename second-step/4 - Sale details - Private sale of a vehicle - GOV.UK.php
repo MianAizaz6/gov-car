@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 if (isset('$_POST'['dateofsale'])) {
     $_SESSION['dateofsale_day'] = $_POST['dateofsale_day'];
     $_SESSION['dateofsale_month'] = $_POST['dateofsale_month'];
@@ -139,7 +140,7 @@ if (isset('$_POST'['dateofsale'])) {
                                                 Day
                                              </label>
 
-                                             <input id="dateofsale_day" name="dateofsale.day" value="" required=""
+                                             <input id="dateofsale_day" name="dateofsale_day" value="" required=""
                                                 type="text" pattern="[0-9]*" inputmode="numeric"
                                                 aria-describedby="dateofsale-hint"
                                                 onkeypress="check(event, this, /[0-9]/);" no_optional_label="true"
@@ -150,7 +151,7 @@ if (isset('$_POST'['dateofsale'])) {
                                              <label for="dateofsale_month">
                                                 Month
                                              </label>
-                                             <input id="dateofsale_month" required="" name="dateofsale.month" value=""
+                                             <input id="dateofsale_month" required="" name="dateofsale_month" value=""
                                                 type="number" pattern="[0-9]*" inputmode="numeric"
                                                 onkeypress="check(event, this, /[0-9]/);" no_optional_label="true"
                                                 class="govuk-input govuk-date-input__input govuk-input--width-2"
@@ -160,11 +161,12 @@ if (isset('$_POST'['dateofsale'])) {
                                              <label for="dateofsale_year">
                                                 Year
                                              </label>
-                                             <input id="dateofsale_year" name="dateofsale.year" required="" value=""
+                                             <input id="dateofsale_year" name="dateofsale_year" required="" value=""
                                                 type="text" pattern="[0-9]*" inputmode="numeric"
                                                 onkeypress="check(event, this, /[0-9]/);" no_optional_label="true"
                                                 class="govuk-input govuk-date-input__input govuk-input--width-4"
                                                 autocomplete="off" maxlength="4">
+                                                <input type="hidden" name="dateofsale"/>
                                           </div>
                                        </div>
                                     </div>

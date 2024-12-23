@@ -2,6 +2,16 @@
 
 session_start();
 
+if (isset($_POST['dateofsale'])) {
+    $_SESSION['dateofsale_day'] = $_POST['dateofsale_day'];
+    $_SESSION['dateofsale_month'] = $_POST['dateofsale_month'];
+    $_SESSION['dateofsale_year'] = $_POST['dateofsale_year'];
+    $_SESSION['mileage'] = $_POST['mileage'];
+
+    var_dump($_SESSION); // Debug: Check session variables
+}
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -142,7 +152,7 @@ session_start();
                                             5DA<br>
                                         </dd>
                                         <dt>Email</dt>
-                                        <dd> <?php echo $_SESSION['privatekeeper_option_email'];?></dd>
+                                        <dd><?php echo $_SESSION['email'];?></dd>
                                         <dt>Date of sale</dt>
                                         <dd>
                                       <?php 

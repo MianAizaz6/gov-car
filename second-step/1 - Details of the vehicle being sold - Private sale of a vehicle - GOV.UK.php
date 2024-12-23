@@ -41,6 +41,7 @@ if (isset($_POST['submit'])) {
     // Store values in the session
     $_SESSION['v_registration'] = $v_registration;
     $_SESSION['v_certificate'] = $v_certificate;
+   $_SESSION['email'] = $s_email;
     // Redirect to the next page or perform further processing
     header('Location: 2 - Enter new keeper details - Private sale of a vehicle - GOV.UK.php'); // Replace with your next page
   
