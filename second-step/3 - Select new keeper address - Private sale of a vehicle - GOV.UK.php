@@ -1,6 +1,8 @@
 <?php
  session_start();
-
+// Check if the session data exists
+$make = isset($_SESSION['v_make']) ? $_SESSION['v_make'] : 'N/A';
+$model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
  
  ?>
 
@@ -118,9 +120,9 @@
                                         <span class="reg-number"><?php echo $_SESSION['v_registration'] ; ?></span>
                                     </dd>
                                     <dt>Make</dt>
-                                    <dd>MERCEDES-BENZ</dd>
-                                    <dt>Model</dt>
-                                    <dd>GLC</dd>
+                              <dd><?php echo htmlspecialchars($make); ?></dd>
+                              <dt>Model</dt>
+                              <dd><?php echo htmlspecialchars($model); ?></dd>
                                 </dl>
                             </div>
                             <div style="font-weight:bold;" class="govuk-warning-text">

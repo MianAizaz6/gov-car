@@ -4,7 +4,9 @@ session_start();
    $day = $_SESSION['dateofsale_day'];
    $month = $_SESSION['dateofsale_month'] ;
    $year = $_SESSION['dateofsale_year'];
-
+// Check if the session data exists
+$make = isset($_SESSION['v_make']) ? $_SESSION['v_make'] : 'N/A';
+$model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
 ?>
 
 <!DOCTYPE html>
@@ -185,9 +187,9 @@ session_start();
                                        <span class="reg-number"><?php echo $_SESSION['v_registration']; ?></span>
                                     </dd>
                                     <dt>Make</dt>
-                                    <dd>MERCEDES-BENZ</dd>
-                                    <dt>Model</dt>
-                                    <dd>GLC</dd>
+                              <dd><?php echo htmlspecialchars($make); ?></dd>
+                              <dt>Model</dt>
+                              <dd><?php echo htmlspecialchars($model); ?></dd> 
                                  </dl>
                               </div>
                               <div class="change-keeper-summary-playback">

@@ -59,6 +59,45 @@ if (isset($_POST['submit'])) {
 
 }
 
+// Initialize error message
+$errorMessage = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $registration = $_POST['registration'];
+
+    if (!empty($registration)) {
+        // API details
+        $apiKey = "2e1b4d62c8e142e04595668ce27c1b06";
+        $apiUrl = "https://api.checkcardetails.co.uk/vehicledata/ukvehicledata?apikey=$apiKey&vrm=" . urlencode($registration);
+
+        // Make the API request
+        $ch = curl_init($apiUrl);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        if ($httpCode === 200) {
+            $carData = json_decode($response, true);
+
+            // Check if the response contains valid data
+            if (isset($carData['VehicleRegistration'])) {
+                $_SESSION['v_make'] = $carData['VehicleRegistration']['Make'] ?? "N/A";
+                $_SESSION['v_model'] = $carData['VehicleRegistration']['Model'] ?? "N/A";
+
+                // Redirect to the next page
+                header("Location: page2.php");
+                exit;
+            } else {
+                $errorMessage = "Car details not found. Please check the registration number.";
+            }
+        } else {
+            $errorMessage = "Failed to fetch data from the API. Please try again later.";
+        }
+    } else {
+        $errorMessage = "Please enter a valid car registration number.";
+    }
+}
  ?> 
 
 
@@ -196,10 +235,12 @@ if (isset($_POST['submit'])) {
                                     Vehicle registration number
                                  </label>
                                  <span class="form-hint" id="vehicleRegistrationNumber-hint"></span>
-                                 <input class="govuk-input" id="vehicleRegistrationNumber" required=""
+                                 <input class="govuk-input" id="registration" required=""
                                     name="registration" value="" type="text"
                                     aria-describedby="vehicleRegistrationNumber-hint"
                                     onkeypress="check(event, this, /[a-zA-Z0-9]/);" autocomplete="off" maxlength="8">
+                                    <div style="text-align: center; margin: 50px;">
+    
                               </div>
                            </div>
                            <div class="form-item">
@@ -211,6 +252,7 @@ if (isset($_POST['submit'])) {
                                  autocomplete="off"
                                  imgsrc="/sell-private/assets/images/b3b6317e5d209548ef6b7c3877b8dd94-V5Creferencehint.png"
                                  minlength="11" maxlength="11">
+                                 
                               <details class="govuk-details" data-module="govuk-details">
                                  <summary class="govuk-details__summary">
                                     <span class="govuk-details__summary-text">
@@ -285,11 +327,11 @@ if (isset($_POST['submit'])) {
                                     
                                  </div>
                                  <?php
-if (!empty($_SESSION['error_message'])): ?>
-   <div class="govuk-error-message">
-       <?= htmlspecialchars($_SESSION['error_message']); ?>
-   </div>
-<?php endif; ?>
+                              if (!empty($_SESSION['error_message'])): ?>
+                                 <div class="govuk-error-message">
+                                    <?= htmlspecialchars($_SESSION['error_message']); ?>
+                                 </div>
+                              <?php endif; ?>
                               </div>
                               <style>
                                  .govuk-radios__conditional {
@@ -364,9 +406,10 @@ if (!empty($_SESSION['error_message'])): ?>
                            </div>
 
                            <div class="form-steps">
-                              <input type="submit" class="govuk-button" style="font-size: 20px;" name="submit" id=""
+                              <input onclick="getCarDetails()" type="submit" class="govuk-button" style="font-size: 20px;" name="submit" id=""
                                  value="Continue">
-                           </div>
+                                 <!-- <div id="car-details"></div>
+                           </div> -->
                         </form>
                      </div>
                   </div>
@@ -475,6 +518,7 @@ if (!empty($_SESSION['error_message'])): ?>
       </footer>
    <div id=" global-app-error" class="app-error hidden">
             </div>
+            <script src="./fetchCarDetails.js"></script>
 </body>
 
 </html>

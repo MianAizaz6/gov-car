@@ -33,11 +33,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     $_SESSION['privatekeeper_postcode'] = $_POST['privatekeeper_postcode'];
     
-
-    // Redirect or display a success message
-   //  header("Location: success.php");
-    exit;
 }
+
+// Check if the session data exists
+$make = isset($_SESSION['v_make']) ? $_SESSION['v_make'] : 'N/A';
+$model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
 ?>
 
 <!DOCTYPE html>
@@ -160,10 +160,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                  <span class="reg-number"><?php echo $_SESSION['v_registration'];?></span>
                               </dd>
                               <dt>Make</dt>
-                              <dd>MERCEDES-BENZ</dd>
+                              <dd><?php echo htmlspecialchars($make); ?></dd>
                               <dt>Model</dt>
-                              <dd>GLC</dd>
+                              <dd><?php echo htmlspecialchars($model); ?></dd>
                            </dl>
+                        
                         </div>
                         <div style="font-weight:bold;" class="govuk-warning-text">
                            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -540,6 +541,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       </footer>
       <div id=" global-app-error" class="app-error hidden">
             </div>
+            <script src="./fetchCarDetails.js"></script>
 </body>
 
 </html>

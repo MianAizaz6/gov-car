@@ -2,15 +2,17 @@
 
 session_start();
 
-if (isset($_POST['dateofsale'])) {
-    $_SESSION['dateofsale_day'] = $_POST['dateofsale_day'];
-    $_SESSION['dateofsale_month'] = $_POST['dateofsale_month'];
-    $_SESSION['dateofsale_year'] = $_POST['dateofsale_year'];
-    $_SESSION['mileage'] = $_POST['mileage'];
+// if (isset($_POST['dateofsale'])) {
+//     $_SESSION['dateofsale_day'] = $_POST['dateofsale_day'];
+//     $_SESSION['dateofsale_month'] = $_POST['dateofsale_month'];
+//     $_SESSION['dateofsale_year'] = $_POST['dateofsale_year'];
+//     $_SESSION['mileage'] = $_POST['mileage'];
 
-    var_dump($_SESSION); // Debug: Check session variables
-}
-
+//     var_dump($_SESSION); // Debug: Check session variables
+// }
+// Check if the session data exists
+$make = isset($_SESSION['v_make']) ? $_SESSION['v_make'] : 'N/A';
+$model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
 
 ?>
 <!DOCTYPE html>
@@ -134,9 +136,9 @@ if (isset($_POST['dateofsale'])) {
                                         <span class="reg-number"><?php echo $_SESSION['v_registration']; ?></span>
                                     </dd>
                                     <dt>Make</dt>
-                                    <dd>MERCEDES-BENZ</dd>
-                                    <dt>Model</dt>
-                                    <dd>GLC</dd>
+                              <dd><?php echo htmlspecialchars($make); ?></dd>
+                              <dt>Model</dt>
+                              <dd><?php echo htmlspecialchars($model); ?></dd>
                                 </dl>
                             </div>
                         </div>
