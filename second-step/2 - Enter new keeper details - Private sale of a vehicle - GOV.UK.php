@@ -433,8 +433,8 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                      </div>
                   </div>
                   <div class="form-item">
-                     <input class="govuk-button" id="mileage" style="font-size: 18px;" name="step-4" value="Continue"
-                        type="submit" autocomplete="off" maxlength="6">
+                     <input onclick="getAddresses()" class="govuk-button" id="mileage" style="font-size: 18px;" name="step-4" value="Continue"
+                        type="submit" autocomplete="off" maxlength="6" >
                   </div>
                </form>
             </div>
@@ -454,7 +454,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                      <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="supportLink"
                         data-track-label="/help" data-track-options="{&quot;dimension29&quot;:&quot;Help&quot;}"
                         data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}"
-                        href="#" https:="" www.gov.uk="" help"="">Help</a>
+                        href="#" https:="" www.gov.uk="" >Help</a>
                   </li>
                   <li class="govuk-footer__inline-list-item">
                      <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="supportLink"

@@ -63,7 +63,17 @@ async function saveToSession(make, model) {
 //address fetching
    // Function to fetch addresses based on postcode
    async function getAddresses() {
+    alert('hiiiiii',);
     const postcode = document.getElementById("postcode").value.trim();
+
+    // Get the element by its ID
+    const pCodeElement = document.getElementById("p_code");
+
+    console.log(pCodeElement);
+
+    // Get the text content of the element
+    const pCodeText = pCodeElement.textContent;
+    console.log(pCodeText);
 
     // Check if postcode is entered
     if (!postcode) {
@@ -72,7 +82,7 @@ async function saveToSession(make, model) {
     }
 
     const apiKey = "9XZq0IDOLnXkbrqwf6vSyoSVkG3wkYf5xY51dTQpvNI";
-    const url = `https://api.easypostcodes.com/addresses/${postcode}`;
+    const url = `https://api.easypostcodes.com/addresses/${postcode || pCodeText}`;
 
     try {
         // Fetch data from API

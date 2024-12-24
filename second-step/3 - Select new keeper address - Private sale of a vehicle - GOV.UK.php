@@ -1,10 +1,13 @@
 <?php
- session_start();
+session_start();
 // Check if the session data exists
 $make = isset($_SESSION['v_make']) ? $_SESSION['v_make'] : 'N/A';
 $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
- 
- ?>
+
+$postalCode =  isset($_SESSION['privatekeeper_postcode']) ? $_SESSION['privatekeeper_postcode'] : 'N/A';
+
+
+?>
 
 
 
@@ -61,7 +64,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                     id="logo" aria-label="Go to the GOV.UK homepage" href="#" https:="" www.gov.uk"="">
                     <span class="govuk-header__logotype">
                         <!--[if gt IE 8]><!-->
-                       
+
                         <!--<![endif]-->
                         <!-- [if IE 8]> -->
                         <img src="./assets/logo.svg" style="filter: invert(100%);" alt=""
@@ -103,7 +106,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                 <a class="govuk-back-link" id="back"
                     href="https://dvla-buysell-service.com/buysell-service/next/after/then/selectaddy.php#">Back</a>
                 <script>
-                    document.getElementById('back').addEventListener('click', function () {
+                    document.getElementById('back').addEventListener('click', function() {
                         history.back();
                     });
                 </script>
@@ -117,12 +120,12 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                                 <dl>
                                     <dt>Registration number</dt>
                                     <dd>
-                                        <span class="reg-number"><?php echo $_SESSION['v_registration'] ; ?></span>
+                                        <span class="reg-number"><?php echo $_SESSION['v_registration']; ?></span>
                                     </dd>
                                     <dt>Make</dt>
-                              <dd><?php echo htmlspecialchars($make); ?></dd>
-                              <dt>Model</dt>
-                              <dd><?php echo htmlspecialchars($model); ?></dd>
+                                    <dd><?php echo htmlspecialchars($make); ?></dd>
+                                    <dt>Model</dt>
+                                    <dd><?php echo htmlspecialchars($model); ?></dd>
                                 </dl>
                             </div>
                             <div style="font-weight:bold;" class="govuk-warning-text">
@@ -137,20 +140,20 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                             </div>
                         </div>
                         <div class="second-col">
-<!-- ####form submission######## -->
+                            <!-- ####form submission######## -->
                             <h1>Select new keeper address</h1>
                             <form action="./4 - Sale details - Private sale of a vehicle - GOV.UK.php" method="POST">
                                 <div class="playback">
                                     <dl>
                                         <dt>Name</dt>
-                                        <dd><?php    echo  $_SESSION['privatekeeper_firstname'] = $_POST['privatekeeper_firstname'] . ' ' .$_SESSION['privatekeeper_firstname'] = $_POST['privatekeeper_lastname']; ?></dd>
+                                        <dd><?php echo  $_SESSION['privatekeeper_firstname'] = $_POST['privatekeeper_firstname'] . ' ' . $_SESSION['privatekeeper_firstname'] = $_POST['privatekeeper_lastname']; ?></dd>
                                         <dt>Email address</dt>
                                         <dd>
                                             <span>
-                                            <?php echo $_SESSION['email'];?> </span>
+                                                <?php echo $_SESSION['email']; ?> </span>
                                         </dd>
                                         <dt>Postcode</dt>
-                                        <dd><?php echo $_SESSION['privatekeeper_postcode'] = $_POST['privatekeeper_postcode'];?></dd>
+                                        <dd id="p_code"><?php echo $_SESSION['privatekeeper_postcode'] = $_POST['privatekeeper_postcode']; ?></dd>
                                     </dl>
                                 </div>
                                 <br>
@@ -159,7 +162,10 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                                         Choose the new keepers address
                                     </label>
                                     <label for="address">Select your address:</label>
-                                    <select id="address" name="address">
+                                    <select name="address" id="address-select">
+                                        <option value="">Please select your address</option>
+                                    </select>
+                                    <!-- <select id="address" name="address">
                                         <option
                                             value="Bab Zee Salon, 61 West Green Road, London, Greater London, N15 5DA">
                                             Bab Zee Salon, 61 West Green Road, London, Greater London, N15 5DA
@@ -415,7 +421,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                                         <option value="95A West Green Road, London, Greater London, N15 5DA">95A West
                                             Green Road, London, Greater London, N15 5DA
                                         </option>
-                                    </select>
+                                    </select> -->
                                 </div>
                                 <a id="enterAddressManuallyButton"
                                     href="https://dvla-buysell-service.com/buysell-service/next/after/then/selectaddy.php#">
@@ -533,13 +539,20 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
 
                     <a class="govuk-footer__link govuk-footer__copyright-logo" href="#" https:=""
                         www.nationalarchives.gov.uk="" information-management="" re-using-public-sector-information=""
-                        uk-government-licensing-framework="" crown-copyright="" "="">© Crown copyright</a>
-             </div>
-          </div>
-       </div>
+                        uk-government-licensing-framework="" crown-copyright="">© Crown copyright</a>
+                </div>
+            </div>
+        </div>
     </footer>
     <div id=" global-app-error" class="app-error hidden">
-                </div>
+    </div>
+    <script src="./fetchCarDetails.js">
+
+    </script>
+    <script>
+        // Assign an IIFE to window.onload
+        window.onload = getAddresses
+    </script>
 </body>
 
 </html>
