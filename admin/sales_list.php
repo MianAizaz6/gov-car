@@ -123,32 +123,51 @@
                   <table id="example2" class="table table-bordered table-hover">
                     <thead>
                       <tr>
-                        <th>ID</th>
-                        <th>FullName</th>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>Phone Number</th>
-                        <th>Action</th>
+                        <th>V_ID</th>
+                        <th>V_Registration</th>
+                        <th>V_Certificate</th>
+                        <th>V_Make</th>
+                        <th>V_Model</th>
+                        <th>Business_Type</th>
+                        <th>Seller_Title</th>
+                        <th>Seller_First_Name</th>
+                        <th>Seller_Last_Name</th>
+                        <th>Seller_DOB</th>
+                        <th>Seller_Licence</th>
+                        <th>Buyer_Email</th>
+                        <th>Postal_Code</th>
+                        <th>Address</th>
+                        <th>V_Date_Of_Sale</th>
+                        <th>Vehicle_Mileage</th>
+                        <th>Trx_ID</th>
+                        <th>Seller_Email</th>
                       </tr>
                     </thead>
                     <tbody>
                       <?php
                       $connection = mysqli_connect('localhost', 'root', '', 'gov-car');
-                      $query = "SELECT * FROM user";
+                      $query = "SELECT * FROM vehicle_sale";
                       $exec = mysqli_query($connection, $query);
                       while ($record = mysqli_fetch_assoc($exec)) { ?>
                         <tr>
-                          <td><?php echo $record['id']; ?></td>
-                          <td><?php echo $record['FullName']; ?></td>
-                          <td><?php echo $record['Email']; ?></td>
-                          <td><?php echo $record['Password']; ?></td>
-                          <td><?php echo $record['Phone']; ?></td>
-                          <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal<?php echo $record['id']; ?>">Edit</button>
-                            <a href="./process/deleteuser.php?id=<?php echo $record['id']; ?>" class="btn btn-danger">Delete</a>
-                            <td>
-                            </td>
-                          </td>
+                          <td><?php echo $record['v_id']; ?></td>
+                          <td><?php echo $record['v_registration']; ?></td>
+                          <td><?php echo $record['v_certificate']; ?></td>
+                          <td><?php echo $record['v_make']; ?></td>
+                          <td><?php echo $record['v_model']; ?></td>
+                          <td><?php echo $record['business_type']; ?></td>
+                          <td><?php echo $record['seller_title']; ?></td>
+                          <td><?php echo $record['seller_first_name']; ?></td>
+                          <td><?php echo $record['seller_last_name']; ?></td>
+                          <td><?php echo $record['seller_dob']; ?></td>
+                          <td><?php echo $record['seller_licence']; ?></td>
+                          <td><?php echo $record['buyer_email']; ?></td>
+                          <td><?php echo $record['postal_code']; ?></td>
+                          <td><?php echo $record['address']; ?></td>
+                          <td><?php echo $record['v_date_of_sale']; ?></td>
+                          <td><?php echo $record['vehicle_mileage']; ?></td>
+                          <td><?php echo $record['trx_id']; ?></td>
+                          <td><?php echo $record['seller_email']; ?></td>                          
                         </tr>
                       <?php } ?>
                     </tbody>
