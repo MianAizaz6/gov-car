@@ -4,12 +4,31 @@ session_start();
 $make = isset($_SESSION['v_make']) ? $_SESSION['v_make'] : 'N/A';
 $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
 
-$postalCode =  isset($_SESSION['privatekeeper_postcode']) ? $_SESSION['privatekeeper_postcode'] : 'N/A';
+
+
+// set varriables in session
+$_SESSION['privatekeeper_title.titleOption'] = $_POST['privatekeeper_title_titleOption'];
+$_SESSION['privatekeeper_title.titleText'] = $_POST['privatekeeper_title.titleText'];
+$_SESSION['privatekeeper_firstname'] = $_POST['privatekeeper_firstname'];
+$_SESSION['privatekeeper_lastname'] = $_POST['privatekeeper_lastname'];
+$_SESSION['privatekeeper_dateofbirth.day'] = $_POST['privatekeeper_dateofbirth_day'];
+$_SESSION['privatekeeper_dateofbirth.month'] = $_POST['privatekeeper_dateofbirth_month'];
+$_SESSION['privatekeeper_dateofbirth.year'] = $_POST['privatekeeper_dateofbirth_year'];
+$_SESSION['privatekeeper_drivernumber'] = $_POST['privatekeeper_drivernumber'];
+$_SESSION['privatekeeper_option_email'] = $_POST['privatekeeper_option_email'];
+$_SESSION['privatekeeper_email.email'] = $_POST['privatekeeper_email_email'];
+$_SESSION['privatekeeper_postcode'] = $_POST['privatekeeper_postcode'];
+
+$_SESSION['seller_dob'] = sprintf(
+    '%04d-%02d-%02d',
+    $_POST['privatekeeper_dateofbirth_year'],
+    $_POST['privatekeeper_dateofbirth_month'],
+    $_POST['privatekeeper_dateofbirth_day']
+);
+
 
 
 ?>
-
-
 
 <html>
 
@@ -546,13 +565,58 @@ $postalCode =  isset($_SESSION['privatekeeper_postcode']) ? $_SESSION['privateke
     </footer>
     <div id=" global-app-error" class="app-error hidden">
     </div>
-    <script src="./fetchCarDetails.js">
-
-    </script>
     <script>
-        // Assign an IIFE to window.onload
-        window.onload = getAddresses
+        const sessionPostalCode = "<?php echo  $_SESSION['privatekeeper_postcode'] ?>";
+        // Function to fetch addresses from the API
+        async function fetchAddresses(postcode) {
+        
+            const apiKey = "9XZq0IDOLnXkbrqwf6vSyoSVkG3wkYf5xY51dTQpvNI";
+            const url = `https://api.easypostcodes.com/addresses/${postcode}`;
+
+            try {
+                const response = await fetch(url, {
+                    headers: {
+                        'Key': apiKey
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const addressList = data.map(item => item.envelopeAddress.summaryLine);
+                populateAddressDropdown(addressList);
+            } catch (error) {
+                console.error("Error fetching addresses:", error);
+                document.getElementById("addresses").innerHTML = `<p style="color: red;">Failed to fetch addresses. Please try again later.</p>`;
+            }
+        }
+
+        // Function to display the fetched addresses
+        function populateAddressDropdown(addressList) {
+            const selectElement = document.getElementById("address-select");
+
+            // Clear any existing options (except the first default option)
+            selectElement.innerHTML = '<option value="">Please select an address</option>';
+
+            // Map through the array of addresses and create an option for each address
+            addressList.forEach(address => {
+                const optionElement = document.createElement("option");
+                optionElement.value = address;
+                optionElement.textContent = address;
+                selectElement.appendChild(optionElement); // Add the option to the select box
+            });
+        }
+
+        // Call the API when the page loads
+        window.onload = function() {
+            fetchAddresses(sessionPostalCode);
+        };
     </script>
+
+
+
 </body>
 
 </html>

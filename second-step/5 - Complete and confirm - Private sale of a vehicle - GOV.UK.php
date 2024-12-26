@@ -2,14 +2,20 @@
 
 session_start();
 
-// if (isset($_POST['dateofsale'])) {
-//     $_SESSION['dateofsale_day'] = $_POST['dateofsale_day'];
-//     $_SESSION['dateofsale_month'] = $_POST['dateofsale_month'];
-//     $_SESSION['dateofsale_year'] = $_POST['dateofsale_year'];
-//     $_SESSION['mileage'] = $_POST['mileage'];
+if (isset($_POST['dateofsale'])) {
+    $_SESSION['dateofsale_day'] = $_POST['dateofsale_day'];
+    $_SESSION['dateofsale_month'] = $_POST['dateofsale_month'];
+    $_SESSION['dateofsale_year'] = $_POST['dateofsale_year'];
+    $_SESSION['mileage'] = $_POST['mileage'];
 
-//     var_dump($_SESSION); // Debug: Check session variables
-// }
+    // put date in a proper formate in session
+    $_SESSION['vehicle_date_of_sale'] = sprintf(
+        '%04d-%02d-%02d',
+        $_POST['dateofsale_year'],
+        $_POST['dateofsale_month'],
+        $_POST['dateofsale_day'],
+    );
+}
 // Check if the session data exists
 $make = isset($_SESSION['v_make']) ? $_SESSION['v_make'] : 'N/A';
 $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
@@ -136,9 +142,9 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                                         <span class="reg-number"><?php echo $_SESSION['v_registration']; ?></span>
                                     </dd>
                                     <dt>Make</dt>
-                              <dd><?php echo htmlspecialchars($make); ?></dd>
-                              <dt>Model</dt>
-                              <dd><?php echo htmlspecialchars($model); ?></dd>
+                                    <dd><?php echo htmlspecialchars($make); ?></dd>
+                                    <dt>Model</dt>
+                                    <dd><?php echo htmlspecialchars($model); ?></dd>
                                 </dl>
                             </div>
                         </div>
@@ -148,19 +154,18 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                                     <h2>New keeper details</h2>
                                     <dl>
                                         <dt>Name</dt>
-                                        <dd><?php echo $_SESSION['privatekeeper_firstname'];?></dd>
+                                        <dd><?php echo $_SESSION['privatekeeper_firstname']; ?></dd>
                                         <dt>Address</dt>
-                                        <dd>Bab Zee Salon<br> 61 West Green Road<br> London<br> Greater London<br> N15
-                                            5DA<br>
+                                        <dd> <?php echo $_SESSION['address'] ?>
                                         </dd>
                                         <dt>Email</dt>
-                                        <dd><?php echo $_SESSION['email'];?></dd>
+                                        <dd><?php echo $_SESSION['email']; ?></dd>
                                         <dt>Date of sale</dt>
                                         <dd>
-                                      <?php 
-                                     echo $_SESSION['dateofsale'] = $_POST['dateofsale_day'] . '-' . $_POST['dateofsale_month'] . '-' . $_POST['dateofsale_year']; 
-                                     ?>
-                                            </dd>
+                                            <?php
+                                            echo $_SESSION['dateofsale'] = $_POST['dateofsale_day'] . '-' . $_POST['dateofsale_month'] . '-' . $_POST['dateofsale_year'];
+                                            ?>
+                                        </dd>
 
                                         </dd>
                                     </dl>
@@ -168,7 +173,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                             </div>
                         </div>
                         <div class="form-steps">
-                            <form action="./6 - Summary - Private sale of a vehicle - GOV.UK.php" method="POST">
+                            <form action="./process/sale_process.php" method="POST">
                                 <div class="form-item">
                                     <div class="govuk-checkboxes">
                                         <div class="govuk-checkboxes__item">

