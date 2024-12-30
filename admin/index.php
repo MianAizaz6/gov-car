@@ -73,7 +73,7 @@ if (isset($_POST['login']) && $_POST['login'] == 'type') {
 
                 <form action="index.php" method="post">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="Username" placeholder="Username" required>
+                        <input type="text" class="form-control" name="Username" placeholder="Username" autocomplete="off" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -81,7 +81,7 @@ if (isset($_POST['login']) && $_POST['login'] == 'type') {
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                        <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="new-password" required>
                         <input type="hidden" name="login" value="type">
                         <div class="input-group-append">
                             <div class="input-group-text">
