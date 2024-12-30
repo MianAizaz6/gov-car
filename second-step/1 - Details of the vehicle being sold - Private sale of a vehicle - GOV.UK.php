@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "gov-car") or die("connection failed");
+include('../admin/inc/conn.php');
 
 // if (isset($_POST['submit'])) {
 //    $v_registration = mysqli_real_escape_string($conn, $_POST['registration']);
@@ -286,9 +286,11 @@ if (isset($_POST['submit'])) {
                                                          <label for="vehicleSellerEmail_email">
                                                             Seller's email address
                                                          </label>
+                                                       
+
                                                          <input class="govuk-input" id="vehicleSellerEmail_email"
                                                             name="email" value="" type="text"
-                                                            no_optional_label="true" maxlength="254" autocomplete="off">
+                                                            no_optional_label="true" maxlength="254" autocomplete="on">
                                                       </div>
                                                       <div class="form-item">
                                                          <label for="confirmemail">

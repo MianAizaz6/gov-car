@@ -201,8 +201,7 @@ $model = isset($_SESSION['v_model']) ? $_SESSION['v_model'] : 'N/A';
                                        <dt>Name</dt>
                                        <dd><?php echo $_SESSION['privatekeeper_firstname']; ?></dd>
                                        <dt>Address</dt>
-                                       <dd>Bab Zee Salon<br> 61 West Green Road<br> London<br> Greater
-                                          London<br> N15 5DA<br>
+                                       <dd><?php echo $_SESSION['address'] ?> <br>
                                        </dd>
                                        <dt>Contact email address</dt>
                                        <dd><?php echo $_SESSION['email']; ?>

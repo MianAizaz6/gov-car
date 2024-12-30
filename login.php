@@ -1,14 +1,7 @@
 <?php
 session_start();
 
-// Database connection
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "gov-car";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+include('./admin/inc/conn.php');
 
 // Check connection
 if ($conn->connect_error) {

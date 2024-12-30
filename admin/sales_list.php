@@ -145,9 +145,9 @@
                     </thead>
                     <tbody>
                       <?php
-                      $connection = mysqli_connect('localhost', 'root', '', 'gov-car');
+                      include('./inc/conn.php');
                       $query = "SELECT * FROM vehicle_sale";
-                      $exec = mysqli_query($connection, $query);
+                      $exec = mysqli_query($conn, $query);
                       while ($record = mysqli_fetch_assoc($exec)) { ?>
                         <tr>
                           <td><?php echo $record['v_id']; ?></td>

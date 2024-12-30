@@ -22,8 +22,8 @@
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <?php
-    include "config.php";
-    ?>
+        include "config.php";
+        ?>
 
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -142,79 +142,79 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                      $connection = mysqli_connect('localhost', 'root', '', 'gov-car');
-                      $query = "SELECT * FROM user WHERE type='user'";
-                      $exec = mysqli_query($connection, $query);
-                      while ($record = mysqli_fetch_assoc($exec)) { ?>
-                                            <tr>
-                                                <td><?php echo $record['id']; ?></td>
-                                                <td><?php echo $record['FullName']; ?></td>
-                                                <td><?php echo $record['Email']; ?></td>
-                                                <td><?php echo $record['Password']; ?></td>
-                                                <td><?php echo $record['Phone']; ?></td>
-                                                <td>
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                        data-target="#editModal<?php echo $record['id']; ?>">Edit</button>
-                                                    <a href="./process/deleteuser.php?id=<?php echo $record['id']; ?>"
-                                                        class="btn btn-danger">Delete</a>
-                                                <td>
-                                                </td>
-                                                </td>
-                                            </tr>
-                                            <div class="modal fade" id="editModal<?php echo $record['id']; ?>"
-                                                tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
-                                                aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="editModalLabel">Edit User</h5>
-                                                            <button type="button" class="close" data-dismiss="modal"
-                                                                aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
+                                            include('./inc/conn.php');
+                                            $query = "SELECT * FROM user WHERE type='user'";
+                                            $exec = mysqli_query($conn, $query);
+                                            while ($record = mysqli_fetch_assoc($exec)) { ?>
+                                                <tr>
+                                                    <td><?php echo $record['id']; ?></td>
+                                                    <td><?php echo $record['FullName']; ?></td>
+                                                    <td><?php echo $record['Email']; ?></td>
+                                                    <td><?php echo $record['Password']; ?></td>
+                                                    <td><?php echo $record['Phone']; ?></td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                            data-target="#editModal<?php echo $record['id']; ?>">Edit</button>
+                                                        <a href="./process/deleteuser.php?id=<?php echo $record['id']; ?>"
+                                                            class="btn btn-danger">Delete</a>
+                                                    <td>
+                                                    </td>
+                                                    </td>
+                                                </tr>
+                                                <div class="modal fade" id="editModal<?php echo $record['id']; ?>"
+                                                    tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="editModalLabel">Edit User</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <form action="./process/edituser.php" method="GET">
+                                                                <div class="modal-body">
+                                                                    <input type="hidden" name="id"
+                                                                        value="<?php echo $record['id']; ?>">
+                                                                    <div class="form-group">
+                                                                        <label for="FullName">Full Name</label>
+                                                                        <input type="text" class="form-control"
+                                                                            name="FullName"
+                                                                            value="<?php echo $record['FullName']; ?>"
+                                                                            required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="Email">Email</label>
+                                                                        <input type="email" class="form-control"
+                                                                            name="Email"
+                                                                            value="<?php echo $record['Email']; ?>"
+                                                                            required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="Password">Password</label>
+                                                                        <input type="password" class="form-control"
+                                                                            name="Password"
+                                                                            value="<?php echo $record['Password']; ?>"
+                                                                            required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="Phone">Phone</label>
+                                                                        <input type="text" class="form-control" name="Phone"
+                                                                            value="<?php echo $record['Phone']; ?>"
+                                                                            required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-dismiss="modal">Close</button>
+                                                                    <button type="submit" class="btn btn-primary">Save
+                                                                        changes</button>
+                                                                </div>
+                                                            </form>
                                                         </div>
-                                                        <form action="./process/edituser.php" method="GET">
-                                                            <div class="modal-body">
-                                                                <input type="hidden" name="id"
-                                                                    value="<?php echo $record['id']; ?>">
-                                                                <div class="form-group">
-                                                                    <label for="FullName">Full Name</label>
-                                                                    <input type="text" class="form-control"
-                                                                        name="FullName"
-                                                                        value="<?php echo $record['FullName']; ?>"
-                                                                        required>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="Email">Email</label>
-                                                                    <input type="email" class="form-control"
-                                                                        name="Email"
-                                                                        value="<?php echo $record['Email']; ?>"
-                                                                        required>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="Password">Password</label>
-                                                                    <input type="password" class="form-control"
-                                                                        name="Password"
-                                                                        value="<?php echo $record['Password']; ?>"
-                                                                        required>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="Phone">Phone</label>
-                                                                    <input type="text" class="form-control" name="Phone"
-                                                                        value="<?php echo $record['Phone']; ?>"
-                                                                        required>
-                                                                </div>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary"
-                                                                    data-dismiss="modal">Close</button>
-                                                                <button type="submit" class="btn btn-primary">Save
-                                                                    changes</button>
-                                                            </div>
-                                                        </form>
                                                     </div>
                                                 </div>
-                                            </div>
                                             <?php } ?>
                                         </tbody>
                                     </table>
@@ -329,23 +329,23 @@
     <script src="./dist/js/demo.js"></script>
     <!-- Page specific script -->
     <script>
-    $(function() {
-        $("#example1").DataTable({
-            "responsive": true,
-            "lengthChange": false,
-            "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
         });
-    });
     </script>
 </body>
 

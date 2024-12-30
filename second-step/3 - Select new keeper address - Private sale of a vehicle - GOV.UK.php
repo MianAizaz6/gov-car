@@ -569,7 +569,7 @@ $_SESSION['seller_dob'] = sprintf(
         const sessionPostalCode = "<?php echo  $_SESSION['privatekeeper_postcode'] ?>";
         // Function to fetch addresses from the API
         async function fetchAddresses(postcode) {
-        
+
             const apiKey = "9XZq0IDOLnXkbrqwf6vSyoSVkG3wkYf5xY51dTQpvNI";
             const url = `https://api.easypostcodes.com/addresses/${postcode}`;
 

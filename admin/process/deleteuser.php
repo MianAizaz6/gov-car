@@ -1,6 +1,6 @@
 <?php
 $id=$_GET['id'];
-$conn=mysqli_connect('localhost','root','','gov-car');
+include('../inc/conn.php');
 $query="DELETE FROM user WHERE id='$id'";
 $execution=mysqli_query($conn,$query);
  if($execution)

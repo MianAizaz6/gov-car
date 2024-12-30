@@ -1,5 +1,5 @@
 <?php
-$conn=mysqli_connect('localhost','root','','gov-car');
+include('../inc/conn.php');
 $type =$_POST['type'] ;
 $fullname=$_POST['fullname'];
 $email=$_POST['email']; 

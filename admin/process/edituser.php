@@ -1,5 +1,5 @@
 <?php
-$conn=mysqli_connect('localhost','root','','gov-car');
+include('../inc/conn.php');
 $fullname=$_GET['FullName'];
 $email=$_GET['Email']; 
 $password=$_GET['Password'];  
