@@ -230,11 +230,11 @@
                                         <option value="admin">Admin</option>
                                     </select>
                                 </div>
-                                <!-- Full Name -->
+                                <!-- User Name -->
                                 <div class="mb-3">
                                     <label for="fullName" class="form-label">Username</label>
                                     <input type="text" class="form-control custom-input-width" id="username"
-                                        name="username" placeholder="Enter your username" required>
+                                        name="username" placeholder="Enter username" required>
                                 </div>
 
                                 <!-- Password -->
