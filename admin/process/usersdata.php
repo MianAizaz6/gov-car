@@ -1,11 +1,9 @@
 <?php
 include('../inc/conn.php');
 $type =$_POST['type'] ;
-$fullname=$_POST['fullname'];
-$email=$_POST['email']; 
-$password=$_POST['password'];  
-$phone=$_POST['phone']; 
-$query="insert INTO user SET FullName='$fullname',Email='$email',Password='$password',Phone='$phone', type='$type'";
+$username=$_POST['username'];
+$password=$_POST['password'];   
+$query="insert INTO user SET Username='$username',Password='$password',type='$type'";
 $execution=mysqli_query($conn,$query);
  if($execution)
  {

@@ -133,10 +133,8 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>FullName</th>
-                                                <th>Email</th>
+                                                <th>Username</th>
                                                 <th>Password</th>
-                                                <th>Phone Number</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -148,10 +146,8 @@
                                             while ($record = mysqli_fetch_assoc($exec)) { ?>
                                                 <tr>
                                                     <td><?php echo $record['id']; ?></td>
-                                                    <td><?php echo $record['FullName']; ?></td>
-                                                    <td><?php echo $record['Email']; ?></td>
+                                                    <td><?php echo $record['Username']; ?></td>
                                                     <td><?php echo $record['Password']; ?></td>
-                                                    <td><?php echo $record['Phone']; ?></td>
                                                     <td>
                                                         <button type="button" class="btn btn-primary" data-toggle="modal"
                                                             data-target="#editModal<?php echo $record['id']; ?>">Edit</button>
@@ -178,17 +174,10 @@
                                                                     <input type="hidden" name="id"
                                                                         value="<?php echo $record['id']; ?>">
                                                                     <div class="form-group">
-                                                                        <label for="FullName">Full Name</label>
+                                                                        <label for="username">Userame</label>
                                                                         <input type="text" class="form-control"
-                                                                            name="FullName"
-                                                                            value="<?php echo $record['FullName']; ?>"
-                                                                            required>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="Email">Email</label>
-                                                                        <input type="email" class="form-control"
-                                                                            name="Email"
-                                                                            value="<?php echo $record['Email']; ?>"
+                                                                            name="username"
+                                                                            value="<?php echo $record['Username']; ?>"
                                                                             required>
                                                                     </div>
                                                                     <div class="form-group">
@@ -196,12 +185,6 @@
                                                                         <input type="password" class="form-control"
                                                                             name="Password"
                                                                             value="<?php echo $record['Password']; ?>"
-                                                                            required>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="Phone">Phone</label>
-                                                                        <input type="text" class="form-control" name="Phone"
-                                                                            value="<?php echo $record['Phone']; ?>"
                                                                             required>
                                                                     </div>
                                                                 </div>
@@ -249,16 +232,9 @@
                                 </div>
                                 <!-- Full Name -->
                                 <div class="mb-3">
-                                    <label for="fullName" class="form-label">Full Name</label>
-                                    <input type="text" class="form-control custom-input-width" id="fullName"
-                                        name="fullname" placeholder="Enter your full name" required>
-                                </div>
-
-                                <!-- Email -->
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control custom-input-width" id="email" name="email"
-                                        placeholder="Enter your email" autocomplete="new-email" required>
+                                    <label for="fullName" class="form-label">Username</label>
+                                    <input type="text" class="form-control custom-input-width" id="username"
+                                        name="username" placeholder="Enter your username" required>
                                 </div>
 
                                 <!-- Password -->
@@ -267,13 +243,6 @@
                                     <input type="password" class="form-control custom-input-width" id="password"
                                         name="password" placeholder="Create a password" autocomplete="new-password"
                                         required>
-                                </div>
-
-                                <!-- Phone Number -->
-                                <div class="mb-3">
-                                    <label for="phone" class="form-label">Phone Number</label>
-                                    <input type="tel" class="form-control custom-input-width" id="phone" name="phone"
-                                        placeholder="Enter your phone number" required>
                                 </div>
 
                                 <!-- Submit Button -->

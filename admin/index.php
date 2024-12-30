@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('./inc/conn.php');
+$conn = mysqli_connect('localhost', 'root', '', 'gov-car');
 // Check if the user is already logged in
 if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
     header('Location: ./dashboard.php');
@@ -10,16 +10,15 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 $errorMessage = ''; // Variable to store error messages
 
 if (isset($_POST['login']) && $_POST['login'] == 'type') {
-    $email = $_POST['email'];
+    $username = $_POST['Username'];
     $password = $_POST['password'];
 
-    $query = mysqli_query($conn, "SELECT * FROM user WHERE Email='$email' AND Password='$password'");
+    $query = mysqli_query($conn, "SELECT * FROM user WHERE Username='$username' AND Password='$password'");
     $row = mysqli_fetch_assoc($query);
     $num = mysqli_num_rows($query);
 
     if ($num > 0) 
     {
-        session_start();
        $_SESSION['id'] = $row['id'];        
         if ($row['type'] == 'admin') {
             header('Location: ./dashboard.php');
@@ -64,17 +63,17 @@ if (isset($_POST['login']) && $_POST['login'] == 'type') {
 
                 <!-- Display Bootstrap Alert -->
                 <?php if (!empty($errorMessage)) : ?>
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <?php echo $errorMessage; ?>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <?php echo $errorMessage; ?>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                 <?php endif; ?>
 
                 <form action="index.php" method="post">
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" name="email" placeholder="Email" required>
+                        <input type="text" class="form-control" name="Username" placeholder="Username" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>

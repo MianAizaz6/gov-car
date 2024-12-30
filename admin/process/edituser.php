@@ -1,11 +1,9 @@
 <?php
 include('../inc/conn.php');
-$fullname=$_GET['FullName'];
-$email=$_GET['Email']; 
+$username=$_GET['username'];
 $password=$_GET['Password'];  
-$phone=$_GET['Phone'];
 $id=$_GET['id']; 
-$query="UPDATE user SET FullName='$fullname',Email='$email',Password='$password',Phone='$phone' WHERE id ='$id'";
+$query="UPDATE user SET Username='$username',Password='$password', WHERE id ='$id'";
 $execution=mysqli_query($conn,$query);
  if($execution)
  {
