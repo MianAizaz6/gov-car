@@ -128,7 +128,7 @@
                                     <th>Seller Email</th>
                                     <th>Seller DOB</th>
                                     <th>Seller Licence</th>
-                                    <th>Registration</th>
+                                    <th>Registration Number</th>
                                     <th>Certificate</th>
                                     <th>Make</th>
                                     <th>Model</th>
