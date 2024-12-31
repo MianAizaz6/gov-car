@@ -1,11 +1,4 @@
 <?php
-require '../../vendor/autoload.php';
-require '../../vendor/phpmailer/phpmailer/src/Exception.php';
-require '../../vendor/phpmailer/phpmailer/src/PHPMailer.php';
-require '../../vendor/phpmailer/phpmailer/src/SMTP.php';
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
 session_start();
 
@@ -39,9 +32,9 @@ $vehicle_mileage =  $_SESSION['mileage'];
 // Function to generate a random transaction ID in the desired format
 function generateTransactionId()
 {
-  $prefix = strtoupper(substr(md5(uniqid(mt_rand(), true)), 0, 7)); // Generate a 7-character alphanumeric string
+  // $prefix = strtoupper(substr(md5(uniqid(mt_rand(), true)), 0, 7)); // Generate a 7-character alphanumeric string
   $suffix = rand(10000000000, 99999999999); // Generate an 11-digit number
-  return $prefix . '-' . $suffix;
+  return $_SESSION['v_registration'] . '-' . $suffix;
 }
 
 // Generate and store the transaction ID
@@ -98,70 +91,8 @@ $query = "INSERT INTO vehicle_sale (
 
 // Execute the query
 if (mysqli_query($conn, $query)) {
-
-
-
-  $mail = new PHPMailer(true);
-
-  try {
-    // Server settings
-    $mail->isSMTP();                                            // Set mailer to use SMTP
-    $mail->Host       = 'mail.dvla-buy-sell-service.com';                       // SMTP server
-    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'info@dvla-buy-sell-service.com';                 // SMTP username
-    $mail->Password   = 'Zg7Knlb4-DDFa';                  // SMTP password or app password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            // Enable SSL encryption
-    $mail->Port       = 465;                                    // TCP port for SSL
-
-    // Recipients
-    $mail->setFrom('info@dvla-buy-sell-service.com', 'Buy-Sell-Services');
-    $mail->addAddress($s_email, 'Support team'); // Add a recipient
-
-    // Content
-    // $mail->isHTML(true);                                        // Set email format to HTML
-    // $mail->Subject = 'Test Email';
-    // $mail->Body    = "<h1>This is a test email</h1><p>'".$_SESSION."'</p>";
-    // $mail->AltBody = 'This is the plain text version of the email content.';
-
-    $mail->isHTML(true); // Set email format to HTML
-    $mail->Subject = 'Vehicle Sale Details';
-    $mail->Body = '<div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f9f9f9; margin: 0; padding: 0;">
-<div style="max-width: 600px; margin: 20px auto; background: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
-    <div style="text-align: center;">
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/GOV.UK_logo.svg/320px-GOV.UK_logo.svg.png" alt="GOV.UK Logo" style="max-width: 150px;">
-    </div>
-    <div style="margin-top: 20px;">
-        <h1 style="font-size: 18px; color: #000;">Driver & Vehicle Licensing Agency</h1>
-        <p style="margin: 10px 0;">DVLA has been notified electronically that you are now the new keeper of vehicle registration number: <span style="font-weight: bold;">' . $v_registration . '</span></p>
-        <p style="margin: 10px 0;">The online Transaction ID is: <span style="font-weight: bold;">' . $trx_id . '</span></p>
-        <p style="margin: 10px 0;">You should receive your new V5C registration certificate (logbook) within 2 weeks.</p>
-        <p style="margin: 10px 0;">Since 1st October 2014, vehicle tax can no longer be transferred as part of the sale. This is because the seller will automatically receive a refund of any remaining tax.</p>
-        <p style="margin: 10px 0;">You must tax this vehicle before it is driven on the road, tax now at <a href="https://www.gov.uk/vehicletax" style="color: #0066cc; text-decoration: none;">www.gov.uk/vehicletax</a>.</p>
-        <p style="margin: 10px 0;">If you do not want to tax you can make a SORN declaration now at <a href="https://www.gov.uk/sorn" style="color: #0066cc; text-decoration: none;">www.gov.uk/sorn</a>.</p>
-        <p style="margin: 10px 0;">For more information on driving and transport go to <a href="https://www.gov.uk/browse/driving" style="color: #0066cc; text-decoration: none;">www.gov.uk/browse/driving</a>.</p>
-        <p style="margin: 10px 0;">You may wish to save or print this email confirmation for your records.</p>
-        <p style="margin: 10px 0;">Yours sincerely,<br>Anthony Bamford<br>Vehicles Service Manager</p>
-    </div>
-    <div style="margin-top: 20px; font-size: 12px; color: #888; text-align: center;">
-        <p style="margin: 10px 0;">THIS IS AN AUTOMATED EMAIL - Please do not reply as emails received at this address cannot be responded to.</p>
-    </div>
-</div>
-</div>';
-
-    $mail->AltBody = 'Please check the details of the vehicle sale in the HTML version of this email.';
-    $mail->send();
-
-    echo 'Message has been sent successfully.';
-  } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-  }
-
-
-
-
-
   // Redirect to a success page or show a success message
-  header('Location:../6 - Summary - Private sale of a vehicle - GOV.UK.php?success');
+  header('Location:../6 - Summary - Private sale of a vehicle - GOV.UK.php?success&send_email=true');
   exit;
 } else {
 

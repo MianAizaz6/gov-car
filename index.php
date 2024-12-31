@@ -32,12 +32,13 @@ session_start();
   <title>SignIn</title>
 </head>
 
-<body class="bg-[url('./assets/bg-img.webp')]  bg-contain min-h-[100vh] ">
+<!-- <body class="bg-[url('./assets/bg-img.webp')]  bg-contain min-h-[100vh] "> -->
+<body class="bg-black  bg-contain min-h-[100vh] ">
   <div class="w-full mx-auto my-8">
     <div class="grid grid-cols-1">
       <div class="flex justify-center items-center h-full pt-[50px]">
         <div>
-          <div class="bg-white md:w-[530px] w-full rounded-md p-[10px_40px_40px_40px]">
+          <div class="bg-white md:w-[530px] shadow-lg w-full rounded-md p-[10px_40px_40px_40px]">
             <div class="flex items-center justify-center mb-7">
               <img class="w-[220px] h-[110px]" src="./second-step/assets/logo.svg" alt="" />
             </div>
@@ -47,41 +48,41 @@ session_start();
                 Welcome back! Please log in to continue
               </p>
             </div>
-<?php 
-if (isset($_SESSION['login_error'])) {
-    echo '<div class="text-red-500 font-semibold mb-4">' . $_SESSION['login_error'] . '</div>';
-    unset($_SESSION['login_error']); // Clear the error message after displaying it
-}
-?>
+            <?php
+            if (isset($_SESSION['login_error'])) {
+              echo '<div class="text-red-500 font-semibold mb-4">' . $_SESSION['login_error'] . '</div>';
+              unset($_SESSION['login_error']); // Clear the error message after displaying it
+            }
+            ?>
             <!-- form -->
-          <form action="login.php" method="POST" class="mt-4 space-y-4">
-            <!-- Email -->
-            <div class="mx-auto">
-                <label for="Email" class="block mb-2 font-sans font-semibold">Email</label>
-                <input type="email" name="user_email" id="Email" placeholder="Please enter your email"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg outline-none block w-full p-2.5"
-                required />
-            </div>
+            <form action="login.php" method="POST" class="mt-4 space-y-4">
+              <!-- Email -->
+              <div class="mx-auto">
+                <label for="Email" class="block mb-2 font-sans font-semibold">Username</label>
+                <input type="text" name="user_email" id="Email" placeholder="Please enter your email"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg outline-none block w-full p-2.5"
+                  required />
+              </div>
 
-            <!-- Password -->
-            <div class="mx-auto">
+              <!-- Password -->
+              <div class="mx-auto">
                 <label for="Password" class="block mb-2 font-sans font-semibold">Password</label>
-                <input type="password" id="Password" name="Password" 
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg outline-none block w-full p-2.5"
-                required />
-            </div>
+                <input type="password" id="Password" name="Password"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg outline-none block w-full p-2.5"
+                  required />
+              </div>
 
-            <!-- Login Button -->
-            <div class="flex items-center justify-center">
+              <!-- Login Button -->
+              <div class="flex items-center justify-center">
                 <button type="submit"
-                class="flex items-center justify-center w-full space-x-2 rounded-md text-white bg-black font-semibold py-1 mt-6">
-                <span>Login</span>
-                <span class="w-4 h-4">
+                  class="flex items-center justify-center w-full space-x-2 rounded-md text-white bg-black font-semibold py-1 mt-6">
+                  <span>Login</span>
+                  <span class="w-4 h-4">
                     <img class="invert" src="/assets/chevron-right-svgrepo-com.svg" alt="" />
-                </span>
+                  </span>
                 </button>
-            </div>
-          </form>
+              </div>
+            </form>
 
 
           </div>

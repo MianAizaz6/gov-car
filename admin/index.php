@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$conn = mysqli_connect('localhost', 'root', '', 'gov-car');
+$conn = mysqli_connect('localhost', 'root', '', 'dvlabuyq_gov_car');
 // Check if the user is already logged in
 if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
     header('Location: ./dashboard.php');

@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_password = $_POST['Password'];
 
     // Prepare query to fetch the user
-    $stmt = $conn->prepare("SELECT * FROM user WHERE Email = ? AND Password = ?");
+    $stmt = $conn->prepare("SELECT * FROM user WHERE Username = ? AND Password = ?");
     $stmt->bind_param("ss", $user_email, $user_password);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($result->num_rows === 1) {
         $user = $result->fetch_assoc();
         $_SESSION['user_id'] = $user['id'];
-        $_SESSION['user_name'] = $user['FullName'];
+        $_SESSION['user_name'] = $user['Username'];
         $_SESSION['user_type'] = $user['type'];
 
         // Redirect based on user type
@@ -44,4 +44,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Close connection
 $conn->close();
-?>
